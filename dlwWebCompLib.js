@@ -2,7 +2,7 @@
 const mainNav = document.createElement("main-nav");
 // mainNav.setAttribute("class","");
 const headerLogo = '<div><img src="https://rmkcdn.successfactors.com/67fb2e9b/b2932bd4-424b-49f8-bc9c-c.png" alt="Jobs @ Brussels Airport Company" class="logo"></div>'
-const mobileNav = '<button class="mobile-nav-toggle aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span><svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="35" data-state="closed" aria-expanded="false"><line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line><line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line></svg></button>';
+const mobileNav = '<button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span><svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="35" data-state="closed" aria-expanded="false"><line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line><line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0"></line></svg></button>';
 mainNav.innerHTML = '<header class="flex primary-header">' + headerLogo + mobileNav + '<nav><ul data-navlist></ul></nav></header>';
 document.body.insertBefore(mainNav, document.body.firstChild);
 
@@ -83,3 +83,33 @@ class HeroBanner extends HTMLElement {
     }
 }
 customElements.define('hero-banner', HeroBanner);
+
+
+// Hamburger menu
+const nav = document.querySelector(".primary-navigation");
+const navToggle = document.querySelector(".mobile-nav-toggle");
+const navHeight = nav.offsetHeight;
+document.documentElement.style.setProperty(
+  "--scroll-padding",
+  navHeight + "px"
+);
+
+// animate the hamburger menu
+navToggle.addEventListener("click", () => {
+  const visibility = nav.getAttribute("data-visible");
+  const currentState = navToggle.getAttribute("data-state");
+  
+  if (!currentState || currentState === "closed") {
+    navToggle.setAttribute("data-state", "opened");
+    navToggle.setAttribute("aria-expanded", "true");
+  } else {
+    navToggle.setAttribute("data-state", "closed");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (visibility === "false") {
+    nav.setAttribute("data-visible", true);
+  } else {
+    nav.setAttribute("data-visible", false);
+  }
+});
