@@ -1,0 +1,8 @@
+.hero-banner-image {
+    height: var(--bg-hero-banner-image-height, 250px);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: var(--bg-hero-banner-image-url, url("https://rmkcdn.successfactors.com/67fb2e9b/c3c2e8a7-b366-4def-a136-a.jpg"));
+    background-position: "center";
+} 
