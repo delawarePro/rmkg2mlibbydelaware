@@ -41,7 +41,7 @@ function render() {
         const navElement = document.createElement('li')
         navElement.classList.add('nav-item')
         var navElementLink = document.createElement('a')
-        navElementLink.setAttribute("class","ff-sans-normals text-dark fs-200 fw-700");
+        navElementLink.setAttribute("class","ff-sans-normals text-dark fs-500 fw-700");
         var navElementLinkText = document.createTextNode(navItem.title)
         navElementLink.appendChild(navElementLinkText)
         navElementLink.href = navItem.url
