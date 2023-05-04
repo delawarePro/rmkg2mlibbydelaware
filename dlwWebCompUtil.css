@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -346,12 +347,12 @@ select {
 }
 
 .primary-navigation a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .primary-navigation a > span { /*direct selector indicator*/
-    font-weight: 700;
-    margin-right: .5em;
+    font-weight: 700 !important;
+    margin-right: .5em !important;
 }
 
 @supports (backdrop-filter: blur(1.5rem)) {
@@ -381,7 +382,7 @@ select {
     }
 
     .primary-navigation a {
-        color:rgba(var(--clr-white), 1);
+        color:rgba(var(--clr-dark), 1) !important;
     }
 
     .primary-navigation[data-visible="true"] {
@@ -482,12 +483,12 @@ select {
     cursor: pointer;
     padding: var(--underline-gap, 1rem) 0;
     border: 0;
-    border-bottom: .2rem solid rgba(var(--clr-white), 0);
+    border-bottom: .2rem solid rgba(var(--clr-dark), 0);
 }
 
 .underline-indicators > *:hover,
 .underline-indicators > *:focus {
-    border-color: rgba(var(--clr-white), 0.5);
+    border-color: rgba(var(--clr-dark), 0.5);
     
 }
 
@@ -524,4 +525,33 @@ select {
 body {
     background-size: cover;
     background-position: center;
+}
+
+/* home */
+.cc-home {
+    background-image: url(./assets/Images/bg--mobile.jpg); /*mobile*/
+    max-height: 100dvh;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 35rem) {
+    .cc-home {
+        background-image: url(./assets/Images/bg--tablet.jpg); /*tablet*/ 
+        max-height: 100dvh;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 45rem) {
+    .cc-home {
+        background-image: url(./assets/Images/bg--desktop.jpg); /*desktop*/
+        max-height: 100dvh;
+        background-repeat: no-repeat;
+    }
+}
+
+/*test*/
+.grid-container--cc-home,
+.grid-container--section-about {
+    height: 100vh;
 }
