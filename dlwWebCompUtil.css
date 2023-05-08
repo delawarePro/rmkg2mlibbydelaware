@@ -309,7 +309,7 @@ header .cc-header-search {
 .cc-social-media-icon-group {
     position: fixed;
     top: 86%;
-    padding: 20px 40px;
+    padding: 20px 5%;
     transform: translateY(-50%);
 }
 
@@ -330,7 +330,7 @@ header .cc-header-search {
     position: absolute;
     bottom: 6%;
     right: 40px;
-display: none;
+    display: none;
 }
 
 .cc-scroll-down-btn {
@@ -366,7 +366,6 @@ display: none;
     .cc-section {
         height: auto  !important;
         padding: 20px 20% !important;
-        background: lightgreen;
     }
 
     .cc-first-section {
