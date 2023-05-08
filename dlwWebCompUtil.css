@@ -42,6 +42,13 @@ h2 {
     margin: 20px 0;
 }
 
+h3 {
+    color: rgba(196,34,28,1);
+    font size : 1.125em;
+    font weight: 700;
+    margin: 0.5;
+}
+
 .cc-logo {
     color: #333;
     text-decoration: none;
@@ -69,7 +76,8 @@ header ul li a {
     position: relative !important;
     text-decoration: none !important; 
     color: #333 !important;
-    font-size: 1rem !important;
+    font-size: 1em !important;
+    font-weight: 700 !important;
     cursor: pointer !important;
 }
 
