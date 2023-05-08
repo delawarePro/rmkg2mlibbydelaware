@@ -53,18 +53,6 @@ p {
     margin: 0 0 10px !important;
 }
 
-ul {
-  list-style: none !important;
-}
-
-ul li::before {
-  content: "\2022";
-  color: rgba (196,34,28,1) !important;
-  display: inline-block; 
-  width: 1em;
-  margin-left: -1em;
-}
-
 .cc-logo {
     color: #333;
     text-decoration: none;
