@@ -341,4 +341,8 @@ display: none;
     .cc-first-section {
         padding-top: 100px !important;
     }
+    
+    .cc-first-section-no-vh {
+        padding-top: 100px !important;
+    }
 }
