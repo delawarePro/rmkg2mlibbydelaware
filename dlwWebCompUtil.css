@@ -30,9 +30,9 @@ header,
 
 h1 {
     color: rgba(196,34,28,1);
-    font-size: 3.375em;
-    font-weight: 700;
-    margin: 20px 0;
+    font-size: 3.375em !important;
+    font-weight: 700 !important;
+    margin: 20px 0 !important;
 }
 
 h2 {
@@ -44,9 +44,9 @@ h2 {
 
 h3 {
     color: rgba(196,34,28,1);
-    font size : 1.125em;
-    font weight: 700;
-    margin: 0.5;
+    font size : 1.125em !important;
+    font weight: 700 !important;
+    margin: 0.5 !important;
 }
 
 .cc-logo {
