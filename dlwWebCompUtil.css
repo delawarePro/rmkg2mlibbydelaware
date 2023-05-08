@@ -49,6 +49,10 @@ h3 {
     margin: 0.5 !important;
 }
 
+p {
+    margin: 0 0 10px !important;
+}
+
 .cc-logo {
     color: #333;
     text-decoration: none;
