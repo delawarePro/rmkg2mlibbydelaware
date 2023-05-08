@@ -246,6 +246,10 @@ header .cc-header-search {
     padding-top: 100px !important;
 }
 
+.cc-first-section-content-page {
+    padding-top: 100px !important;
+}
+
 .cc-grid {
     display: grid !important;
     gap: 2rem !important;
