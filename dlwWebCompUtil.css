@@ -61,6 +61,11 @@ p {
     text-transform: uppercase;
 }
 
+cc-logo-img {
+    width: 50%;
+    display: inline-block;
+}
+
 .cc-header-group {
     display: flex;
     align-items: center;
