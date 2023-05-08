@@ -345,3 +345,7 @@ display: none;
         padding-top: 100px !important;
     }
 }
+
+.outershell a, .outershell .link, div.outershell div.cookiePolicy a {
+    color: rgba(51,122,183,1) !important;
+}
