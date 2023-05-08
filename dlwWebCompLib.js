@@ -1,7 +1,7 @@
 /* web component for header */
 let ccHeader = document.createElement("header-nav");
 
-let headerLogo = '<a href="/" class="cc-logo">Logo</a>';
+let headerLogo = '<a href="/" class="cc-logo"><span><img class="cc-logo-img" src="https://rmkcdn.successfactors.com/67fb2e9b/d1df3933-c965-478f-8bb2-3.svg"/></span></a>';
 let headerSearch = '<div class="cc-header-search"><span class="cc-icon"><a href="#" onclick="submitSearch()"><ion-icon name="search-outline" class="cc-submit-job-search-btn"></ion-icon></a><ion-icon name="search-outline" class="cc-search-btn"></ion-icon><ion-icon name="close-outline" class="cc-close-btn"></ion-icon></span></div>';
 let mobileHeaderMenuToggle = '<ion-icon name="menu-outline" class="cc-mobile-menu-toggle"></ion-icon>';
 let mobileHeaderMenuClose = '<ion-icon name="close-outline" class="cc-mobile-menu-close hide"></ion-icon>';
