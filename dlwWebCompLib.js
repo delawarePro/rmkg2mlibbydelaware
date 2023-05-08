@@ -82,31 +82,4 @@ class HeroBanner extends HTMLElement {
 customElements.define('hero-banner', HeroBanner);
 
 
-// Hamburger menu
-const nav = document.querySelector(".primary-navigation");
-const navToggle = document.querySelector(".mobile-nav-toggle");
-const navHeight = nav.offsetHeight;
-document.documentElement.style.setProperty(
-  "--scroll-padding",
-  navHeight + "px"
-);
 
-// animate the hamburger menu
-navToggle.addEventListener("click", () => {
-  const visibility = nav.getAttribute("data-visible");
-  const currentState = navToggle.getAttribute("data-state");
-  
-  if (!currentState || currentState === "closed") {
-    navToggle.setAttribute("data-state", "opened");
-    navToggle.setAttribute("aria-expanded", "true");
-  } else {
-    navToggle.setAttribute("data-state", "closed");
-    navToggle.setAttribute("aria-expanded", "false");
-  }
-
-  if (visibility === "false") {
-    nav.setAttribute("data-visible", true);
-  } else {
-    nav.setAttribute("data-visible", false);
-  }
-});
