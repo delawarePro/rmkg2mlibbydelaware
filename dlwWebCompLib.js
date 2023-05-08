@@ -1,50 +1,48 @@
-let searchBtn = document.querySelector(".cc-search-btn");
-console.log(searchBtn);
-let closeBtn = document.querySelector(".cc-close-btn");
-let searchBox = document.querySelector(".cc-search-box");
-let searchBoxInput = document.querySelector(".cc-search-box-input");
-let searchBoxSubmitBtn = document.querySelector(".cc-submit-job-search-btn");
-let headerNavigation = document.querySelector(".cc-header-navigation");
-let mobileMenuToggle = document.querySelector(".cc-mobile-menu-toggle");
-let mobileMenuClose = document.querySelector(".cc-mobile-menu-close");
-let header = document.querySelector(".cc-header");
+/* web component for header */
+let ccHeader = document.createElement("header-nav");
 
-searchBtn.onclick = function() {
-    searchBox.classList.add("active");
-    closeBtn.classList.add("active");
-    searchBoxSubmitBtn.classList.add("active");
-    searchBtn.classList.add("hide");
-    mobileMenuToggle.classList.add("hide");
-    mobileMenuClose.classList.add("hide");
-    header.classList.remove("open");
+let headerLogo = '<a href="/" class="cc-logo">Logo</a>';
+let headerSearch = '<div class="cc-header-search"><span class="cc-icon"><a href="#" onclick="submitSearch()"><ion-icon name="search-outline" class="cc-submit-job-search-btn"></ion-icon></a><ion-icon name="search-outline" class="cc-search-btn"></ion-icon><ion-icon name="close-outline" class="cc-close-btn"></ion-icon></span></div>';
+let mobileHeaderMenuToggle = '<ion-icon name="menu-outline" class="cc-mobile-menu-toggle"></ion-icon>';
+let mobileHeaderMenuClose = '<ion-icon name="close-outline" class="cc-mobile-menu-close hide"></ion-icon>';
+let headerSearchBox = '<div class="cc-search-box"><form name="keywordsearch" class="cc-search-form" method="get" role="search" action="/search/"><input name="createNewAlert" type="hidden" value="false"><input type="text" class="cc-search-box-input" placeholder="Zoek jobs" name="q" maxlength="50" aria-label="Zoek op trefwoord"></form></div>';
+ccHeader.innerHTML = '<header class="cc-header">' + headerLogo + '<div class="cc-header-group">' + '<ul class="cc-header-navigation" data-navlist></ul>' + headerSearch + mobileHeaderMenuToggle + mobileHeaderMenuClose + '</div>' + headerSearchBox + '</header>';
+document.body.insertBefore(ccHeader, document.body.firstChild);
+
+/*web component for header*/
+let navList = ccPrimaryNavDutch;
+switch (languageToken) {
+  case "fr":
+    navList = ccPrimaryNavFrench;
+    break;
 }
-
-closeBtn.onclick = function() {
-    searchBox.classList.remove("active");
-    closeBtn.classList.remove("active");
-    searchBoxSubmitBtn.classList.remove("active");
-    searchBtn.classList.remove("active");
-    searchBtn.classList.remove("hide");
-    mobileMenuToggle.classList.remove("hide");
-    searchBoxInput.value = "";
+let templateCcHeader = document.createElement('template');
+templateCcHeader.innerHTML = `
+<slot></slot>
+`
+class HeaderNav extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' })
+        render()
+        shadow.append(templateCcHeader.content.cloneNode(true))
+    }
 }
+customElements.define('header-nav', HeaderNav)
 
-mobileMenuToggle.onclick = function() {
-    header.classList.toggle("open");
-    searchBox.classList.remove("active");
-    closeBtn.classList.remove("active");
-    searchBtn.classList.remove("active");
-    mobileMenuClose.classList.remove("hide");
-    mobileMenuToggle.classList.add("hide");
-}
-
-mobileMenuClose.onclick = function() {
-    header.classList.toggle("open");
-    searchBox.classList.remove("active");
-    closeBtn.classList.remove("active");
-    searchBtn.classList.remove("active");
-    mobileMenuToggle.classList.remove("hide");
-    mobileMenuClose.classList.add("hide");
+function render() {
+    const navContainer = document.querySelector('[data-navlist]');
+    navList.forEach(navItem => {
+        const navElement = document.createElement('li')
+        let navElementLink = document.createElement('a')
+        let navElementLinkText = document.createTextNode(navItem.title)
+        navElementLink.appendChild(navElementLinkText)
+        navElementLink.href = navItem.url
+        navElementLink.title = navItem.title
+        navElementLink.target = navItem.target
+        navElement.appendChild(navElementLink)
+        navContainer.appendChild(navElement)
+    })
 }
 
 
