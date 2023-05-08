@@ -28,6 +28,13 @@ header,
     z-index: 1;
 }
 
+h1 {
+    color: rgba(196,34,28,1);
+    font-size: 3.375em;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
 .cc-logo {
     color: #333;
     text-decoration: none;
@@ -354,3 +361,5 @@ display: none;
 .outershell a:hover {
     color: rgba(51,122,183,1) !important;
 }
+
+
