@@ -1,5 +1,4 @@
 let searchBtn = document.querySelector(".cc-search-btn");
-console.log(searchBtn);
 let closeBtn = document.querySelector(".cc-close-btn");
 let searchBox = document.querySelector(".cc-search-box");
 let searchBoxInput = document.querySelector(".cc-search-box-input");
