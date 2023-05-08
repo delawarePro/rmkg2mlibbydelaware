@@ -254,7 +254,7 @@ header .cc-header-search {
 }
 
 .cc-container {
-    min-height: 100vh !important;
+    height: fit-content !important;
 }
 
 .cc-section {
