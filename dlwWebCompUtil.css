@@ -348,6 +348,9 @@ display: none;
 }
 
 /*override standard link color*/
-.outershell a, .outershell .link, div.outershell div.cookiePolicy a {
+.outershell a {
+    color: rgba(196,34,28,1) !important;
+}
+.outershell a:hover {
     color: rgba(51,122,183,1) !important;
 }
