@@ -335,13 +335,12 @@ header .cc-header-search {
     }
 
     .cc-search-btn {
-        left: 0 !important;
-        padding-top: 45px;
+        left: -10px !important;
+        top: 22px;
     }
 
     .cc-close-btn {
-        left: 25px !important;
-        top: -12.5px;
+        left: 0 !important;
     }
 
     .cc-mobile-menu-toggle {
