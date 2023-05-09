@@ -212,6 +212,59 @@ header .cc-header-search {
     height: fit-content !important;
 }
 
+.cc-container {
+    min-height: 100vh !important;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background: rgba(34, 34, 36,0.1);
+}
+
+.cc-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #b2c0e2;
+  mix-blend-mode: hard-light;
+}
+
+.cc-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+}
+.cc-vimeo-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: contain;
+  overflow: hidden;
+  opacity: 0.8;
+}
+.cc-vimeo-wrapper iframe {
+  width: 100vw;
+  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cc-vimeo-wrapper-mobile {
+  display: none;
+}
+
 .cc-section {
     padding: 20px 15% !important;
     position: relative !important;
@@ -229,6 +282,14 @@ header .cc-header-search {
 .cc-grid {
     display: grid !important;
     gap: 2rem !important;
+}
+
+.cc-grid-center-content {
+    place-content: center;
+}
+
+.cc-grid-center-items {
+    place-items: center;
 }
 
 .cc-cta-btn {
@@ -318,12 +379,12 @@ header .cc-header-search {
     }
 
     .cc-section {
-        height: auto  !important;
         padding: 20px 20% !important;
     }
 
     .cc-first-section {
         padding-top: 100px !important;
+        height: 100dvh !important;
     }
     
     .cc-first-section-no-vh {
@@ -339,16 +400,11 @@ header .cc-header-search {
         top: 22px;
     }
 
-    .cc-close-btn {
-       /* left: 0 !important; */
-    }
-
     .cc-mobile-menu-toggle {
         position: relative !important;
         display: inline-block !important;
         font-size: 1.5em !important;
         cursor: pointer !important;
-        /*transform: translateX(50px) !important;*/
         z-index: 10;
     }
 
@@ -357,7 +413,6 @@ header .cc-header-search {
         display: inline-block !important;
         font-size: 1.5em !important;
         cursor: pointer !important;
-        /*transform: translateX(50px) !important;*/
         z-index: 10;
     }
 
@@ -388,7 +443,34 @@ header .cc-header-search {
 
     .hide {
         display: none !important;
-    }   
+    }  
+    
+    .cc-vimeo-wrapper {
+        display: none;
+    }
+    .cc-vimeo-wrapper-mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        object-fit: cover;
+        overflow: hidden;
+        opacity: 0.8;
+    }
+    .cc-vimeo-wrapper-mobile iframe {
+        width: 100vw;
+        height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+        min-height: 100vh;
+        min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /*override standard link color*/
