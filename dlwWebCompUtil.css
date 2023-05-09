@@ -330,8 +330,18 @@ header .cc-header-search {
         padding-top: 100px !important;
     }
 
+    .cc-search-box {
+        padding: 0 5%;
+    }
+
     .cc-search-btn {
         left: 0 !important;
+        padding-top: 45px;
+    }
+
+    .cc-close-btn {
+        left: 25px !important;
+        top: -12.5px;
     }
 
     .cc-mobile-menu-toggle {
