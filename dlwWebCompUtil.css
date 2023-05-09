@@ -311,8 +311,10 @@ header .cc-header-search {
         margin: 10px 0 !important;
     }
 
+    header, 
     .cc-header {
         transition: .2s;
+        padding: 20px 5%;
     }
 
     .cc-section {
