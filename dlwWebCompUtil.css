@@ -44,8 +44,8 @@ h2 {
 
 h3 {
     color: rgba(196,34,28,1) !important;
-    font size : 1.125em !important;
-    font weight: 700 !important;
+    font-size : 1.125em !important;
+    font-weight: 700 !important;
     margin: 0.5 !important;
 }
 
@@ -186,7 +186,7 @@ header .cc-header-search {
     visibility: hidden;
     transition: 0.5s;
     scale: 0;
-    color: red;
+    color: rgba(196,34,28,1);
 }
 
 .cc-submit-job-search-btn.active {
@@ -199,13 +199,13 @@ header .cc-header-search {
 .cc-mobile-menu-toggle {
     position: relative !important;
     display: none !important;
-    color: red !important;
+    color: rgba(196,34,28,1) !important;
 }
 
 .cc-mobile-menu-close {
     position: relative !important;
     display: none !important;
-    color: red !important;
+    color: rgba(196,34,28,1) !important;
 }
 
 /* responsive */
@@ -219,7 +219,7 @@ header .cc-header-search {
         display: block !important;
         font-size: 1.5em !important;
         cursor: pointer !important;
-        transform: translateX(60px) !important;
+        transform: translateX(50px) !important;
         z-index: 10;
     }
 
@@ -228,7 +228,7 @@ header .cc-header-search {
         display: block !important;
         font-size: 1.5em !important;
         cursor: pointer !important;
-        transform: translateX(60px) !important;
+        transform: translateX(50px) !important;
         z-index: 10;
     }
 
@@ -322,7 +322,7 @@ header .cc-header-search {
 }
 
 .cc-social-media-icon:hover {
-    color:aqua;
+    color:rgba(51,122,183,1);
     transform: translateY(-5px);
 }
 
@@ -338,7 +338,7 @@ header .cc-header-search {
     padding: 8px;
     font-size: 1.5rem; 
     color: white;
-    background: green;
+    background: rgba(196,34,28,1);
     border-radius: 30px;
     transition: all .60s ease;
 }
@@ -384,5 +384,3 @@ header .cc-header-search {
 .outershell a:hover {
     color: rgba(51,122,183,1) !important;
 }
-
-
