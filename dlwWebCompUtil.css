@@ -181,7 +181,7 @@ header .cc-header-search {
 
 .cc-submit-job-search-btn {
     position: relative;
-    top: 2.5px;
+    top: 3px;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
