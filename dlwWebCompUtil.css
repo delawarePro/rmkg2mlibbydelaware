@@ -270,6 +270,59 @@ picture {
   display: block;
 }
 
+footer {
+  display: block;
+  position: relative;   
+  width: 100%;
+  background: rgba(var(--clr-color-3),1);
+  padding-inline: 15%;
+}
+
+.cc-footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.cc-footer-icon {
+  font-size: 1.5em;
+  display: inline-block;
+  color: rgba(var(--clr-color-white),1);
+}
+
+.cc-footer-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cc-footer-copy a {
+  text-decoration: none;
+}
+
+.cc-footer-copy span {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgba(var(--clr-color-white),1);
+  font-size: 0.875em;
+  padding-left: 1em;
+}
+
+.cc-footer-menu {
+  display: block;
+}
+
+.cc-footer-menu a {
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.875em;
+  font-weight: 600;
+  color: rgba(var(--clr-color-white),1);
+}
+
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
