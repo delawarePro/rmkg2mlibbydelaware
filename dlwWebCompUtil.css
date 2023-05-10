@@ -1,10 +1,221 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:wght@300;400;700&display=swap');
 
+/* ------------------------------ */
+/* Custom properties - rgb values */
+/* ------------------------------ */
+:root {
+  /* colors */
+  --clr-color-1: 196,34,28; /*passion*/
+  --clr-color-2: 23,64,92; /*nightsky*/
+  --clr-color-3: 60,60,59; /*basic*/
+  --clr-color-4: 153,212,192; /*daylight*/
+  --clr-color-5: 47,172,92; /*future*/
+  --clr-color-6: 0,102,75; /*ocean*/
+  --clr-color-7: 135,39,79; /*aubergine*/
+  --clr-color-8: 242,125,169; /*tender*/
+  --clr-color-9: 255,194,14; /*sunlight*/
+  --clr-color-10: 235,95,14; /*sundown*/
+  --clr-color-dark: 23,64,92; /*nightsky*/
+  --clr-color-white: 255,255,255; /*white*/
+  --clr-color-accent: 153,212,192; /*daylight*/
+
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem); 
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
+  --fs-500: 1.75rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+  
+  /* font-weights */
+  --fw-700: 700;
+  --fw-400: 400;
+}
+
+/*colors*/
+.cc-text-color-white {
+  color: rgba(var(--clr-color-white),1) !important;
+}
+
+.cc-text-color-passion {
+  color: rgba(var(--clr-color-1),1) !important;
+}
+
+.cc-text-color-nightsky {
+  color: rgba(var(--clr-color-2),1) !important;
+}
+
+.cc-text-color-basic {
+  color: rgba(var(--clr-color-3),1) !important;
+}
+
+.cc-text-color-daylight {
+  color: rgba(var(--clr-color-4),1) !important;
+}
+
+.cc-text-color-future {
+  color: rgba(var(--clr-color-5),1) !important;
+}
+
+.cc-text-color-ocean {
+  color: rgba(var(--clr-color-6),1) !important;
+}
+
+.cc-text-color-aubergine {
+  color: rgba(var(--clr-color-7),1) !important;
+}
+
+.cc-text-color-tender {
+  color: rgba(var(--clr-color-8),1) !important;
+}
+
+.cc-text-color-sunlight {
+  color: rgba(var(--clr-color-9),1) !important;
+}
+
+.cc-text-color-sundown {
+  color: rgba(var(--clr-color-10),1) !important;
+}
+
+
+
+.cc-bg-color-passion {
+  background: rgba(var(--clr-color-1),1);
+}
+
+.cc-bg-color-passion-accent {
+  background: rgba(var(--clr-color-1),0.5);
+}
+
+.cc-bg-color-passion-light {
+  background: rgba(var(--clr-color-1),0.25);
+}
+
+.cc-bg-color-nightsky {
+  background: rgba(var(--clr-color-2),1);
+}
+
+.cc-bg-color-nightsky-accent {
+  background: rgba(var(--clr-color-2),0.5);
+}
+
+.cc-bg-color-nightsky-light {
+  background: rgba(var(--clr-color-2),0.25);
+}
+
+.cc-bg-color-basic {
+  background: rgba(var(--clr-color-3),1);
+}
+
+.cc-bg-color-basic-accent {
+  background: rgba(var(--clr-color-3),0.5);
+}
+
+.cc-bg-color-basic-light {
+  background: rgba(var(--clr-color-3),0.25);
+}
+
+.cc-bg-color-daylight-{
+  background: rgba(var(--clr-color-4),1);
+}
+
+.cc-bg-color-daylight-accent {
+  background: rgba(var(--clr-color-4),0.5);
+}
+
+.cc-bg-color-daylight-light {
+  background: rgba(var(--clr-color-4),0.25);
+}
+
+.cc-bg-color-future {
+  background: rgba(var(--clr-color-5),1);
+}
+
+.cc-bg-color-future-accent {
+  background: rgba(var(--clr-color-5),0.5);
+}
+
+.cc-bg-color-future-light {
+  background: rgba(var(--clr-color-5),0.25);
+}
+
+.cc-bg-color-ocean {
+  background: rgba(var(--clr-color-6),1);
+}
+
+.cc-bg-color-ocean-accent {
+  background: rgba(var(--clr-color-6),0.5);
+}
+
+.cc-bg-color-ocean-light {
+  background: rgba(var(--clr-color-6),0.25);
+}
+
+.cc-bg-color-aubergine {
+  background: rgba(var(--clr-color-7),1);
+}
+
+.cc-bg-color-aubergine-accent {
+  background: rgba(var(--clr-color-7),0.5);
+}
+
+.cc-bg-color-aubergine-light {
+  background: rgba(var(--clr-color-7),0.25);
+}
+
+.cc-bg-color-tender {
+  background: rgba(var(--clr-color-8),1);
+}
+
+.cc-bg-color-tender-accent {
+  background: rgba(var(--clr-color-8),0.5);
+}
+
+.cc-bg-color-tender-light {
+  background: rgba(var(--clr-color-8),0.25);
+}
+
+.cc-bg-color-sunlight {
+  background: rgba(var(--clr-color-9),1);
+}
+
+.cc-bg-color-sunlight-accent {
+  background: rgba(var(--clr-color-9),0.5);
+}
+
+.cc-bg-color-sunlight-light {
+  background: rgba(var(--clr-color-9),0.25);
+}
+
+.cc-bg-color-sundown {
+  background: rgba(var(--clr-color-10),1);
+}
+
+.cc-bg-color-sundown-accent {
+  background: rgba(var(--clr-color-10),0.5);
+}
+
+.cc-bg-color-sundown-light {
+  background: rgba(var(--clr-color-10),0.25);
+}
+
+.cc-bg-color-white {
+  background: rgba(var(--clr-color-white),1);
+}
+
+/*reset*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: var(--scroll-padding, 100px);
 }
 
 body {
@@ -19,31 +230,30 @@ header,
     left: 0;
     width: 100%;
     height: 80px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(var(--clr-color-white),0.7);
     padding: 20px 15%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.05);
     z-index: 1;
 }
 
 h1 {
-    color: rgba(196,34,28,1) !important;
+    color: rgba(var(--clr-color-1),1) !important;
     font-size: 3.375em !important;
     font-weight: 700 !important;
     margin: 20px 0 !important;
 }
 
 h2 {
-    color: rgba(23,64,92,1) !important;
+    color: rgba(var(--clr-color-2),1) !important;
     font-size: 1.5em !important;
     font-weight: 700 !important;
     margin: 20px 0 !important;
 }
 
 h3 {
-    color: rgba(196,34,28,1) !important;
+    color: rgba(var(--clr-color-1),1) !important;
     font-size : 1.125em !important;
     font-weight: 700 !important;
     margin: 0.5 !important;
@@ -53,8 +263,32 @@ p {
     margin: 0 0 10px !important;
 }
 
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*header and navigation*/
 .cc-logo {
-    color: #333;
+    color: rgba(var(--clr-color-3),1);
     text-decoration: none;
     font-size: 1em;
     font-weight: 700;
@@ -84,7 +318,7 @@ header ul li {
 header ul li a {
     position: relative !important;
     text-decoration: none !important; 
-    color: #333 !important;
+    color: rgba(var(--clr-color-3),1) !important;
     font-size: 1em !important;
     font-weight: 700 !important;
     cursor: pointer !important;
@@ -96,7 +330,7 @@ header ul li a::before {
     bottom: -4px !important;
     width: 100% !important;
     height: 2px !important;
-    background: #333 !important;
+    background: rgba(var(--clr-color-1),1) !important;
     transform: scaleX(0) !important;
     transition: transform 0.5s ease-in-out !important;
     transform-origin: right !important;
@@ -122,7 +356,7 @@ header .cc-header-search {
     right: -100%;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: var(--clr-color-white,1);
     display: flex;
     align-items: center;
     padding: 0 15%;
@@ -138,10 +372,10 @@ header .cc-header-search {
     border: none;
     outline: none;
     height: 50px;
-    color: #333;
+    color: rgba(var(--clr-color-white),0.7);
     font-size: 1.25rem;
-    background: #fff;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(var(--clr-color-white),1);
+    border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
 }
 
 .cc-search-form {
@@ -186,7 +420,7 @@ header .cc-header-search {
     visibility: hidden;
     transition: 0.5s;
     scale: 0;
-    color: rgba(196,34,28,1);
+    color: rgba(var(--clr-color-1),1);
 }
 
 .cc-submit-job-search-btn.active {
@@ -199,15 +433,17 @@ header .cc-header-search {
 .cc-mobile-menu-toggle {
     position: relative !important;
     display: none !important;
-    color: rgba(196,34,28,1) !important;
+    color: rgba(var(--clr-color-1),1) !important;
 }
 
 .cc-mobile-menu-close {
     position: relative !important;
     display: none !important;
-    color: rgba(196,34,28,1) !important;
+    color: rgba(var(--clr-color-1),1) !important;
 }
 
+
+/*content*/
 .cc-container {
     height: fit-content !important;
 }
@@ -217,7 +453,6 @@ header .cc-header-search {
     position: absolute;
     right: 0;
     width: 100%;
-    background: rgba(34, 34, 36,0.1);
 }
 
 .cc-overlay {
@@ -226,7 +461,7 @@ header .cc-header-search {
   left: 0;
   width: 100%;
   min-height: 100%;
-  background: #b2c0e2;
+  background: rgba(var(--clr-color-white),0.01);
   mix-blend-mode: hard-light;
 }
 
@@ -279,6 +514,15 @@ header .cc-header-search {
     padding-top: 100px !important;
 }
 
+.cc-next-section {
+    height: 100dvh !important;
+}
+
+.cc-next-section-no-vh {
+    height: auto !important;
+    padding-bottom: 40px !important;
+}
+
 .cc-grid {
     display: grid !important;
     gap: 2rem !important;
@@ -292,24 +536,28 @@ header .cc-header-search {
     place-items: center;
 }
 
+.cc-grid-container-small {
+    max-width: 600px;
+}
+
 .cc-cta-btn {
     text-decoration: none;
     display: inline-block;
-    color: #fff;
-    background: teal;
-    border: 1px solid transparent;
+    color: rgba(var(--clr-color-white),1);
+    background: rgba(var(--clr-color-1),1);
+    border: 1px solid rgba(var(--clr-color-1),1);
     padding: 6px 30px;
     line-height: 1.4;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 500;
-    border-radius: 30px;
+    border-radius: 5px;
     
     transition: all .60s ease;
 }
 
 .cc-cta-btn:hover {
-    background: transparent;
-    border: 1px solid white;
+    background: rgba(var(--clr-color-3),0.5);
+    border: 1px solid rgba(var(--clr-color-1),1);
     transform: translateX(8px);
 }
 
@@ -329,7 +577,7 @@ header .cc-header-search {
 }
 
 .cc-social-media-icon:hover {
-    color:rgba(51,122,183,1);
+    color:rgba(var(--clr-color-2),1);
     transform: translateY(-5px);
 }
 
@@ -344,8 +592,8 @@ header .cc-header-search {
     display: block;
     padding: 8px;
     font-size: 1.5rem; 
-    color: white;
-    background: rgba(196,34,28,1);
+    color: rgba(var(--clr-color-white),1);
+    background: rgba(var(--clr-color-1),1);
     border-radius: 30px;
     transition: all .60s ease;
 }
@@ -430,11 +678,11 @@ header .cc-header-search {
         left: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        background: #fff !important;
+        background: rgba(var(--clr-color-white),1) !important;
         width: 100% !important;
         height: calc(100vh - 80px) !important;
         padding: 40px !important;
-        border-top: 1px solid rgba(0,0,0,0.05) !important;
+        border-top: 1px solid rgba(var(--clr-color-3),0.05) !important;
     }
 
     .cc-header.open .cc-header-navigation li a {
@@ -475,10 +723,10 @@ header .cc-header-search {
 
 /*override standard link color*/
 .outershell a {
-    color: rgba(196,34,28,1) !important;
+    color: rgba(var(--clr-color-1),1) !important;
 }
 .outershell a:hover {
-    color: rgba(51,122,183,1) !important;
+    color: rgba(var(--clr-color-2),1) !important;
 }
 
 /*github reference here*/
@@ -571,7 +819,7 @@ header .cc-header-search {
   
   
   .cc-heartbeat {
-    color: rgba(196,34,28,1);
+    color: rgba(var(--clr-color-1),1);
     font-size: 2em;
   }
   
