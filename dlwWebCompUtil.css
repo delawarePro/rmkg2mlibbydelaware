@@ -41,6 +41,9 @@
 .outershell a:hover {
     color: rgba(var(--clr-color-2),1) !important;
 }
+.outershell a.cc-social-media-icon:hover {
+    color: rgba(var(--clr-color-9),1) !important;
+}
 
 /*hide search*/
 #search-wrapper {
