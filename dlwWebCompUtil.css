@@ -273,7 +273,9 @@ p {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+svg,
+video {
   max-width: 100%;
   display: block;
 }
@@ -806,6 +808,23 @@ header .cc-header-search {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .cc-footer-container {
+      flex-direction: column-reverse;
+    }
+
+    .cc-footer-copy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cc-footer-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 9%;
+      width: 100%;
     }
 }
 
