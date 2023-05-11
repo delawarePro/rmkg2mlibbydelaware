@@ -604,9 +604,9 @@ header .cc-header-search {
 .cc-cta-btn {
     text-decoration: none;
     display: inline-block;
-    color: rgba(var(--clr-color-white),1);
-    background: rgba(var(--clr-color-1),1);
-    border: 1px solid rgba(var(--clr-color-1),1);
+    color: rgba(var(--clr-color-white),1) !important;
+    background: rgba(var(--clr-color-1),1) !important;
+    border: 1px solid rgba(var(--clr-color-1),1) !important;
     padding: 6px 30px;
     line-height: 1.4;
     font-size: 1em;
@@ -617,8 +617,8 @@ header .cc-header-search {
 }
 
 .cc-cta-btn:hover {
-    background: rgba(var(--clr-color-3),0.5);
-    border: 1px solid rgba(var(--clr-color-1),1);
+    background: rgba(var(--clr-color-3),0.25) !important;
+    border: 1px solid rgba(var(--clr-color-1),1) !important;
     transform: translateX(8px);
 }
 
