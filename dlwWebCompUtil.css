@@ -34,12 +34,17 @@
   --fw-400: 400;
 }
 
-/*override standard link color*/
+/*override link color*/
 .outershell a {
     color: rgba(var(--clr-color-1),1) !important;
 }
 .outershell a:hover {
     color: rgba(var(--clr-color-2),1) !important;
+}
+
+/*hide search*/
+#search-wrapper {
+  display: none !important;
 }
 
 /*colors*/
