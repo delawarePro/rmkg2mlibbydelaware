@@ -1,7 +1,7 @@
 /* web component for header */
-/*web component for header*/
 let navList = ccPrimaryNavDutch;
 let navLocale = "locale=nl_NL";
+
 switch (languageToken) {
   case "fr":
     navList = ccPrimaryNavFrench;
