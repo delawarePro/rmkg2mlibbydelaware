@@ -382,7 +382,7 @@ footer {
 header ul {
     position: relative !important;
     display: flex !important;
-    gap: 25px !important;
+    gap: 15px !important;
 }
 
 header ul li {
