@@ -47,6 +47,11 @@
   display: none !important;
 }
 
+/*padding-top*/
+.cc-padding-top-350 {
+  padding-top: 350px;
+}
+
 /*colors*/
 .cc-text-color-white {
   color: rgba(var(--clr-color-white),1) !important;
@@ -710,6 +715,10 @@ header .cc-header-search {
 
 /* responsive */
 @media (max-width: 759px) {
+    .cc-padding-top-350 {
+      padding-top: 0px;
+    }
+    
     h1 {
         font-size: 2.5em !important;
         margin: 10px 0 !important;
