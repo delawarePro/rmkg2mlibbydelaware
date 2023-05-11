@@ -299,6 +299,11 @@ footer {
   display: inline-block;
   color: rgba(var(--clr-color-basic),1) !important;
   vertical-align: middle;
+  transition: all .60s ease;
+}
+
+.cc-footer-icon:hover {
+  transform: translateX(4px);
 }
 
 .cc-footer-copy {
