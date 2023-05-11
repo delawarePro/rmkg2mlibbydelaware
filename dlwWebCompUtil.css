@@ -17,7 +17,7 @@
   --clr-color-10: 235,95,14; /*sundown*/
   --clr-color-dark: 23,64,92; /*nightsky*/
   --clr-color-white: 255,255,255; /*white*/
-  --clr-color-accent: 153,212,192; /*daylight*/
+  --clr-color-accent: 245,245,245; /*lightgray*/
 
   /* font-sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem); 
@@ -282,7 +282,7 @@ footer {
   display: block;
   position: relative;   
   width: 100%;
-  background: rgba(var(--clr-color-3),1);
+  background: rgba(var(--clr-color-accent),1);
   padding-inline: 15%;
 }
 
