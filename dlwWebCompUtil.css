@@ -677,7 +677,7 @@ header .cc-header-search {
 }
 
 .cc-social-media-icon:hover {
-    color:rgba(var(--clr-color-2),1);
+    color:rgba(var(--clr-color-9),1) !important;
     transform: translateY(-5px);
 }
 
