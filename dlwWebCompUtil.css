@@ -827,6 +827,7 @@ header .cc-header-search {
 
     .cc-footer-menu {
       display: flex;
+      align-items: center;
       flex-direction: column;
       padding: 10px 9%;
       width: 100%;
