@@ -34,6 +34,14 @@
   --fw-400: 400;
 }
 
+/*override standard link color*/
+.outershell a {
+    color: rgba(var(--clr-color-1),1) !important;
+}
+.outershell a:hover {
+    color: rgba(var(--clr-color-2),1) !important;
+}
+
 /*colors*/
 .cc-text-color-white {
   color: rgba(var(--clr-color-white),1) !important;
@@ -772,14 +780,6 @@ header .cc-header-search {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-}
-
-/*override standard link color*/
-.outershell a {
-    color: rgba(var(--clr-color-1),1) !important;
-}
-.outershell a:hover {
-    color: rgba(var(--clr-color-2),1) !important;
 }
 
 /*github reference here*/
