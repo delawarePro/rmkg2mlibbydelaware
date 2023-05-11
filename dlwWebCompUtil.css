@@ -568,12 +568,12 @@ header .cc-header-search {
 }
 
 .cc-next-section {
-    height: 100dvh !important;
+  height: auto !important;
+  padding-bottom: 40px !important;
 }
 
-.cc-next-section-no-vh {
-    height: auto !important;
-    padding-bottom: 40px !important;
+.cc-next-section-100-vh {
+  height: 100dvh !important;
 }
 
 .cc-grid {
