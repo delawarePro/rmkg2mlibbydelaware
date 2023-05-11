@@ -620,7 +620,8 @@ header .cc-header-search {
     max-width: 900px;
 }
 
-.cc-cta-btn {
+.cc-cta-btn,
+.cc-cta-btn a {
     text-decoration: none;
     display: inline-block;
     color: rgba(var(--clr-color-white),1) !important;
@@ -631,14 +632,14 @@ header .cc-header-search {
     font-size: 1em;
     font-weight: 500;
     border-radius: 5px;
-    
+    margin-right: 6px !important;
     transition: all .60s ease;
 }
 
 .cc-cta-btn:hover {
     background: rgba(var(--clr-color-3),0.25) !important;
     border: 1px solid rgba(var(--clr-color-1),1) !important;
-    transform: translateX(8px);
+    transform: translateX(4px);
 }
 
 .cc-social-media-icon-group {
