@@ -825,6 +825,10 @@ header .cc-header-search {
         transform: translate(-50%, -50%);
     }
 
+    .cc-img-wrap:before {
+        content: ' ';
+    }
+
     .cc-footer-container {
       flex-direction: column-reverse;
     }
