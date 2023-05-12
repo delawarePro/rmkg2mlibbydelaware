@@ -827,6 +827,7 @@ header .cc-header-search {
 
     .cc-img-wrap:before {
         content: ' ';
+        background-image: none;
     }
 
     .cc-footer-container {
