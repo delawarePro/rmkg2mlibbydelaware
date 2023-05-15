@@ -29,13 +29,6 @@ let headerSearchBox = '<div class="cc-search-box"><form name="keywordsearch" cla
 ccHeader.innerHTML = '<header class="cc-header">' + headerLogo + '<div class="cc-header-group">' + '<ul class="cc-header-navigation" data-navlist></ul><ul class="cc-header-search" data-navsearchiconlist></ul></div>' + headerSearchBox + '</header>';
 document.body.insertBefore(ccHeader, document.body.firstChild);
 
-/*web component for header*/
-let navList = ccPrimaryNavDutch;
-switch (languageToken) {
-  case "fr":
-    navList = ccPrimaryNavFrench;
-    break;
-}
 let templateCcHeader = document.createElement('template');
 templateCcHeader.innerHTML = `
 <slot></slot>
