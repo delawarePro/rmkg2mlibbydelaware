@@ -11,7 +11,9 @@ let header = document.querySelector(".cc-header");
 searchBtn.onclick = function() {
     searchBox.classList.add("active");
     closeBtn.classList.add("active");
+    closeBtn.classList.remove("hide");
     searchBoxSubmitBtn.classList.add("active");
+    searchBoxSubmitBtn.classList.remove("hide");
     searchBtn.classList.add("hide");
     mobileMenuToggle.classList.add("hide");
     mobileMenuClose.classList.add("hide");
@@ -22,6 +24,7 @@ closeBtn.onclick = function() {
     searchBox.classList.remove("active");
     closeBtn.classList.remove("active");
     searchBoxSubmitBtn.classList.remove("active");
+    searchBoxSubmitBtn.classList.add("hide");
     searchBtn.classList.remove("active");
     searchBtn.classList.remove("hide");
     mobileMenuToggle.classList.remove("hide");
