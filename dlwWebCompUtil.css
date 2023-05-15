@@ -247,7 +247,7 @@ header,
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 10vh;
     background: rgba(var(--clr-color-white),0.7);
     padding: 20px 15%;
     display: flex;
@@ -410,6 +410,7 @@ footer {
 header ul {
     position: relative !important;
     display: flex !important;
+    align-items: center;
     gap: 15px !important;
 }
 
@@ -471,10 +472,11 @@ header .cc-header-search {
 
 .cc-search-box input {
     width: 100%;
+    padding-inline: 2.5%; 
     border: none;
     outline: none;
-    height: 50px;
-    color: rgba(var(--clr-color-white),0.7);
+    height: 10vh;
+    color: rgba(var(--clr-color-black),0.7);
     font-size: 1.25rem;
     background: rgba(var(--clr-color-white),1);
     border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
@@ -485,23 +487,25 @@ header .cc-header-search {
 }
 
 .cc-search-btn {
-    position: relative;
-    left: 30px !important;
-    top: 2.5px;
     transition: 0.5s ease-in-out;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 
 .cc-search-btn.active {
     left: 0;
 }
 
-.cc-search-btn.hide {
-    display: none;
+.cc-search-btn.hide,
+.hide {
+    display: none !important;
+}
+
+.cc-icon {
+  display: block;
 }
 
 .cc-close-btn {
-    position: relative;
-    top: 2.5px;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
@@ -512,24 +516,25 @@ header .cc-header-search {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
+    font-size: 1.5em;
     scale: 1 !important;
 }
 
 .cc-submit-job-search-btn {
-    position: relative;
-    top: 3px;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
     scale: 0;
     color: rgba(var(--clr-color-1),1);
+    z-index: 10;
 }
 
 .cc-submit-job-search-btn.active {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
-    scale: 1 !important;
+    font-size: 1.5em;
+    scale: 1;
 }
 
 .cc-mobile-menu-toggle {
@@ -706,6 +711,10 @@ header .cc-header-search {
 }
 
 @media (min-width: 760px) {
+    header ul {
+      justify-content: space-between;
+    }
+
     .cc-section {
         transition: .2s;
     }
@@ -750,28 +759,8 @@ header .cc-header-search {
         padding: 0 5%;
     }
 
-    .cc-search-btn {
-        left: 0 !important;
-        top: 22px;
-    }
-
-    .cc-mobile-menu-toggle {
-        position: relative !important;
-        display: inline-block !important;
-        font-size: 1.5em !important;
-        cursor: pointer !important;
-        z-index: 10;
-    }
-
-    .cc-mobile-menu-close {
-        position: relative !important;
-        display: inline-block !important;
-        font-size: 1.5em !important;
-        cursor: pointer !important;
-        z-index: 10;
-    }
-
     .cc-header .cc-header-navigation {
+        padding-top: 10px;
         position: absolute !important;
         opacity: 0 !important;
         visibility: hidden !important;
@@ -779,7 +768,7 @@ header .cc-header-search {
     }
 
     .cc-header.open .cc-header-navigation {
-        top: 80px !important;
+        top: 10vh !important;
         opacity: 1 !important;
         visibility: visible !important;
         left: 0 !important;
@@ -787,13 +776,33 @@ header .cc-header-search {
         flex-direction: column !important;
         background: rgba(var(--clr-color-white),1) !important;
         width: 100% !important;
-        height: calc(100vh - 80px) !important;
-        padding: 40px !important;
+        height: 90vh !important;
         border-top: 1px solid rgba(var(--clr-color-3),0.05) !important;
     }
 
     .cc-header.open .cc-header-navigation li a {
         font-size: 1.25rem !important;
+    }
+
+    .cc-search-btn {
+      left: 0 !important;
+      top: 22px;
+    }
+
+    .cc-mobile-menu-toggle {
+        position: relative !important;
+        display: inline-block !important;
+        font-size: 1.5em !important;
+        cursor: pointer !important;
+        z-index: 10 !important;
+    }
+
+    .cc-mobile-menu-close {
+        position: relative !important;
+        display: inline-block !important;
+        font-size: 1.5em !important;
+        cursor: pointer !important;
+        z-index: 10 !important;
     }
 
     .hide {
