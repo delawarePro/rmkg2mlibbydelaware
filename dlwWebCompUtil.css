@@ -325,7 +325,8 @@ footer {
 }
 
 .cc-footer-copy a {
-  text-decoration: none;
+  text-decoration: none !important;
+  transition: all .60s ease;
 }
 
 .cc-footer-copy span {
@@ -346,6 +347,7 @@ footer {
   font-size: 0.875em;
   font-weight: 600;
   color: rgba(var(--clr-color-basic),1) !important;
+  transition: all .60s ease;
 }
 
 
