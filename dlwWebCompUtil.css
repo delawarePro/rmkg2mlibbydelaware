@@ -342,8 +342,7 @@ footer {
 }
 
 .cc-footer-menu a {
-  text-decoration: none;
-  transition: color 0.3s;
+  text-decoration: none !important;
   font-size: 0.875em;
   font-weight: 600;
   color: rgba(var(--clr-color-basic),1) !important;
