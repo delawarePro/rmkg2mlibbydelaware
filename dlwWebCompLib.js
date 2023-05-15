@@ -51,9 +51,9 @@ class HeaderNav extends HTMLElement {
 customElements.define('header-nav', HeaderNav)
 
 function render() {
-    const navContainer = document.querySelector('[data-navlist]');
+    let navContainer = document.querySelector('[data-navlist]');
     navList.forEach(navItem => {
-        const navElement = document.createElement('li');
+        let navElement = document.createElement('li');
         let navElementLink = document.createElement('a');
         let navElementLinkText = document.createTextNode(navItem.title);
         navElementLink.appendChild(navElementLinkText);
@@ -64,9 +64,9 @@ function render() {
         navContainer.appendChild(navElement);
     });
 
-    const navSearchContainer = document.querySelector('[data-navsearchiconlist]');
+    let navSearchContainer = document.querySelector('[data-navsearchiconlist]');
     ccSearchNavigation.forEach(ccSearchNavigationItem => {
-        const navElementIcon = document.createElement('li');
+        let navElementIcon = document.createElement('li');
         navElementIcon.innerHTML = ccSearchNavigationItem.icon;
         navSearchContainer.appendChild(navElementIcon);
     });
