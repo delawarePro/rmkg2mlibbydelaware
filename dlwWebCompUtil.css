@@ -636,6 +636,10 @@ header .cc-header-search {
   position: relative;
 }
 
+ .cc-img-wrap > * {
+    position: relative;
+}
+
 .cc-img-wrap:before {
   content: ' ';
   display: block;
