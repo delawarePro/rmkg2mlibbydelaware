@@ -542,6 +542,7 @@ header .cc-header-search {
     position: relative !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
+    transition: 0.5s;
 }
 
 .cc-mobile-menu-close {
@@ -549,6 +550,7 @@ header .cc-header-search {
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
     left: -13px;
+    transition: 0.5s;
 }
 
 
