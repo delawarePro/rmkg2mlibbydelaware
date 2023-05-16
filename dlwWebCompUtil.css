@@ -395,10 +395,11 @@ footer {
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
+    width: 25%;
 }
 
 .cc-logo-img {
-    width: 50%;
+    width: 100%;
     display: inline-block;
 }
 
@@ -741,7 +742,7 @@ header .cc-header-search {
     }
 
     .cc-section {
-        padding: 20px 20% !important;
+        padding: 20px 10% !important;
     }
 
     .cc-first-section {
