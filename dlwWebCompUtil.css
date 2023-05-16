@@ -556,7 +556,6 @@ header .cc-header-search {
 }
 
 .cc-container {
-    min-height: 100vh !important;
     position: absolute;
     right: 0;
     width: 100%;
