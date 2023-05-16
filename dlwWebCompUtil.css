@@ -399,7 +399,7 @@ footer {
 }
 
 .cc-logo-img {
-    width: 100%;
+    width: 50%;
     display: inline-block;
 }
 
@@ -743,6 +743,11 @@ header .cc-header-search {
         transition: .2s;
         padding: 20px 5%;
     }
+  
+    .cc-logo-img {
+        width: 100%;
+        display: inline-block;
+    }
 
     .cc-section {
         padding: 20px 10% !important;
@@ -797,6 +802,7 @@ header .cc-header-search {
         font-size: 1.5em !important;
         cursor: pointer !important;
         z-index: 10 !important;
+        transition: 0.5s;
     }
 
     .cc-mobile-menu-close {
@@ -805,6 +811,7 @@ header .cc-header-search {
         font-size: 1.5em !important;
         cursor: pointer !important;
         z-index: 10 !important;
+        transition: 0.5s;
     }
 
     .hide {
