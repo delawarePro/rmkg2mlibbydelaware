@@ -548,6 +548,7 @@ header .cc-header-search {
     position: relative !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
+    left: -13px;
 }
 
 
