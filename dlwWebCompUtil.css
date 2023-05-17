@@ -729,6 +729,10 @@ header .cc-header-search {
         grid-auto-flow: column  !important;
         grid-auto-columns: 1fr  !important;
     }
+  
+    .cc-text-align-right {
+        text-align: right;
+    }
 }
 
 /* responsive */
