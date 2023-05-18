@@ -99,5 +99,83 @@ class HeroBanner extends HTMLElement {
 }
 customElements.define('hero-banner', HeroBanner);
 
+/*custom web component to create card*/
+let templateCard = document.createElement('template');
+templateCard.innerHTML = `
+<slot></slot>
+`
+
+class Card extends HTMLElement {
+    static get observedAttributes() {
+        return['card-title','card-content','card-color'];
+    }
+
+    get cardTitle() {
+        return this.getAttribute("card-title");
+    }
+
+    get cardContent() {
+        return this.getAttribute("card-content");
+    }
+
+    get cardColor() {
+        return this.getAttribute("card-color");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderCard();
+        shadow.append(templateCard.content.cloneNode(true))
+    }
+
+    renderCard() {
+        let cardIcon = '<div class="cc-card-icon-corner"><ion-icon name="heart-circle-outline"></ion-icon></div>';
+
+        let elementCardWrapper = document.createElement('div');
+
+        let elementCard = document.createElement('div');
+        elementCard.classList.add('cc-card');
+        
+        let elementCardTitle = document.createElement('h3');
+        elementCardTitle.innerHTML = this.cardTitle;
+        elementCard.appendChild(elementCardTitle);
+        
+        let elementCardContent = document.createElement('p');
+        elementCardContent.innerHTML = this.cardContent;
+        elementCard.appendChild(elementCardContent);
+        
+        let elementCardCorner = document.createElement('div');
+        elementCardCorner.classList.add('cc-card-corner');
+        
+        elementCardCorner.innerHTML = cardIcon;
+        elementCard.appendChild(elementCardCorner);
+        
+        switch (this.cardColor) {
+            case "nightsky":
+                elementCard.classList.add('cc-card-clr-nightsky');
+                elementCardCorner.classList.add('cc-card-corner-clr-nightsky');
+                break;
+            case "dark":
+                elementCard.classList.add('cc-card-clr-dark');
+                elementCardCorner.classList.add('cc-card-corner-clr-dark');
+                break;
+            case "white":
+                elementCard.classList.add('cc-card-clr-white');
+                elementCardCorner.classList.add('cc-card-corner-clr-white');
+                break;
+            default:
+                elementCard.classList.add('cc-card-clr-passion');
+                elementCardCorner.classList.add('cc-card-corner-clr-passion');
+            break;
+        }
+
+        elementCardWrapper.appendChild(elementCard);
+        
+        this.innerHTML = elementCardWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-card', Card);
 
 
