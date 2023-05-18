@@ -122,6 +122,10 @@ class Card extends HTMLElement {
         return this.getAttribute("card-color");
     }
 
+    get cardIcon() {
+        return this.getAttribute("card-icon");
+    }
+
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
@@ -130,7 +134,31 @@ class Card extends HTMLElement {
     }
 
     renderCard() {
-        let cardIcon = '<div class="cc-card-icon-corner"><ion-icon name="heart-circle-outline"></ion-icon></div>';
+        let cardIconName = "heart-circle-outline";
+        switch (this.cardIcon) {
+            case "paperplane":
+                cardIconName = "paper-plane-outline";
+                break;
+            case "rocket":
+                cardIconName = "rocket-outline";
+                break;
+            case "leaf":
+                cardIconName = "leaf-outline";
+                break;
+            case "planet":
+                cardIconName = "planet-outline";
+                break;
+            case "earth":
+                cardIconName = "earth-outline";
+                break;
+            case "heartbeat":
+                cardIconName = "fitness-outline";
+                break;
+            default:
+                cardIconName = "heart-circle-outline";
+                break;
+        }
+        let cardIconElement = '<div class="cc-card-icon-corner"><ion-icon name="'+cardIconName+'" aria-hidden="true"></ion-icon></div>';
 
         let elementCardWrapper = document.createElement('div');
 
@@ -148,7 +176,7 @@ class Card extends HTMLElement {
         let elementCardCorner = document.createElement('div');
         elementCardCorner.classList.add('cc-card-corner');
         
-        elementCardCorner.innerHTML = cardIcon;
+        elementCardCorner.innerHTML = cardIconElement;
         elementCard.appendChild(elementCardCorner);
         
         switch (this.cardColor) {
@@ -177,5 +205,6 @@ class Card extends HTMLElement {
 }
 
 customElements.define('cc-card', Card);
+
 
 
