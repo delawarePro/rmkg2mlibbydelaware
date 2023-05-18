@@ -904,13 +904,17 @@ header .cc-header-search {
     display: block;
     position: relative;
     max-width: 262px;
-    min-height: 230px;
+    min-height: 280px;
     border-radius: 4px;
     padding: 32px 24px;
     margin: 12px;
     text-decoration: none;
     z-index: 0;
     overflow: hidden;
+  }
+
+  .cc-card p {
+    font-size: 0.875em;
   }
 
   .cc-card-clr-passion {
