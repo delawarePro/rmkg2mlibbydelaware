@@ -904,7 +904,7 @@ header .cc-header-search {
     display: block;
     position: relative;
     max-width: 262px;
-    min-height: 280px;
+    min-height: 250px;
     border-radius: 4px;
     padding: 32px 24px;
     margin: 12px;
