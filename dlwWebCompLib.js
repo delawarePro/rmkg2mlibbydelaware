@@ -107,7 +107,7 @@ templateCard.innerHTML = `
 
 class Card extends HTMLElement {
     static get observedAttributes() {
-        return['card-title','card-content','card-color'];
+        return['card-title','card-content','card-color','card-icon'];
     }
 
     get cardTitle() {
