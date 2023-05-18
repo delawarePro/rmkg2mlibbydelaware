@@ -32,6 +32,9 @@
   /* font-weights */
   --fw-700: 700;
   --fw-400: 400;
+
+  /* card transition */
+  --card-transition: all 0.5s ease-out;
 }
 
 /*override link color*/
@@ -1083,7 +1086,7 @@ header .cc-header-search {
 
   .cc-card-clr-white,
   .cc-card-clr-dark {
-    background-color: rgba(var(--clr-color-white),0.1);
+    background-color: rgba(var(--clr-color-white),1);
   }
 
   .cc-card:before {
@@ -1097,7 +1100,7 @@ header .cc-header-search {
     border-radius: 32px;
     transform: scale(1);
     transform-origin: 50% 50%;
-    transition: transform 0.4s ease-out;
+    transition: transform 0.5s ease-out;
   }
 
   .cc-card-clr-passion:before {
@@ -1105,7 +1108,7 @@ header .cc-header-search {
   }
 
   .cc-card-clr-white:before {
-    background: rgba(var(--clr-color-1),0.1);
+    background: rgba(var(--clr-color-1),1);
   }
 
   .cc-card-clr-nightsky:before {
@@ -1113,36 +1116,40 @@ header .cc-header-search {
   }
 
   .cc-card-clr-dark:before {
-    background: rgba(var(--clr-color-2),0.1);
+    background: rgba(var(--clr-color-2),1);
   }
 
   .cc-card:hover:before {
-    transform: scale(21);
+    transform: scale(25);
   }
   
   .cc-card:hover p {
-    transition: all 0.3s ease-out;
+    transition: var(--card-transition);
     color: rgba(var(--clr-color-white),1);
   }
 
   .cc-card-clr-white p,
   .cc-card-clr-dark p {
-    color: rgba(var(--clr-color-white),1);
+    color: rgba(var(--clr-color-dark),1);
   }
 
   .cc-card-clr-white:hover p,
   .cc-card-clr-dark:hover p {
-    transition: all 0.3s ease-out;
-    color: rgba(var(--clr-color-dark),1);
+    transition: var(--card-transition);
+    color: rgba(var(--clr-color-white),1);
   }
 
   .cc-card:hover h3 {
-    transition: all 0.3s ease-out;
+    transition: var(--card-transition);
     color: rgba(var(--clr-color-white),1) !important;
   }
 
-  .cc-card-clr-white:hover h3,
   .cc-card-clr-dark:hover h3 {
-    transition: all 0.3s ease-out;
+    transition: var(--card-transition);
     color: rgba(var(--clr-color-1),1) !important;
+  }
+
+  .cc-card-clr-white:hover h3 {
+    transition: var(--card-transition);
+    color: rgba(var(--clr-color-white),1) !important;
   }
