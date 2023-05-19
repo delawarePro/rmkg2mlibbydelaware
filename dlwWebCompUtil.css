@@ -336,6 +336,7 @@ footer {
 .cc-footer-copy a {
   text-decoration: none !important;
   transition: all .60s ease;
+  color: rgba(var(--clr-color-1),1);
 }
 
 .cc-footer-copy span {
