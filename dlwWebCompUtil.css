@@ -40,6 +40,7 @@
 /*override link color*/
 .outershell a {
     color: rgba(var(--clr-color-1),1) !important;
+    text-decoration: none !important;
 }
 .outershell a:hover {
     color: rgba(var(--clr-color-2),1) !important;
