@@ -1348,3 +1348,8 @@ header .cc-header-search {
     max-width: 100%;
   }
 }
+
+/*cookie modal*/
+.modal.in .modal-dialog {
+  margin: auto !important;
+}
