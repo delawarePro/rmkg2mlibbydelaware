@@ -373,6 +373,7 @@ footer {
     padding-top: 5px;
     font-size: 1.5em;
     transition: all .60s ease;
+    color: rgba(var(--clr-color-1),1);
 }
 
 .cc-social-media-icon:hover,
