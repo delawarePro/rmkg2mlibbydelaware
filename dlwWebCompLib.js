@@ -123,10 +123,10 @@ class FooterNav extends HTMLElement {
             elFooterMenuLink.href = navListItem.url;
             elFooterMenuLink.title = navListItem.title;
             elFooterMenuLink.target = navListItem.target;
-            if (navListItem.target == '#cookieManagerModal') {
-                navListItem.setAttribute('role','button');
-                navListItem.setAttribute('data-target','#cookieManagerModal');
-                navListItem.setAttribute('data-toggle','modal');
+            if (navListItem.url == '#cookieManagerModal') {
+                elFooterMenuLink.setAttribute('role','button');
+                elFooterMenuLink.setAttribute('data-target','#cookieManagerModal');
+                elFooterMenuLink.setAttribute('data-toggle','modal');
             }
             elFooterMenuLink.innerHTML += '\n';
             elFooterMenu.appendChild(elFooterMenuLink);
