@@ -1358,3 +1358,8 @@ header .cc-header-search {
 .modal.in .modal-dialog {
   margin: auto !important;
 }
+
+/*search result page*/
+.search-page .inner {
+  padding: 10vh 20% 0 20%;
+}
