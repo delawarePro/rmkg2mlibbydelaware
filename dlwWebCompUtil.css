@@ -1085,8 +1085,8 @@ header .cc-header-search {
   }
   
   .cc-accordion-panel:focus-within {
-    outline: 3px solid var(--panel-color);
-    outline-offset: 4px;
+    outline: 2px solid var(--panel-color);
+    outline-offset: 3px;
   }
   
   .cc-accordion-content > p,
