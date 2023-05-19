@@ -1364,3 +1364,8 @@ header .cc-header-search {
 .search-page .inner {
   padding: 10vh 20% 0 20%;
 }
+
+.outershell .table-hover > tbody > tr:hover,
+.outershell .table-striped > tbody > tr:hover {
+  background-color: rgba(var(--clr-color-1), 0.1);
+}
