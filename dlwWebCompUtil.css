@@ -1375,3 +1375,19 @@ header .cc-header-search {
 .outershell .table-striped > tbody > tr:hover {
   background-color: rgba(var(--clr-color-1), 0.1);
 }
+
+.cc-search-categories {
+  margin: 50px 0 10px 0 !important;
+  padding: 10px 10px 10px 10px;
+  background-color: rgba(var(--clr-color-1), 0.1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 759px) {
+  .cc-search-categories {
+    flex-direction: column;
+  }
+}
