@@ -206,5 +206,153 @@ class Card extends HTMLElement {
 
 customElements.define('cc-card', Card);
 
+/* custom web component to create accordion */
+let templateAccordion = document.createElement('template');
+templateAccordion.innerHTML = `<slot></slot>`;
 
+class Accordion extends HTMLElement {
+    static get observedAttributes() {
+        return['acc-id'];
+    }
+
+    get accordionConstructId() {
+        return this.getAttribute('acc-id');
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        //console.log(this.accordionConstructId);
+        this.renderAccordion(this.accordionConstructId);
+        shadow.append(templateAccordion.content.cloneNode(true))
+    }
+
+    renderAccordion(accordionConstructId) {
+        let accordionIdAttr = 1;
+
+        let elementWrapper = document.createElement('div');        
+        let listAccordionWrapper = document.querySelectorAll('cc-accordion-wrapper [acc-id="'+accordionConstructId+'"]');
+        let elementAccordionWrapper = document.createElement('div');
+        elementAccordionWrapper.classList.add('cc-accordion-wrapper');     
+            
+        let elementAccordion = document.createElement('div');
+        elementAccordion.classList.add('cc-accordion');
+
+        [].forEach.call(listAccordionWrapper, function (listAccordionWrapperItem) {
+            let accordionWrapperId = listAccordionWrapperItem.getAttribute('acc-id');
+            let panelWrapperId = listAccordionWrapperItem.getAttribute('acc-id');
+
+            if (accordionWrapperId == panelWrapperId) {
+                //first one is expanded, others are hidden when rendering
+                let accordionExpandedAttr = true;
+                if (accordionIdAttr > 1) accordionExpandedAttr = false;
+
+                let accordionTitleAttr = listAccordionWrapperItem.getAttribute('acc-title');
+                let accordionIconAttr = listAccordionWrapperItem.getAttribute('acc-icon');
+                let accordionContentTitleAttr = listAccordionWrapperItem.getAttribute('acc-content-title');
+                let accordionContentTextAttr = listAccordionWrapperItem.getAttribute('acc-content-text');
+                let accordionContentLinkAttr = listAccordionWrapperItem.getAttribute('acc-content-link');
+                let accordionContentLinkTitleAttr = listAccordionWrapperItem.getAttribute('acc-content-link-title'); 
+                let accordionContentLinkTargetAttr = listAccordionWrapperItem.getAttribute('acc-content-link-target');
+                
+                let elementAccordionPanel = document.createElement('div');
+                elementAccordionPanel.classList.add('cc-accordion-panel');
+
+                //Header
+                let accordionPanelHeading = document.createElement('h2');
+                accordionPanelHeading.setAttribute('id', 'panel'+accordionIdAttr+'-title');
+                elementAccordionPanel.appendChild(accordionPanelHeading);
+
+                let accordionTrigger = document.createElement('button');
+                accordionTrigger.classList.add('cc-accordion-trigger');
+                accordionTrigger.setAttribute('aria-controls', 'panel'+accordionIdAttr+'-content');
+
+                accordionTrigger.setAttribute('aria-expanded', accordionExpandedAttr);
+                accordionPanelHeading.appendChild(accordionTrigger);
+
+                let accordionTitle = document.createElement('span');
+                accordionTitle.classList.add('cc-accordion-title');
+                accordionTitle.innerHTML = accordionTitleAttr;
+                accordionTrigger.appendChild(accordionTitle);
+
+                let accordionIconWrapper = document.createElement('div');
+                accordionIconWrapper.classList.add('cc-accordion-icon');
+                let accordionIcon = document.createElement('img');
+                accordionIcon.setAttribute('src',accordionIconAttr);
+                accordionIcon.setAttribute('aria-hidden','true');
+                accordionIconWrapper.appendChild(accordionIcon);
+                accordionTrigger.appendChild(accordionIconWrapper);
+
+                //Content
+                let accordionContentWrapper = document.createElement('div');
+                accordionContentWrapper.classList.add('cc-accordion-content');
+                accordionContentWrapper.setAttribute('id','panel'+accordionIdAttr+'-content');
+                accordionContentWrapper.setAttribute('aria-label','panel'+accordionIdAttr+'-title');
+                accordionContentWrapper.setAttribute('aria-hidden','false');
+                accordionContentWrapper.setAttribute('role','region');
+                elementAccordionPanel.appendChild(accordionContentWrapper);
+
+                let accordionContent = document.createElement('div');
+                let accordionContentTitle = document.createElement('h3');
+                accordionContentTitle.innerHTML = accordionContentTitleAttr;
+                accordionContent.appendChild(accordionContentTitle);
+                
+                let accordionContentText = document.createElement('p');
+                accordionContentText.innerHTML = accordionContentTextAttr;
+                accordionContent.appendChild(accordionContentText);
+
+                if (accordionContentLinkTitleAttr) {
+                    let accordionContentLink = document.createElement('a');
+                    accordionContentLink.classList.add('cc-cta-btn');
+                    accordionContentLink.href = accordionContentLinkAttr;
+                    accordionContentLink.title = accordionContentLinkTitleAttr;
+                    accordionContentLink.target = accordionContentLinkTargetAttr;
+                    accordionContentLink.innerHTML = accordionContentLinkTitleAttr;
+                    accordionContent.appendChild(accordionContentLink);
+                }
+                
+
+                accordionContentWrapper.appendChild(accordionContent);
+                elementAccordion.appendChild(elementAccordionPanel);            
+            }           
+            accordionIdAttr++;
+        }); 
+        elementAccordionWrapper.appendChild(elementAccordion);
+        elementWrapper.appendChild(elementAccordionWrapper);        
+        this.innerHTML = elementWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-accordion', Accordion);
+
+/* move panels */
+const accordionList = document.querySelectorAll(".cc-accordion");
+
+[].forEach.call(accordionList, function (accordion) {
+    accordion.addEventListener("click", (e) => {
+        const activePanel = e.target.closest(".cc-accordion-panel");
+        if (!activePanel) return;
+        toggleAccordion(activePanel);
+    });
+});
+
+function toggleAccordion(panelToActivate) {
+  const buttons = panelToActivate.parentElement.querySelectorAll("button");
+  const contents =
+    panelToActivate.parentElement.querySelectorAll(".cc-accordion-content");
+
+  buttons.forEach((button) => {
+    button.setAttribute("aria-expanded", false);
+  });
+
+  contents.forEach((content) => {
+    content.setAttribute("aria-hidden", true);
+  });
+
+  panelToActivate.querySelector("button").setAttribute("aria-expanded", true);
+
+  panelToActivate
+    .querySelector(".cc-accordion-content")
+    .setAttribute("aria-hidden", false);
+}
 
