@@ -65,7 +65,91 @@ function render() {
     });
 }
 
+/*web component for footer*/
+let ccContainer = document.querySelector('.cc-container');
+let ccFooter = document.createElement('footer-nav');
+ccContainer.append(ccFooter);
 
+let navListFooterMenu = ccFooterNavDutch;
+let navListFooterCopy = ccFooterCopyDutch;
+let navListFooterSocial = ccFooterSocialMedia;
+switch (languageToken) {
+  case "fr":
+    navListFooterMenu = ccFooterNavFrench;
+    navListFooterCopy = ccFooterCopyFrench;
+    break;
+}
+let templateCcFooter = document.createElement('template');
+templateCcFooter.innerHTML = `
+<slot></slot>
+`
+class FooterNav extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' })
+        this.renderFooter()
+        shadow.append(templateCcFooter.content.cloneNode(true))
+    }
+
+    renderFooter() {
+        let elFooterWrapper = document.createElement('div');
+        let elFooter = document.createElement('footer');
+        let elFooterContainer = document.createElement('div');
+        elFooterContainer.classList.add('cc-footer-container');
+        elFooter.appendChild(elFooterContainer);
+
+        let elFooterCopy = document.createElement('div');
+        elFooterCopy.classList.add('cc-footer-copy');
+        elFooterContainer.appendChild(elFooterCopy);
+        let elFooterCopySpan = document.createElement('span');
+        elFooterCopySpan.innerHTML = '© ';
+        navListFooterCopy.forEach(navListItem => {
+            let elFooterCopySpanLink = document.createElement('a');
+            let navElementLinkText = document.createTextNode(navListItem.title);
+            elFooterCopySpanLink.appendChild(navElementLinkText);
+            elFooterCopySpanLink.href = navListItem.url;
+            elFooterCopySpanLink.title = navListItem.title;
+            elFooterCopySpanLink.target = navListItem.target;
+            elFooterCopySpan.appendChild(elFooterCopySpanLink);
+        });
+        elFooterCopy.appendChild(elFooterCopySpan);
+         
+        let elFooterMenu = document.createElement('div');
+        elFooterMenu.classList.add('cc-footer-menu');
+        navListFooterMenu.forEach(navListItem => {
+            let elFooterMenuLink = document.createElement('a');
+            let navElementLinkText = document.createTextNode(navListItem.title);
+            elFooterMenuLink.appendChild(navElementLinkText);
+            elFooterMenuLink.href = navListItem.url;
+            elFooterMenuLink.title = navListItem.title;
+            elFooterMenuLink.target = navListItem.target;
+            elFooterMenuLink.innerHTML += '\n';
+            elFooterMenu.appendChild(elFooterMenuLink);
+        });
+        elFooterContainer.appendChild(elFooterMenu);
+
+        let elFooterSocial = document.createElement('div');
+        elFooterSocial.classList.add('cc-social-media-icon-group');
+        elFooterContainer.appendChild(elFooterSocial);
+        navListFooterSocial.forEach(navListItem => {
+            let elFooterSocialLink = document.createElement('a');
+            elFooterSocialLink.classList.add('cc-social-media-icon');
+            elFooterSocialLink.href = navListItem.url;
+            elFooterSocialLink.title = navListItem.title;
+            elFooterSocialLink.target = navListItem.target;
+            let elFooterSocialIcon = document.createElement('ion-icon');
+            elFooterSocialIcon.setAttribute('name','logo-'+navListItem.channel);
+            elFooterSocialLink.appendChild(elFooterSocialIcon);
+            elFooterSocial.appendChild(elFooterSocialLink);
+        });
+        elFooterContainer.appendChild(elFooterSocial);
+
+        elFooterWrapper.appendChild(elFooter);
+        this.innerHTML = elFooterWrapper.innerHTML;
+        
+    }
+}
+customElements.define('footer-nav', FooterNav);
 
 /* web component for Hero Banner Image */
 const heroElement = document.querySelector("hero-banner");
