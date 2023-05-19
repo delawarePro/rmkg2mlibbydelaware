@@ -576,6 +576,7 @@ header .cc-header-search {
 
 .cc-container-footer {
     height: 0;
+    bottom: 0;
 }
 
 .cc-overlay {
