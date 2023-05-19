@@ -1004,7 +1004,6 @@ header .cc-header-search {
     display: none;
   }
   .cc-accordion-wrapper {
-    max-width: 50rem;
     margin-inline: auto;
     padding-inline: 0;
   }
@@ -1026,7 +1025,7 @@ header .cc-header-search {
   @media (min-width: 45em) {
     .cc-accordion {
       flex-direction: row;
-      height: 20rem;
+      height: 30rem;
     }
   }
   
@@ -1113,7 +1112,7 @@ header .cc-header-search {
   }
   
   .cc-accordion-title {
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 700;
   
     position: relative;
@@ -1132,7 +1131,7 @@ header .cc-header-search {
     }
 
     .cc-accordion-panel:has([aria-expanded="true"]) {
-      flex-basis: 25rem;
+      flex-basis: 30rem;
       flex-grow: 1;
     }
 
