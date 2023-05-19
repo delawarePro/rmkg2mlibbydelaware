@@ -565,11 +565,14 @@ header .cc-header-search {
 
 /*content*/
 .cc-container {
-    /*height: fit-content !important;*/
     height: 100%;
     width: 100%;
     position: absolute;
     right: 0;
+}
+
+.cc-container-footer {
+    height: 0;
 }
 
 .cc-overlay {
