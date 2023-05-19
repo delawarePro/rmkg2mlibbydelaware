@@ -697,7 +697,9 @@ header .cc-header-search {
     transition: all .60s ease;
 }
 
-.cc-cta-btn:hover {
+.cc-cta-btn:hover,
+.cc-cta-btn a:hover,
+.outershell a.cc-cta-btn:hover {
     background: rgba(var(--clr-color-3),0.25) !important;
     border: 1px solid rgba(var(--clr-color-1),1) !important;
     transform: translateX(4px);
