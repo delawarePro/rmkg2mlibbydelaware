@@ -66,6 +66,14 @@ function render() {
 }
 
 /*web component for footer*/
+let elBody = document.querySelector('body');
+let ccContainerCheck = document.querySelector('.cc-container');
+if (!ccContainerCheck) {
+    let ccCreateContainer = document.createElement('div');
+    ccCreateContainer.classList.add('cc-container');
+    ccCreateContainer.classList.add('cc-container-footer');
+    elBody.appendChild(ccCreateContainer);
+}
 let ccContainer = document.querySelector('.cc-container');
 let ccFooter = document.createElement('footer-nav');
 ccContainer.append(ccFooter);
