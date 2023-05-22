@@ -101,6 +101,10 @@ class FooterNav extends HTMLElement {
 
     renderFooter() {
         let elFooterWrapper = document.createElement('div');
+        
+        let elBottomSection = document.createElement('div');
+        elBottomSection.classList.add('cc-bottom-section');
+        
         let elFooter = document.createElement('footer');
         let elFooterContainer = document.createElement('div');
         elFooterContainer.classList.add('cc-footer-container');
@@ -156,7 +160,8 @@ class FooterNav extends HTMLElement {
             elFooterSocial.appendChild(elFooterSocialLink);
         });
         elFooterContainer.appendChild(elFooterSocial);
-
+        
+        elFooterWrapper.appendChild(elBottomSection);
         elFooterWrapper.appendChild(elFooter);
         this.innerHTML = elFooterWrapper.innerHTML;
         
