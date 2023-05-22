@@ -302,7 +302,7 @@ video {
 
 footer {
   display: block;
-  position: relative;   
+  position: absolute;   
   width: 100%;
   background: rgba(var(--clr-color-accent),1);
   padding-inline: 15%;
@@ -571,7 +571,7 @@ header .cc-header-search {
 .cc-container {
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     right: 0;
 }
 
