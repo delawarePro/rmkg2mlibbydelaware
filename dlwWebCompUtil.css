@@ -1362,8 +1362,9 @@ header .cc-header-search {
   margin: auto !important;
 }
 
-/*search result page*/
-.search-page .inner {
+/*search result & job detail page*/
+.search-page .inner,
+.job-page .inner {
   padding: 10vh 20% 0 20%;
 }
 
