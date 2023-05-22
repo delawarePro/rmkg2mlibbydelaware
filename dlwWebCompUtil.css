@@ -976,7 +976,7 @@ header .cc-header-search {
   }
 
   .cc-card:hover:before {
-    transform: scale(25);
+    transform: scale(30);
   }
   
   .cc-card:hover p {
@@ -1142,7 +1142,7 @@ header .cc-header-search {
     }
 
     .cc-accordion-panel:has([aria-expanded="true"]) {
-      flex-basis: 30rem;
+      flex-basis: 35rem;
       flex-grow: 1;
     }
 
