@@ -575,12 +575,6 @@ header .cc-header-search {
     right: 0;
 }
 
-.cc-container-footer {
-    height: 0;
-    bottom: 0;
-    position: relative;
-}
-
 .cc-overlay {
   position: absolute;
   top: 0;
