@@ -306,6 +306,7 @@ footer {
   width: 100%;
   background: rgba(var(--clr-color-accent),1);
   padding-inline: 15%;
+  bottom: 0;
 }
 
 .cc-footer-container {
