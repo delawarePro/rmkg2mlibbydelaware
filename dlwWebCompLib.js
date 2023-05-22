@@ -458,3 +458,84 @@ function toggleAccordion(panelToActivate) {
     .setAttribute("aria-hidden", false);
 }
 
+/*custom web component to create card with image*/
+let templateCardImage = document.createElement('template');
+templateCardImage.innerHTML = `
+<slot></slot>
+`
+class CardImage extends HTMLElement {
+    static get observedAttributes() {
+        return['card-title','card-content','card-image','card-link', 'card-link-title', 'card-link-target'];
+    }
+
+    get cardTitle() {
+        return this.getAttribute("card-title");
+    }
+
+    get cardContent() {
+        return this.getAttribute("card-content");
+    }
+
+    get cardImage() {
+        return this.getAttribute("card-image");
+    }
+
+    get cardLink() {
+        return this.getAttribute("card-link");
+    }
+
+    get cardLinkTitle() {
+        return this.getAttribute("card-link-title");
+    }
+
+    get cardLinkTarget() {
+        return this.getAttribute("card-link-target");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderCardImage();
+        shadow.append(templateCardImage.content.cloneNode(true))
+    }
+
+    renderCardImage() {
+        let elementCardImageWrapper = document.createElement('div');
+
+        let elementCardImage = document.createElement('div');
+        elementCardImage.classList.add('cc-card-image');
+
+        let elementCardImageThumb = document.createElement('div');
+        elementCardImageThumb.classList.add('cc-card-image-thumb');
+        elementCardImageThumb.style.setProperty('--image-thumb-card', 'url("'+this.cardImage+'")');
+        elementCardImage.appendChild(elementCardImageThumb);
+
+        let elementCardImageInfo = document.createElement('div');
+        elementCardImageInfo.classList.add('cc-card-image-info');
+        let elementCardImageTitle = document.createElement('h2');
+        elementCardImageTitle.innerHTML = this.cardTitle;
+        elementCardImageInfo.appendChild(elementCardImageTitle);
+        let elementCardImageContent = document.createElement('p');
+        elementCardImageContent.classList.add('cc-card-image-text');
+        elementCardImageContent.innerHTML = this.cardContent;
+        elementCardImageInfo.appendChild(elementCardImageContent);
+
+        let elementCardImageLink = document.createElement('a');
+        elementCardImageLink.classList.add('cc-card-image-link');
+        let elementCardImageLinkText = document.createTextNode(this.cardLinkTitle);
+        elementCardImageLink.appendChild(elementCardImageLinkText);
+        elementCardImageLink.href = this.cardLink;
+        elementCardImageLink.title = this.cardLinkTitle;
+        elementCardImageLink.target = this.cardLinkTarget;
+        elementCardImageInfo.appendChild(elementCardImageLink);
+        
+        elementCardImage.appendChild(elementCardImageInfo);
+
+        elementCardImageWrapper.appendChild(elementCardImage);
+        
+        this.innerHTML = elementCardImageWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-cardimage', CardImage);
+
