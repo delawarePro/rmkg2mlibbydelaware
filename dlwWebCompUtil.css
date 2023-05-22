@@ -307,6 +307,11 @@ footer {
   background: rgba(var(--clr-color-accent),1);
   padding-inline: 15%;
   bottom: 0;
+  height: 100px;
+}
+
+.cc-bottom-section {
+  padding-bottom: 100px;
 }
 
 .cc-footer-container {
@@ -1328,6 +1333,14 @@ header .cc-header-search {
   }
 
   /*footer*/
+  footer {
+    height: 230px;
+  }
+
+  .cc-bottom-section {
+    padding-bottom: 230px;
+  }
+
   .cc-footer-container {
     flex-direction: column-reverse;
   }
