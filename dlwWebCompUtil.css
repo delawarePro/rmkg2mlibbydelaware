@@ -1426,6 +1426,11 @@ header .cc-header-search {
   background: #fff;
   transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 }
+
+.cc-card-image-info h2{
+  font-size: 1.2em !important;
+}
+
 .cc-card-image-title {
   position: relative;
   margin: 10px 0;
