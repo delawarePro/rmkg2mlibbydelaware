@@ -1142,7 +1142,7 @@ header .cc-header-search {
     }
 
     .cc-accordion-panel:has([aria-expanded="true"]) {
-      flex-basis: 35rem;
+      flex-basis: 40rem;
       flex-grow: 1;
     }
 
