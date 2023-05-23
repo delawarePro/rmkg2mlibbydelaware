@@ -1199,10 +1199,6 @@ header .cc-header-search {
     justify-content: space-between;
   }
 
-  .cc-section {
-      transition: .2s;
-  }
-
   .cc-grid {
       grid-auto-flow: column  !important;
       grid-auto-columns: 1fr  !important;
@@ -1226,7 +1222,6 @@ header .cc-header-search {
 
   header, 
   .cc-header {
-      transition: .2s;
       padding: 20px 5%;
   }
 
