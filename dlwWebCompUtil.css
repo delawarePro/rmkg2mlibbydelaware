@@ -322,6 +322,11 @@ footer {
   padding-bottom: 40px;
 }
 
+.search-page .cc-footer-container,
+.job-page .cc-footer-container {
+  padding-bottom: 23px;
+}
+
 .cc-footer-icon {
   font-size: 1.5em;
   display: inline-block;
