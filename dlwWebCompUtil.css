@@ -289,6 +289,7 @@ p {
 ul {
   padding-left: 20px;
   padding-bottom: 10px;
+  text-indent: -20px;
 }
 
 /* Make images easier to work with */
