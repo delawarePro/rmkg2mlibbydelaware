@@ -449,6 +449,7 @@ header ul li a {
     font-size: 1em !important;
     font-weight: 700 !important;
     cursor: pointer !important;
+  margin-left: 10px !important;
 }
 
 header ul li a::before {
