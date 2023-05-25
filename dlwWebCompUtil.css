@@ -292,6 +292,12 @@ ul {
   text-indent: -20px;
 }
 
+iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    width: 100%;
+}
+
 /* Make images easier to work with */
 img,
 picture,
