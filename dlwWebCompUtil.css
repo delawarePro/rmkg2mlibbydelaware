@@ -1474,3 +1474,315 @@ header .cc-header-search {
 .cc-card-image-link:hover {
   color: rgba(var(--clr-color-2),1);
 }
+
+
+/*CONTAINER optimized*/
+.cc-container-new {
+  min-height: calc(100vh - 770px);
+  min-height: calc(100dvh - 770px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.cc-section-new {
+  padding: 10px 10% 10px 10%;
+  border: 3px solid yellow;
+  background: lightgreen;
+}
+
+.cc-section-new-small {
+  padding: 10px 25% 10px 25%;
+  border: 3px solid orange;
+  background: lightsalmon;
+}
+
+.cc-section-new-fw {
+  padding: 10px 0 10px 0;
+  border: 3px solid red;
+  background-color: lightcoral;
+}
+
+.cc-header-new {
+  border: 3px solid green;
+  height: 100px;
+}
+
+.cc-footer-new {
+  border: 3px solid green;
+  height: 100px;
+}
+
+.cc-hidden {
+  display: none;
+}
+
+/*GRID optimized*/
+.grid {
+  --column-count: 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+}
+
+.grid-1-col {
+  --column-count: 1;
+}
+
+.grid-2-col {
+  --column-count: 2;
+}
+
+.grid-3-col {
+  --column-count: 3;
+}
+
+.grid-4-col {
+  --column-count: 4;
+}
+
+.grid-5-col {
+  --column-count: 5;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+@media (min-width: 280px) {
+  .grid {
+    --column-count: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .grid {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 720px) {
+  .grid-2-col {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    --column-count: 4;
+  }
+
+  .grid-2-col {
+    --column-count: 2;
+  }
+
+  .grid-3-col {
+    --column-count: 3;
+  }
+}
+
+/*FLEX optimized*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1 rem;
+}
+
+.flex > * {
+  flex: 1 1 300px;
+}
+
+/*hero-banner home-page*/
+.cc-hero-home {
+  width: 100%;
+}
+
+.cc-hero-home-image-mobile {
+  height: 110px;
+  width: 100%;
+}
+
+.cc-hero-home-content-box {
+  position: relative;
+}
+
+.cc-hero-home-content-box-title-wrap {
+  position: absolute;
+  top: 25%;
+  left: -10%;
+  margin: 0;
+  display: inline-block;
+  text-align: right;
+}
+
+.cc-hero-home-content-big-title {
+  font-size: 1.5em;
+  line-height: 1.05;
+  font-weight: var(--fw-700);
+  color:rgba(var(--clr-color-1), 1);
+  text-transform: uppercase;
+}
+
+.cc-hero-home-content-sub-title {
+  font-size: 1em;
+  line-height: 1.05;
+  font-weight: var(--fw-700);
+  color:rgba(var(--clr-color-1), 1);
+}
+
+.cc-hero-home-content-text {
+  color: rgba(var(--clr-color-2), 1);
+  font-weight: var(--fw-700);
+  padding-top: 10px;
+}
+
+.cc-hero-home-content-link {
+  text-decoration: none;
+  font-weight: var(--fw-400);
+  color:rgba(var(--clr-color-2), 1);
+  padding-left: 5px;
+}
+
+.cc-hero-home-content-link:hover {
+  color:rgba(var(--clr-color-1), 1);
+}
+
+.cc-hero-home-image-box-bg {
+  background: url(https://media.brusselsairport.be/bruweb/hero/0001/36/thumb_35491_hero_home.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+}
+
+@media (min-width: 280px) {
+  .cc-hero-home-content-box-title-wrap {
+    position: unset;
+    text-align: left;
+    padding: 5px 5% 0 5%;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 1.5em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 0.875em;
+  }
+}
+
+@media (min-width: 400px) {
+  .cc-hero-home-content-big-title {
+    font-size: 2.5em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 576px) {
+  .cc-hero-home-image-mobile {
+    height: 246px;
+  }
+
+  .cc-hero-home-content-box-title-wrap {
+    position: absolute;
+    text-align: right;
+    padding: 0;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 4em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 1.125em;
+  }
+}
+
+@media (min-width: 768px) {
+  .cc-hero-home-image-box {
+    height: auto;
+    width: calc((100vw - 744px)/2 + 290px);
+  }
+
+  .cc-hero-home-image-mobile {
+    height: 284px;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 5em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 1.275em;
+  }
+}
+
+@media (min-width: 992px) {
+  .cc-hero-home-image-box {
+    width: calc((100vw - 992px)/2 + 360px);
+  }
+
+  .cc-hero-home-image-mobile {
+    height: 410px;
+  }
+
+  .cc-hero-home-content-box-title-wrap {
+    left: -20%;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 7.5em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-height: 1200px) and (min-width: 992px) {
+  .cc-hero-home {
+    height: calc(100vh - 100px);
+    min-height: 570px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cc-hero-home-image-box {
+    width: calc((100vw - 1176px)/2 + 543px);
+  }
+
+  .cc-hero-home-content-box-title-wrap {
+    left: -15%;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 9em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cc-hero-home-content-box-title-wrap {
+    top: 30%;
+    left: -10%;
+  }
+
+  .cc-hero-home-content-big-title {
+    font-size: 12em;
+  }
+
+  .cc-hero-home-content-sub-title {
+    font-size: 3em;
+  }
+}
+
+
+
+/*hero-banner content page*/
