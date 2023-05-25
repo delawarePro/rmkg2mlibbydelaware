@@ -1486,30 +1486,67 @@ header .cc-header-search {
 }
 
 .cc-section-new {
-  padding: 10px 10% 10px 10%;
-  border: 3px solid yellow;
-  background: lightgreen;
+  padding: 6.875rem 10% 6.875rem 10%;
 }
 
 .cc-section-new-small {
-  padding: 10px 25% 10px 25%;
-  border: 3px solid orange;
-  background: lightsalmon;
+  padding: 6.875rem 25% 6.875rem 25%;
 }
 
 .cc-section-new-fw {
-  padding: 10px 0 10px 0;
-  border: 3px solid red;
-  background-color: lightcoral;
+  position: relative;
+  padding: 6.875rem 0 6.875rem 0;
+}
+
+.cc-background-curved-1 {
+  position: absolute;
+  margin: 60px 0 0 0 !important;
+  height: 600px;
+  width: 75%;
+  border-radius: 0 0 140px;
+  background: rgba(var(--clr-color-1), 0.1);
+  z-index: -1;
+  left: 0;
+}
+
+.cc-background-curved-2 {
+  position: absolute;
+  margin-top: 200px !important;
+  height: 370px;
+  width: 100%;
+  border-radius: 140px 0 0;
+  background: rgba(var(--clr-color-1), 0.1);
+  z-index: -1;
+  right: 0;
+}
+
+.cc-background-curved-3 {
+  position: absolute;
+  margin: 10px 0 0 0 !important;
+  height: 300px;
+  width: 60%;
+  border-radius: 0 140px 0 0;
+  background: rgba(var(--clr-color-2), 0.1);
+  z-index: -1;
+  left: 0;
+}
+
+.cc-background-curved-4 {
+  position: absolute;
+  margin-top: -6.875rem !important;
+  height: 300px;
+  width: 30%;
+  border-radius: 0 0 140px 0;
+  background: rgba(var(--clr-color-1), 1);
+  z-index: -1;
+  left: 0;
 }
 
 .cc-header-new {
-  border: 3px solid green;
   height: 100px;
 }
 
 .cc-footer-new {
-  border: 3px solid green;
   height: 100px;
 }
 
@@ -1586,7 +1623,7 @@ header .cc-header-search {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 1 rem;
+  gap: 1rem;
 }
 
 .flex > * {
@@ -1596,6 +1633,7 @@ header .cc-header-search {
 /*hero-banner home-page*/
 .cc-hero-home {
   width: 100%;
+  z-index: 10;
 }
 
 .cc-hero-home-image-mobile {
