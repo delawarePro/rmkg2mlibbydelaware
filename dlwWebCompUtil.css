@@ -1558,6 +1558,7 @@ header .cc-header-search {
 
 /*GRID optimized*/
 .grid {
+  position: absolute;
   --column-count: 1;
   display: grid;
   gap: 1rem;
@@ -1585,6 +1586,7 @@ header .cc-header-search {
 }
 
 .auto-grid {
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
@@ -1623,6 +1625,7 @@ header .cc-header-search {
 
 /*FLEX optimized*/
 .flex {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
