@@ -1486,10 +1486,12 @@ header .cc-header-search {
 }
 
 .cc-section-new {
+  position: relative;
   padding: 6.875rem 10% 6.875rem 10%;
 }
 
 .cc-section-new-small {
+  position: relative;
   padding: 6.875rem 25% 6.875rem 25%;
 }
 
