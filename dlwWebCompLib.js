@@ -768,3 +768,11 @@ class CardImage extends HTMLElement {
 
 customElements.define('cc-cardimage', CardImage);
 
+/*show on scroll*/
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll');
+    });
+});
+let hiddenElements = document.querySelectorAll('.cc-hidden-on-scroll');
+hiddenElements.forEach((el) => observer.observe(el));
