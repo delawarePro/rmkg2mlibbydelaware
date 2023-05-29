@@ -67,24 +67,18 @@ function render() {
 
 /*web component for footer*/
 let elBody = document.querySelector('body');
-let ccContainerCheck = document.querySelector('.cc-container');
-if (!ccContainerCheck) {
-    let ccCreateContainer = document.createElement('div');
-    ccCreateContainer.classList.add('cc-container');
-    ccCreateContainer.classList.add('cc-container-footer');
-    elBody.appendChild(ccCreateContainer);
-}
-let ccContainer = document.querySelector('.cc-container');
 let ccFooter = document.createElement('footer-nav');
-ccContainer.append(ccFooter);
+elBody.append(ccFooter);
 
 let navListFooterMenu = ccFooterNavDutch;
 let navListFooterCopy = ccFooterCopyDutch;
 let navListFooterSocial = ccFooterSocialMedia;
+let FooterAddress = ccFooterAddressDutch;
 switch (languageToken) {
   case "fr":
     navListFooterMenu = ccFooterNavFrench;
     navListFooterCopy = ccFooterCopyFrench;
+    FooterAddress = ccFooterAddressFrench;
     break;
 }
 let templateCcFooter = document.createElement('template');
@@ -101,31 +95,13 @@ class FooterNav extends HTMLElement {
 
     renderFooter() {
         let elFooterWrapper = document.createElement('div');
-        
-        let elBottomSection = document.createElement('div');
-        elBottomSection.classList.add('cc-bottom-section');
-        
+
         let elFooter = document.createElement('footer');
         let elFooterContainer = document.createElement('div');
         elFooterContainer.classList.add('cc-footer-container');
         elFooter.appendChild(elFooterContainer);
 
-        let elFooterCopy = document.createElement('div');
-        elFooterCopy.classList.add('cc-footer-copy');
-        elFooterContainer.appendChild(elFooterCopy);
-        let elFooterCopySpan = document.createElement('span');
-        elFooterCopySpan.innerHTML = '© ';
-        navListFooterCopy.forEach(navListItem => {
-            let elFooterCopySpanLink = document.createElement('a');
-            let navElementLinkText = document.createTextNode(navListItem.title);
-            elFooterCopySpanLink.appendChild(navElementLinkText);
-            elFooterCopySpanLink.href = navListItem.url;
-            elFooterCopySpanLink.title = navListItem.title;
-            elFooterCopySpanLink.target = navListItem.target;
-            elFooterCopySpan.appendChild(elFooterCopySpanLink);
-        });
-        elFooterCopy.appendChild(elFooterCopySpan);
-         
+        /** container with menu & social media */
         let elFooterMenu = document.createElement('div');
         elFooterMenu.classList.add('cc-footer-menu');
         navListFooterMenu.forEach(navListItem => {
@@ -160,8 +136,30 @@ class FooterNav extends HTMLElement {
             elFooterSocial.appendChild(elFooterSocialLink);
         });
         elFooterContainer.appendChild(elFooterSocial);
+
+        /** copy */
+        let elFooterCopy = document.createElement('div');
+        elFooterCopy.classList.add('cc-footer-copy');
+        let elFooterCopySpan = document.createElement('span');
+        elFooterCopySpan.innerHTML = '© ';
+        navListFooterCopy.forEach(navListItem => {
+            let elFooterCopySpanLink = document.createElement('a');
+            let navElementLinkText = document.createTextNode(navListItem.title);
+            elFooterCopySpanLink.appendChild(navElementLinkText);
+            elFooterCopySpanLink.href = navListItem.url;
+            elFooterCopySpanLink.title = navListItem.title;
+            elFooterCopySpanLink.target = navListItem.target;
+            elFooterCopySpan.appendChild(elFooterCopySpanLink);
+        });
+        elFooterCopy.appendChild(elFooterCopySpan);
+        elFooter.appendChild(elFooterCopy);
         
-        elFooterWrapper.appendChild(elBottomSection);
+        /** address */
+        let elFooterAddress = document.createElement('div');
+        elFooterAddress.classList.add('cc-footer-address');
+        elFooterAddress.innerHTML = FooterAddress;
+        elFooter.appendChild(elFooterAddress);
+
         elFooterWrapper.appendChild(elFooter);
         this.innerHTML = elFooterWrapper.innerHTML;
         
