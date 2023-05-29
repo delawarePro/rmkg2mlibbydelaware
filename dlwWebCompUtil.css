@@ -1449,6 +1449,45 @@ header .cc-header-search {
   display: none;
 }
 
+.cc-hidden-on-scroll {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+  .cc-hidden-on-scroll {
+    transition: none;
+  }
+}
+
+.cc-show-on-scroll {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.cc-show-on-scroll-delay-200ms {
+  transition-delay: 200ms;
+}
+
+.cc-show-on-scroll-delay-400ms {
+  transition-delay: 400ms;
+}
+
+.cc-show-on-scroll-delay-600ms {
+  transition-delay: 600ms;
+}
+
+.cc-show-on-scroll-delay-800ms {
+  transition-delay: 800ms;
+}
+
+.cc-show-on-scroll-delay-1s {
+  transition-delay: 1s;
+}
+
 /*GRID optimized*/
 .grid {
   --column-count: 1;
