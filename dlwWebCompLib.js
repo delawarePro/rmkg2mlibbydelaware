@@ -169,6 +169,122 @@ class FooterNav extends HTMLElement {
 }
 customElements.define('footer-nav', FooterNav);
 
+/*hero banner home*/
+let templateHeroBannerHome = document.createElement('template');
+templateHeroBannerHome.setAttribute('id','hero-banner-home');
+templateHeroBannerHome.innerHTML = `
+<slot></slot>
+`
+
+class HeroBannerHome extends HTMLElement {
+    static get observedAttributes() {
+        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target'];
+    }
+
+    get heroImageDesktop() {
+        return this.getAttribute("hero-img-desktop");
+    }
+
+    get heroImageMobile() {
+        return this.getAttribute("hero-img-mobile");
+    }
+
+    get heroContentBg() {
+        return this.getAttribute("hero-content-bg");
+    }
+
+    get heroContentBigTitle() {
+        return this.getAttribute("hero-content-big-title");
+    }
+
+    get heroContentSubTitle() {
+        return this.getAttribute("hero-content-sub-title");
+    }
+
+    get heroContentText() {
+        return this.getAttribute("hero-content-text");
+    }
+
+    get heroContentLink() {
+        return this.getAttribute("hero-content-link");
+    }
+
+    get heroContentLinkTitle() {
+        return this.getAttribute("hero-content-link-title");
+    }
+
+    get heroContentLinkTarget() {
+        return this.getAttribute("hero-content-link-target");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderHeroBannerHome();
+        shadow.append(templateHeroBannerHome.content.cloneNode(true))
+    }
+    
+    renderHeroBannerHome() {
+        let elementHeroHomeWrapper = document.createElement('div');
+
+        let elementHeroHome = document.createElement('div');
+        elementHeroHome.classList.add('cc-hero-home');    
+        elementHeroHome.classList.add('auto-grid');
+
+        let elementHeroHomeImageBox = document.createElement('div');
+        elementHeroHomeImageBox.classList.add('cc-hero-home-image-box');
+        let elementHeroImageBoxDesktop = document.createElement('img');
+        elementHeroImageBoxDesktop.classList.add('cc-hero-home-image');
+        elementHeroImageBoxDesktop.setAttribute('src',this.heroImageDesktop);
+        elementHeroHomeImageBox.appendChild(elementHeroImageBoxDesktop);
+        let elementHeroImageBoxMobile = document.createElement('img');
+        elementHeroImageBoxMobile.classList.add('cc-hero-home-image-mobile');
+        elementHeroImageBoxMobile.classList.add('cc-hidden');
+        elementHeroImageBoxMobile.setAttribute('src',this.heroImageMobile);
+        elementHeroHomeImageBox.appendChild(elementHeroImageBoxMobile);
+        elementHeroHome.appendChild(elementHeroHomeImageBox);   
+        
+        let elementHeroHomeContentBox = document.createElement('div');
+        elementHeroHomeContentBox.classList.add('cc-hero-home-content-box');
+        if (this.heroContentBg == 'true') {
+            let elementBackground = document.createElement('div');
+            elementBackground.classList.add('cc-background-curved-2');
+            elementHeroHomeContentBox.appendChild(elementBackground);
+        }
+        let elementHeroHomeTitleWrapper = document.createElement('div');
+        elementHeroHomeTitleWrapper.classList.add('cc-hero-home-content-box-title-wrap');
+        let elementHeroHomeBigTitle = document.createElement('span');
+        elementHeroHomeBigTitle.classList.add('cc-hero-home-content-big-title');
+        elementHeroHomeBigTitle.innerHTML = this.heroContentBigTitle;
+        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeBigTitle);
+        let elementHeroHomeSubTitle = document.createElement('span');
+        elementHeroHomeSubTitle.classList.add('cc-hero-home-content-sub-title');
+        elementHeroHomeSubTitle.innerHTML = '<div>' + this.heroContentSubTitle + '</div>';
+        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeSubTitle);
+        let elementHeroHomeText = document.createElement('p');
+        elementHeroHomeText.classList.add('cc-hero-home-content-text');
+        elementHeroHomeText.innerHTML = this.heroContentText;
+        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeText);
+
+        let elementHeroHomeLink = document.createElement('a');
+        elementHeroHomeLink.classList.add('cc-cta-btn');
+        let elementHeroHomeLinkText = document.createTextNode(this.heroContentLinkTitle);
+        elementHeroHomeLink.appendChild(elementHeroHomeLinkText);
+        elementHeroHomeLink.href = this.heroContentLink;
+        elementHeroHomeLink.title = this.heroContentLinkTitle;
+        elementHeroHomeLink.target = this.heroContentLinkTarget;
+        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeLink);
+
+        elementHeroHomeContentBox.appendChild(elementHeroHomeTitleWrapper);
+        elementHeroHome.appendChild(elementHeroHomeContentBox); 
+
+        elementHeroHomeWrapper.appendChild(elementHeroHome);
+        this.innerHTML = elementHeroHomeWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-herobannerhome', HeroBannerHome);
+
 /* web component for Hero Banner Image */
 const heroElement = document.querySelector("hero-banner");
 if (heroElement) {
