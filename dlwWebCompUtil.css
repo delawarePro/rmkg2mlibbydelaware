@@ -584,14 +584,6 @@ header .cc-header-search {
 }
 
 
-/*content*/
-.cc-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    right: 0;
-}
-
 .cc-overlay {
   position: absolute;
   top: 0;
@@ -600,41 +592,6 @@ header .cc-header-search {
   min-height: 100%;
   background: rgba(var(--clr-color-white),0.01);
   mix-blend-mode: hard-light;
-}
-
-.cc-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0.8;
-}
-.cc-vimeo-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  object-fit: contain;
-  overflow: hidden;
-  opacity: 0.8;
-}
-.cc-vimeo-wrapper iframe {
-  width: 100vw;
-  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-  min-height: 100vh;
-  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.cc-vimeo-wrapper-mobile {
-  display: none;
 }
 
 .cc-section {
@@ -712,7 +669,6 @@ header .cc-header-search {
     font-size: 1em;
     font-weight: 500;
     border-radius: 5px;
-    margin-right: 6px !important;
     margin-bottom: 2px !important;
     transition: all .60s ease;
 }
@@ -722,7 +678,7 @@ header .cc-header-search {
 .outershell a.cc-cta-btn:hover {
     background: rgba(var(--clr-color-3),0.25) !important;
     border: 1px solid rgba(var(--clr-color-1),1) !important;
-    transform: translateX(4px);
+    transform: translateY(4px);
 }
 
 .cc-scroll-down {
@@ -1477,7 +1433,7 @@ header .cc-header-search {
 
 
 /*CONTAINER optimized*/
-.cc-container-new {
+.cc-container {
   min-height: calc(100vh - 200px);
   min-height: calc(100dvh - 200px);
   display: grid;
@@ -1487,17 +1443,17 @@ header .cc-header-search {
 
 .cc-section-new {
   position: relative;
-  padding: 6.875rem 10% 6.875rem 10%;
+  padding: 1.875rem 10% 1.875rem 10%;
 }
 
 .cc-section-new-small {
   position: relative;
-  padding: 6.875rem 25% 6.875rem 25%;
+  padding: 1.875rem 25% 1.875rem 25%;
 }
 
 .cc-section-new-fw {
   position: relative;
-  padding: 6.875rem 0 6.875rem 0;
+  padding: 1.875rem 0 1.875rem 0;
 }
 
 .cc-background-curved-1 {
@@ -1513,8 +1469,8 @@ header .cc-header-search {
 
 .cc-background-curved-2 {
   position: absolute;
-  margin-top: 200px !important;
-  height: 370px;
+  margin-top: 50% !important;
+  height: 50%;
   width: 100%;
   border-radius: 140px 0 0;
   background: rgba(var(--clr-color-1), 0.1);
@@ -1645,6 +1601,7 @@ header .cc-header-search {
 
 .cc-hero-home-content-box {
   position: relative;
+  padding-bottom: 10px;
 }
 
 .cc-hero-home-content-box-title-wrap {
@@ -1675,6 +1632,7 @@ header .cc-header-search {
   color: rgba(var(--clr-color-2), 1);
   font-weight: var(--fw-700);
   padding-top: 10px;
+  font-size: 1.2em;
 }
 
 .cc-hero-home-content-link {
@@ -1688,27 +1646,25 @@ header .cc-header-search {
   color:rgba(var(--clr-color-1), 1);
 }
 
-.cc-hero-home-image-box-bg {
-  background: url(https://media.brusselsairport.be/bruweb/hero/0001/36/thumb_35491_hero_home.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  background-size: cover;
-}
-
 @media (min-width: 280px) {
   .cc-hero-home-content-box-title-wrap {
     position: unset;
     text-align: left;
     padding: 5px 5% 0 5%;
+    left: 0;
   }
 
   .cc-hero-home-content-big-title {
-    font-size: 1.5em;
+    font-size: 4em;
   }
 
   .cc-hero-home-content-sub-title {
-    font-size: 0.875em;
+    font-size: 2em;
+  }
+
+  .cc-background-curved-2 {
+    margin-top: 0% !important;
+    height: 100%;
   }
 }
 
@@ -1733,12 +1689,9 @@ header .cc-header-search {
     padding: 0;
   }
 
-  .cc-hero-home-content-big-title {
-    font-size: 4em;
-  }
-
-  .cc-hero-home-content-sub-title {
-    font-size: 1.125em;
+  .cc-background-curved-2 {
+    margin-top: 35% !important;
+    height: 100%;
   }
 }
 
@@ -1757,11 +1710,31 @@ header .cc-header-search {
   }
 
   .cc-hero-home-content-sub-title {
-    font-size: 1.275em;
+    font-size: 2.275em;
   }
+
+  .cc-background-curved-2 {
+    margin-top: 30% !important;
+    height: 100%;
+  }  
 }
 
 @media (min-width: 992px) {
+  .cc-section-new {
+    position: relative;
+    padding: 3.875rem 10% 3.875rem 10%;
+  }
+  
+  .cc-section-new-small {
+    position: relative;
+    padding: 3.875rem 25% 3.875rem 25%;
+  }
+  
+  .cc-section-new-fw {
+    position: relative;
+    padding: 3.875rem 0 3.875rem 0;
+  }
+
   .cc-hero-home-image-box {
     width: calc((100vw - 992px)/2 + 360px);
   }
@@ -1779,20 +1752,18 @@ header .cc-header-search {
   }
 
   .cc-hero-home-content-sub-title {
-    font-size: 1.5em;
+    font-size: 2.5em;
   }
-}
 
-@media (max-height: 1200px) and (min-width: 992px) {
-  .cc-hero-home {
-    height: calc(100vh - 100px);
-    min-height: 570px;
-  }
+  .cc-background-curved-2 {
+    margin-top: 25% !important;
+    height: 70%;
+  }  
 }
 
 @media (min-width: 1200px) {
   .cc-hero-home-image-box {
-    width: calc((100vw - 1176px)/2 + 543px);
+    width: calc((100vw - 1176px)/2 + 543px) !important;
   }
 
   .cc-hero-home-content-box-title-wrap {
@@ -1804,7 +1775,12 @@ header .cc-header-search {
   }
 
   .cc-hero-home-content-sub-title {
-    font-size: 2em;
+    font-size: 2.1em;
+  }
+
+  .cc-background-curved-2 {
+    margin-top: 35% !important;
+    height: 70%;
   }
 }
 
@@ -1820,6 +1796,11 @@ header .cc-header-search {
 
   .cc-hero-home-content-sub-title {
     font-size: 3em;
+  }
+
+  .cc-background-curved-2 {
+    margin-top: 40% !important;
+    height: 70%;
   }
 }
 
