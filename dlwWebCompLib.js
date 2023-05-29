@@ -283,6 +283,121 @@ class HeroBannerHome extends HTMLElement {
 
 customElements.define('cc-herobannerhome', HeroBannerHome);
 
+/** search form web comp */
+let templateSearchForm = document.createElement('template');
+templateSearchForm.setAttribute('id', 'cc-search-form');
+templateSearchForm.innerHTML = `
+<slot></slot>
+`;
+
+let xmlLang = "nl-NL";
+let searchLabel = ccSearchLabelDutch;
+let searchLabelBtn = ccSearchLabelBtnDutch;
+let searchLabelErase = ccSearchLabelResetDutch;
+switch (languageToken) {
+    case "fr":
+        xmlLang = "fr-FR";
+        searchLabel = ccSearchLabelFrench;
+        searchLabelBtn = ccSearchLabelBtnFrench;
+        searchLabelErase = ccSearchLabelResetFrench;
+        break;
+}
+
+class SearchForm extends HTMLElement {
+    static get observedAttributes() {
+        return['title','title-color'];
+    }
+
+    get searchFormHeaderTitle() {
+        return this.getAttribute("title");
+    }
+
+    get searchFormHeaderTitleColor() {
+        return this.getAttribute("title-color");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderSearchForm();
+        shadow.append(templateSearchForm.content.cloneNode(true))
+    }
+
+    renderSearchForm() {
+        let elSearchFormWrapper = document.createElement('div');
+
+        let elSearchFormContainer = document.createElement('div');
+        elSearchFormContainer.classList.add('cc-bg-color-nightsky');
+        elSearchFormContainer.classList.add('cc-section-new');
+
+        let elSearchFormContainerTitle = document.createElement('h2');
+        elSearchFormContainerTitle.classList.add('cc-h1');
+        let titleColor = 'cc-text-color-white';
+        switch (this.searchFormHeaderTitleColor) {
+            case 'passion':
+                titleColor = 'cc-text-color-passion';
+                break;
+            case 'nightsky':
+                titleColor = 'cc-text-color-nightsky';
+                break;
+            default:
+                titleColor = 'cc-text-color-white';
+                break;
+        }
+        elSearchFormContainerTitle.classList.add(titleColor);
+        elSearchFormContainerTitle.innerHTML = this.searchFormHeaderTitle;
+        elSearchFormContainer.appendChild(elSearchFormContainerTitle);
+
+        let elSearchBox = document.createElement('div');
+        elSearchBox.classList.add('cc-search-box-page');
+
+        let elSearchForm = document.createElement('form');
+        elSearchForm.classList.add('cc-search-form-page');
+        elSearchForm.setAttribute('name','keywordsearch');
+        elSearchForm.setAttribute('method','get');
+        elSearchForm.setAttribute('action','/search/');
+        elSearchForm.setAttribute('xml:lang', xmlLang);
+        elSearchForm.setAttribute('lang', xmlLang);
+        elSearchForm.setAttribute('role', 'search');
+        elSearchBox.appendChild(elSearchForm);
+        
+
+        let elSearchInput = document.createElement('input');
+        elSearchInput.classList.add('cc-search-box-page-input');
+        elSearchInput.setAttribute('type', 'text');
+        elSearchInput.setAttribute('name', 'q');
+        elSearchInput.setAttribute('maxlength', 50);
+        elSearchInput.setAttribute('aria-label', searchLabel);
+        elSearchForm.appendChild(elSearchInput);
+
+        let elSearchSubmit = document.createElement('a');
+        elSearchSubmit.classList.add('cc-cta-button-search');
+        let elSearchSubmitLinkText = document.createTextNode(searchLabelBtn);
+        elSearchSubmit.appendChild(elSearchSubmitLinkText);
+        elSearchSubmit.href = '#';
+        elSearchSubmit.title = searchLabelBtn;
+        elSearchSubmit.target = '_self';
+        elSearchSubmit.setAttribute('onclick','submitCcSearch();');
+        elSearchForm.appendChild(elSearchSubmit);
+
+        let elSearchErase = document.createElement('a');
+        elSearchErase.classList.add('cc-cta-button-search');
+        let elSearchEraseLinkText = document.createTextNode(searchLabelErase);
+        elSearchErase.appendChild(elSearchEraseLinkText);
+        elSearchErase.href = '/search/';
+        elSearchErase.title = searchLabelErase;
+        elSearchErase.target = '_self';
+        elSearchForm.appendChild(elSearchErase);
+
+        elSearchFormContainer.appendChild(elSearchBox);
+        elSearchFormWrapper.appendChild(elSearchFormContainer);
+        this.innerHTML = elSearchFormWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-search', SearchForm);
+
+
 /* web component for Hero Banner Image */
 const heroElement = document.querySelector("hero-banner");
 if (heroElement) {
