@@ -779,3 +779,27 @@ const observer = new IntersectionObserver((entries) => {
 });
 let hiddenElements = document.querySelectorAll('.cc-hidden-on-scroll');
 hiddenElements.forEach((el) => observer.observe(el));
+
+const observerRight = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll-right');
+    });
+});
+let hiddenElementsRight = document.querySelectorAll('.cc-hidden-on-scroll-right');
+hiddenElementsRight.forEach((el) => observerRight.observe(el));
+
+const observerTop = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll-top');
+    });
+});
+let hiddenElementsTop = document.querySelectorAll('.cc-hidden-on-scroll-top');
+hiddenElementsTop.forEach((el) => observerTop.observe(el));
+
+const observerBottom = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll-bottom');
+    });
+});
+let hiddenElementsBottom = document.querySelectorAll('.cc-hidden-on-scroll-bottom');
+hiddenElementsBottom.forEach((el) => observerBottom.observe(el));
