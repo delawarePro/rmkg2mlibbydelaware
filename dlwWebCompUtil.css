@@ -308,12 +308,12 @@ video {
 
 footer {
   display: block;
-  position: absolute;   
+  position: relative;   
   width: 100%;
   background: rgba(var(--clr-color-accent),1);
   padding-inline: 15%;
   bottom: 0;
-  height: 100px;
+  height: 115px;
 }
 
 .cc-bottom-section {
@@ -1441,17 +1441,20 @@ header .cc-header-search {
   grid-template-columns: 100%;
 }
 
-.cc-section-new {
+.cc-section-new,
+.cc-section {
   position: relative;
   padding: 1.875rem 10% 1.875rem 10%;
 }
 
-.cc-section-new-small {
+.cc-section-new-small,
+.cc-section-small {
   position: relative;
   padding: 1.875rem 25% 1.875rem 25%;
 }
 
-.cc-section-new-fw {
+.cc-section-new-fw,
+.cc-section-fw {
   position: relative;
   padding: 1.875rem 0 1.875rem 0;
 }
@@ -1501,10 +1504,6 @@ header .cc-header-search {
 }
 
 .cc-header-new {
-  height: 100px;
-}
-
-.cc-footer-new {
   height: 100px;
 }
 
@@ -1720,17 +1719,20 @@ header .cc-header-search {
 }
 
 @media (min-width: 992px) {
-  .cc-section-new {
+  .cc-section-new,
+  .cc-section {
     position: relative;
     padding: 3.875rem 10% 3.875rem 10%;
   }
   
-  .cc-section-new-small {
+  .cc-section-new-small,
+  .cc-section-small {
     position: relative;
     padding: 3.875rem 25% 3.875rem 25%;
   }
   
-  .cc-section-new-fw {
+  .cc-section-new-fw,
+  .cc-section-fw {
     position: relative;
     padding: 3.875rem 0 3.875rem 0;
   }
