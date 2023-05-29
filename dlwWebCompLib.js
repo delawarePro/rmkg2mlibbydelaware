@@ -172,7 +172,7 @@ let templateHeroBannerHome = document.createElement('template');
 templateHeroBannerHome.setAttribute('id','hero-banner-home');
 templateHeroBannerHome.innerHTML = `
 <slot></slot>
-`
+`;
 
 class HeroBannerHome extends HTMLElement {
     static get observedAttributes() {
@@ -231,6 +231,7 @@ class HeroBannerHome extends HTMLElement {
 
         let elementHeroHomeImageBox = document.createElement('div');
         elementHeroHomeImageBox.classList.add('cc-hero-home-image-box');
+        elementHeroHomeImageBox.classList.add('cc-hidden-on-scroll');
         let elementHeroImageBoxDesktop = document.createElement('img');
         elementHeroImageBoxDesktop.classList.add('cc-hero-home-image');
         elementHeroImageBoxDesktop.setAttribute('src',this.heroImageDesktop);
@@ -251,6 +252,8 @@ class HeroBannerHome extends HTMLElement {
         }
         let elementHeroHomeTitleWrapper = document.createElement('div');
         elementHeroHomeTitleWrapper.classList.add('cc-hero-home-content-box-title-wrap');
+        elementHeroHomeTitleWrapper.classList.add('cc-hidden-on-scroll');
+        elementHeroHomeTitleWrapper.classList.add('cc-show-on-scroll-delay-400ms');
         let elementHeroHomeBigTitle = document.createElement('span');
         elementHeroHomeBigTitle.classList.add('cc-hero-home-content-big-title');
         elementHeroHomeBigTitle.innerHTML = this.heroContentBigTitle;
