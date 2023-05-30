@@ -780,6 +780,14 @@ const observer = new IntersectionObserver((entries) => {
 let hiddenElements = document.querySelectorAll('.cc-hidden-on-scroll');
 hiddenElements.forEach((el) => observer.observe(el));
 
+const observerLeft = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll-left');
+    });
+});
+let hiddenElementsLeft = document.querySelectorAll('.cc-hidden-on-scroll-left');
+hiddenElementsLeft.forEach((el) => observerRight.observe(el));
+
 const observerRight = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('cc-show-on-scroll-right');
