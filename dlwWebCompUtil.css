@@ -1764,6 +1764,7 @@ header .cc-header-search {
 /*content banner*/
 .cc-content-page-banner-container {
   width: 100%;
+  padding-top: 100px;
 }
 
 .cc-content-page-banner-image {
