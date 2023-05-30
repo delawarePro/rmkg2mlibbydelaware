@@ -1681,7 +1681,7 @@ header .cc-header-search {
   padding-inline: 2.5%; 
   border: none;
   outline: none;
-  height: 5vh;
+  height: 35px;
   color: rgba(var(--clr-color-black),0.7);
   background: rgba(var(--clr-color-white),1);
   border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
@@ -1748,7 +1748,7 @@ header .cc-header-search {
   }
 
   .cc-search-form-page input {
-    height: 5vh;
+    height: 35px;
   }
 
   .cc-search-box-action-container {
@@ -1902,7 +1902,7 @@ header .cc-header-search {
   }
 
   .cc-search-form-page input {
-    height: 5vh;
+    height: 35px;
   }
 
   .cc-search-box-action-container {
