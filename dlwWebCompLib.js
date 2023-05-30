@@ -176,7 +176,7 @@ templateHeroBannerHome.innerHTML = `
 
 class HeroBannerHome extends HTMLElement {
     static get observedAttributes() {
-        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target'];
+        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target','hero-image-appear','hero-content-appear'];
     }
 
     get heroImageDesktop() {
@@ -215,6 +215,14 @@ class HeroBannerHome extends HTMLElement {
         return this.getAttribute("hero-content-link-target");
     }
 
+    get heroImageAppearOnScroll() {
+        return this.getAttribute("hero-image-appear");
+    }
+
+    get heroContentAppearOnScroll() {
+        return this.getAttribute("hero-content-appear");
+    }
+
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
@@ -231,7 +239,29 @@ class HeroBannerHome extends HTMLElement {
 
         let elementHeroHomeImageBox = document.createElement('div');
         elementHeroHomeImageBox.classList.add('cc-hero-home-image-box');
-        elementHeroHomeImageBox.classList.add('cc-hidden-on-scroll');
+        let imageAppear = '';
+        switch (this.heroImageAppearOnScroll) {
+            case "default":
+                imageAppear = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                imageAppear = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                imageAppear = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                imageAppear = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                imageAppear = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                imageAppear = '';
+                break;
+        }
+        if (imageAppear != '') elementHeroHomeImageBox.classList.add(imageAppear);
+
         let elementHeroImageBoxDesktop = document.createElement('img');
         elementHeroImageBoxDesktop.classList.add('cc-hero-home-image');
         elementHeroImageBoxDesktop.setAttribute('src',this.heroImageDesktop);
@@ -252,8 +282,31 @@ class HeroBannerHome extends HTMLElement {
         }
         let elementHeroHomeTitleWrapper = document.createElement('div');
         elementHeroHomeTitleWrapper.classList.add('cc-hero-home-content-box-title-wrap');
-        elementHeroHomeTitleWrapper.classList.add('cc-hidden-on-scroll');
-        elementHeroHomeTitleWrapper.classList.add('cc-show-on-scroll-delay-400ms');
+        let contentAppear = '';
+        switch (this.heroContentAppearOnScroll) {
+            case "default":
+                contentAppear = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                contentAppear = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                contentAppear = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                contentAppear = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                contentAppear = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                contentAppear = '';
+                break;
+        }
+        if (contentAppear != '') {
+            elementHeroHomeTitleWrapper.classList.add(contentAppear);
+            elementHeroHomeTitleWrapper.classList.add('cc-show-on-scroll-delay-400ms');
+        }
         let elementHeroHomeBigTitle = document.createElement('span');
         elementHeroHomeBigTitle.classList.add('cc-hero-home-content-big-title');
         elementHeroHomeBigTitle.innerHTML = this.heroContentBigTitle;
