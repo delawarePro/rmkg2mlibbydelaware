@@ -424,26 +424,31 @@ class SearchForm extends HTMLElement {
         elSearchInput.setAttribute('name', 'q');
         elSearchInput.setAttribute('maxlength', 50);
         elSearchInput.setAttribute('aria-label', searchLabel);
+        elSearchInput.setAttribute('placeholder', searchLabel);
         elSearchForm.appendChild(elSearchInput);
+
+        let elActionContainer = document.createElement('div');
+        elActionContainer.classList.add('cc-search-box-action-container');
 
         let elSearchSubmit = document.createElement('a');
         elSearchSubmit.classList.add('cc-cta-button-search');
         let elSearchSubmitLinkText = document.createTextNode(searchLabelBtn);
         elSearchSubmit.appendChild(elSearchSubmitLinkText);
-        elSearchSubmit.href = '#';
         elSearchSubmit.title = searchLabelBtn;
         elSearchSubmit.target = '_self';
         elSearchSubmit.setAttribute('onclick','submitCcSearch();');
-        elSearchForm.appendChild(elSearchSubmit);
+        elActionContainer.appendChild(elSearchSubmit);
 
         let elSearchErase = document.createElement('a');
         elSearchErase.classList.add('cc-cta-button-search');
         let elSearchEraseLinkText = document.createTextNode(searchLabelErase);
         elSearchErase.appendChild(elSearchEraseLinkText);
-        elSearchErase.href = '/search/';
         elSearchErase.title = searchLabelErase;
         elSearchErase.target = '_self';
-        elSearchForm.appendChild(elSearchErase);
+        elSearchErase.setAttribute('onclick','clearCcSearch();');
+        elActionContainer.appendChild(elSearchErase);
+
+        elSearchForm.appendChild(elActionContainer);
 
         elSearchFormContainer.appendChild(elSearchBox);
         elSearchFormWrapper.appendChild(elSearchFormContainer);
