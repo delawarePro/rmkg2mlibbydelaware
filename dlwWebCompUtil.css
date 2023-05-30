@@ -1685,6 +1685,7 @@ header .cc-header-search {
   color: rgba(var(--clr-color-black),0.7);
   background: rgba(var(--clr-color-white),1);
   border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
+  border-radius: 5px;
 }
 
 .cc-search-box-action-container {
