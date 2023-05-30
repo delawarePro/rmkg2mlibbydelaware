@@ -1161,7 +1161,11 @@ header .cc-header-search {
   }
 
   .cc-text-align-right {
-      text-align: right;
+    text-align: right;
+  }
+
+  .cc-text-align-center {
+    text-align: center;
   }
 }
 
@@ -1330,7 +1334,7 @@ header .cc-header-search {
 }
 
 .cc-card-image-info p {
-  font-size: 0.875em;
+  font-size: 1em;
 }
 
 .cc-card-image-info h2{
@@ -1400,6 +1404,28 @@ header .cc-header-search {
 .cc-section-fw {
   position: relative;
   padding: 1.875rem 0 1.875rem 0;
+}
+
+.cc-background-curved-video-right {
+  position: absolute;
+  margin: 20px 0 0 0 !important;
+  height: 300px;
+  width: 75%;
+  border-radius: 0 140px 0;
+  background: rgba(var(--clr-color-1), 0.1);
+  z-index: 0;
+  right: 0;
+}
+
+.cc-background-curved-video-left {
+  position: absolute;
+  margin: 20px 0 0 0 !important;
+  height: 300px;
+  width: 75%;
+  border-radius: 0 140px 0;
+  background: rgba(var(--clr-color-1), 0.1);
+  z-index: 0;
+  left: 0;
 }
 
 .cc-background-curved-1 {
@@ -1681,7 +1707,7 @@ header .cc-header-search {
   padding-inline: 2.5%; 
   border: none;
   outline: none;
-  height: 35px;
+  height: 5vh;
   color: rgba(var(--clr-color-black),0.7);
   background: rgba(var(--clr-color-white),1);
   border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
@@ -1748,7 +1774,7 @@ header .cc-header-search {
   }
 
   .cc-search-form-page input {
-    height: 35px;
+    height: 5vh;
   }
 
   .cc-search-box-action-container {
@@ -1856,19 +1882,19 @@ header .cc-header-search {
   .cc-section-new,
   .cc-section {
     position: relative;
-    padding: 3.875rem 10% 3.875rem 10%;
+    padding: 1.875rem 10% 3.875rem 10%;
   }
   
   .cc-section-new-small,
   .cc-section-small {
     position: relative;
-    padding: 3.875rem 25% 3.875rem 25%;
+    padding: 1.875rem 25% 3.875rem 25%;
   }
   
   .cc-section-new-fw,
   .cc-section-fw {
     position: relative;
-    padding: 3.875rem 0 3.875rem 0;
+    padding: 1.875rem 0 3.875rem 0;
   }
 
   .cc-hero-home-image-box {
@@ -1902,7 +1928,7 @@ header .cc-header-search {
   }
 
   .cc-search-form-page input {
-    height: 35px;
+    height: 5vh;
   }
 
   .cc-search-box-action-container {
@@ -1929,11 +1955,16 @@ header .cc-header-search {
 
   .cc-background-curved-2 {
     margin-top: 35% !important;
-    height: 70%;
+    height: 65%;
   }
 }
 
 @media (min-width: 1400px) {
+  .cc-section-new,
+  .cc-section {
+    padding: 1.875rem 20% 3.875rem 20%;
+  }
+
   .cc-hero-home-content-box-title-wrap {
     top: 30%;
     left: -10%;
@@ -1949,7 +1980,7 @@ header .cc-header-search {
 
   .cc-background-curved-2 {
     margin-top: 40% !important;
-    height: 70%;
+    height: 55%;
   }
 }
 
