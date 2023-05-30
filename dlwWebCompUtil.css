@@ -1329,6 +1329,10 @@ header .cc-header-search {
   transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 }
 
+.cc-card-image-info p {
+  font-size: 0.875em;
+}
+
 .cc-card-image-info h2{
   /*font-size: 1.2em !important;*/
   margin-top: -5px !important;
@@ -1556,6 +1560,7 @@ header .cc-header-search {
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: var(--gap, 1em);
 }
 
 @media (min-width: 280px) {
