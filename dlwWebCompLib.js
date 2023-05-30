@@ -755,7 +755,7 @@ templateCardImage.innerHTML = `
 `
 class CardImage extends HTMLElement {
     static get observedAttributes() {
-        return['card-title','card-content','card-image','card-link', 'card-link-title', 'card-link-target'];
+        return['card-title','card-content','card-image','card-link', 'card-link-title', 'card-link-target', 'card-appear', 'card-appear-delay'];
     }
 
     get cardTitle() {
@@ -782,6 +782,14 @@ class CardImage extends HTMLElement {
         return this.getAttribute("card-link-target");
     }
 
+    get cardAppearOnScroll() {
+        return this.getAttribute("card-appear");
+    }
+
+    get cardAppearOnScrollDelay() {
+        return this.getAttribute("card-appear-delay");
+    }
+
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
@@ -794,6 +802,52 @@ class CardImage extends HTMLElement {
 
         let elementCardImage = document.createElement('div');
         elementCardImage.classList.add('cc-card-image');
+
+        let cardAppear = '';
+        switch (this.cardAppearOnScroll) {
+            case "default":
+                cardAppear = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                cardAppear = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                cardAppear = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                cardAppear = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                cardAppear = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                cardAppear = '';
+                break;
+        }
+        if (cardAppear != '') elementCardImage.classList.add(cardAppear);
+
+        let cardAppearDelay = '';
+        switch (this.cardAppearOnScrollDelay) {
+            case "200ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-200ms';
+                break;
+            case "400ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-400ms';
+                break;
+            case "600ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-600ms';
+                break;
+            case "800ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-800ms';
+                break;
+            case "1s":
+                cardAppearDelay = 'cc-show-on-scroll-delay-1s';
+                break;
+            default:
+                cardAppearDelay = '';
+                break;
+        }
+        if (cardAppearDelay != '') elementCardImage.classList.add(cardAppearDelay);
 
         let elementCardImageThumb = document.createElement('div');
         elementCardImageThumb.classList.add('cc-card-image-thumb');
@@ -810,17 +864,18 @@ class CardImage extends HTMLElement {
         elementCardImageContent.innerHTML = this.cardContent;
         elementCardImageInfo.appendChild(elementCardImageContent);
 
-        let elementCardImageLink = document.createElement('a');
-        elementCardImageLink.classList.add('cc-card-image-link');
-        let elementCardImageLinkText = document.createTextNode(this.cardLinkTitle);
-        elementCardImageLink.appendChild(elementCardImageLinkText);
-        elementCardImageLink.href = this.cardLink;
-        elementCardImageLink.title = this.cardLinkTitle;
-        elementCardImageLink.target = this.cardLinkTarget;
-        elementCardImageInfo.appendChild(elementCardImageLink);
+        if (this.cardLinkTitle) {
+            let elementCardImageLink = document.createElement('a');
+            elementCardImageLink.classList.add('cc-card-image-link');
+            let elementCardImageLinkText = document.createTextNode(this.cardLinkTitle);
+            elementCardImageLink.appendChild(elementCardImageLinkText);
+            elementCardImageLink.href = this.cardLink;
+            elementCardImageLink.title = this.cardLinkTitle;
+            elementCardImageLink.target = this.cardLinkTarget;
+            elementCardImageInfo.appendChild(elementCardImageLink);
+        }
         
         elementCardImage.appendChild(elementCardImageInfo);
-
         elementCardImageWrapper.appendChild(elementCardImage);
         
         this.innerHTML = elementCardImageWrapper.innerHTML;
@@ -828,6 +883,8 @@ class CardImage extends HTMLElement {
 }
 
 customElements.define('cc-cardimage', CardImage);
+
+
 
 /*show on scroll*/
 const observer = new IntersectionObserver((entries) => {
