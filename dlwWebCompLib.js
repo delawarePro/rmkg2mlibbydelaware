@@ -1017,6 +1017,101 @@ class VideoText extends HTMLElement {
 
 customElements.define('cc-videotext', VideoText);
 
+
+/*content page banner component*/
+let templateContentBanner = document.createElement('template');
+templateContentBanner.setAttribute('id','cc-content-banner');
+templateContentBanner.innerHTML = `
+<slot></slot>
+`;
+
+class ContentBanner extends HTMLElement {
+    static get observedAttributes() {
+        return['banner-url','banner-appear','banner-appear-delay'];
+    }
+
+    get bannerUrl() {
+        return this.getAttribute("banner-url");
+    }
+    get bannerAppear() {
+        return this.getAttribute("banner-appear");
+    }
+
+    get bannerAppearDelay() {
+        return this.getAttribute("banner-appear-delay");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderBannerContentPage();
+        shadow.append(templateContentBanner.content.cloneNode(true))
+    }
+
+    renderBannerContentPage() {
+        let elBannerWrapper = document.createElement('div');
+
+        let elBannerContainer = document.createElement('div');
+        elBannerContainer.classList.add('cc-content-page-banner-container');
+
+        let bannerAppearMode = '';
+        switch (this.bannerAppear) {
+            case "default":
+                bannerAppearMode = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                bannerAppearMode = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                bannerAppearMode = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                bannerAppearMode = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                bannerAppearMode = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                bannerAppearMode = '';
+                break;
+        }
+        
+        let bannerAppearDelayTime = '';
+        switch (this.bannerAppearDelay) {
+            case "200ms":
+                bannerAppearDelayTime = 'cc-show-on-scroll-delay-200ms';
+                break;
+            case "400ms":
+                bannerAppearDelayTime = 'cc-show-on-scroll-delay-400ms';
+                break;
+            case "600ms":
+                bannerAppearDelayTime = 'cc-show-on-scroll-delay-600ms';
+                break;
+            case "800ms":
+                bannerAppearDelayTime = 'cc-show-on-scroll-delay-800ms';
+                break;
+            case "1s":
+                bannerAppearDelayTime = 'cc-show-on-scroll-delay-1s';
+                break;
+            default:
+                bannerAppearDelayTime = '';
+                break;
+        }
+        
+        let elBannerContainerImage = document.createElement('div');
+        elBannerContainerImage.classList.add('cc-content-page-banner-image');
+        if (bannerAppearMode != '') elBannerContainerImage.classList.add(bannerAppearMode);        
+        if (bannerAppearDelayTime != '') elBannerContainerImage.classList.add(bannerAppearDelayTime);
+        elBannerContainerImage.style.setProperty("--content-banner",'url("'+this.bannerUrl+'")');
+        elBannerContainer.appendChild(elBannerContainerImage);
+
+        elBannerWrapper.appendChild(elBannerContainer);
+        this.innerHTML = elBannerWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-contentbanner', ContentBanner);
+
 /*show on scroll*/
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
