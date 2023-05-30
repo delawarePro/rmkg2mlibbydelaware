@@ -839,7 +839,7 @@ const observerLeft = new IntersectionObserver((entries) => {
     });
 });
 let hiddenElementsLeft = document.querySelectorAll('.cc-hidden-on-scroll-left');
-hiddenElementsLeft.forEach((el) => observerRight.observe(el));
+hiddenElementsLeft.forEach((el) => observerLeft.observe(el));
 
 const observerRight = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
