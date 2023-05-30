@@ -884,7 +884,138 @@ class CardImage extends HTMLElement {
 
 customElements.define('cc-cardimage', CardImage);
 
+/*video + text component*/
+let templateVideoText = document.createElement('template');
+templateVideoText.setAttribute('id','cc-video-text');
+templateVideoText.innerHTML = `
+<slot></slot>
+`;
 
+class VideoText extends HTMLElement {
+    static get observedAttributes() {
+        return['video-link','video-title','video-text','video-appear','video-appear-delay','video-add-background'];
+    }
+
+    get videoLink() {
+        return this.getAttribute("video-link");
+    }
+
+    get videoTitle() {
+        return this.getAttribute("video-title");
+    }
+
+    get videoText() {
+        return this.getAttribute("video-text");
+    }
+
+    get videoAppear() {
+        return this.getAttribute("video-appear");
+    }
+
+    get videoAppearDelay() {
+        return this.getAttribute("video-appear-delay");
+    }
+
+    get videoAddBackground() {
+        return this.getAttribute("video-add-background");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderVideoText();
+        shadow.append(templateVideoText.content.cloneNode(true))
+    }
+    
+    renderVideoText() {
+        let elVideoTextWrapper = document.createElement('div');
+
+        let elVideoText = document.createElement('div');
+        elVideoText.classList.add('cc-video-wrapper');
+
+        if (this.videoAddBackground == 'true') {
+            let elVideoBackground = document.createElement('div');
+            elVideoBackground.classList.add('cc-background-curved-video-left');
+            elVideoText.appendChild(elVideoBackground);
+        }
+
+        let videoAppearMode = '';
+        switch (this.videoAppear) {
+            case "default":
+                videoAppearMode = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                videoAppearMode = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                videoAppearMode = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                videoAppearMode = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                videoAppearMode = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                videoAppearMode = '';
+                break;
+        }
+        
+        let videoAppearDelayTime = '';
+        switch (this.videoAppearDelay) {
+            case "200ms":
+                videoAppearDelayTime = 'cc-show-on-scroll-delay-200ms';
+                break;
+            case "400ms":
+                videoAppearDelayTime = 'cc-show-on-scroll-delay-400ms';
+                break;
+            case "600ms":
+                videoAppearDelayTime = 'cc-show-on-scroll-delay-600ms';
+                break;
+            case "800ms":
+                videoAppearDelayTime = 'cc-show-on-scroll-delay-800ms';
+                break;
+            case "1s":
+                videoAppearDelayTime = 'cc-show-on-scroll-delay-1s';
+                break;
+            default:
+                videoAppearDelayTime = '';
+                break;
+        }
+
+        let elVideoTextContainer = document.createElement('div');
+        elVideoTextContainer.classList.add('cc-grid-video-text-container');
+
+
+        if (videoAppearMode != '') elVideoTextContainer.classList.add(videoAppearMode);
+        
+        if (videoAppearDelayTime != '') elVideoTextContainer.classList.add(videoAppearDelayTime);
+
+        let elGridVideoText = document.createElement('div');
+        elGridVideoText.classList.add('cc-grid-video-text');
+        elVideoTextContainer.appendChild(elGridVideoText);
+
+        let elGridVideoShow = document.createElement('div');
+        elGridVideoShow.classList.add('cc-grid-video-show');
+        elGridVideoShow.innerHTML = '<iframe src="'+this.videoLink+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        elGridVideoText.appendChild(elGridVideoShow);
+
+        let elGridVideoTextShow = document.createElement('div');
+        elGridVideoTextShow.classList.add('cc-grid-video-text-show');
+        let elGridVideoTitle = document.createElement('h2');
+        elGridVideoTitle.innerHTML = this.videoTitle;
+        elGridVideoTextShow.appendChild(elGridVideoTitle);
+        elGridVideoTextShow.innerHTML += this.videoText;
+        elGridVideoText.appendChild(elGridVideoTextShow);
+
+        elVideoText.appendChild(elVideoTextContainer);
+
+        elVideoTextWrapper.appendChild(elVideoText);
+        this.innerHTML = elVideoTextWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-videotext', VideoText);
 
 /*show on scroll*/
 const observer = new IntersectionObserver((entries) => {
