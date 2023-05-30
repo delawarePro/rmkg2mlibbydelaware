@@ -341,11 +341,6 @@ footer {
   text-align: center;
 }
 
-.search-page .cc-footer-container,
-.job-page .cc-footer-container {
-  padding-bottom: 23px;
-}
-
 .cc-footer-icon {
   font-size: 1.5em;
   display: inline-block;
@@ -1419,9 +1414,9 @@ header .cc-header-search {
 
 .cc-background-curved-video-left {
   position: absolute;
-  margin: 20px 0 0 10px !important;
+  margin: 20px 0 0 0 !important;
   height: 300px;
-  width: 85%;
+  width: 75%;
   border-radius: 0 140px 0;
   background: rgba(var(--clr-color-1), 0.1);
   z-index: 0;
