@@ -1332,9 +1332,8 @@ header .cc-header-search {
   font-size: 1em;
 }
 
-.cc-card-image-info h2{
-  /*font-size: 1.2em !important;*/
-  margin-top: -5px !important;
+.cc-card-image-info h2 {
+  margin-top: 5px !important;
 }
 
 .cc-card-image-title {
