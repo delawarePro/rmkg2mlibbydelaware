@@ -523,6 +523,7 @@ header .cc-header-search {
     font-size: 1.25rem;
     background: rgba(var(--clr-color-white),1);
     border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
+    padding-top: 15px;
 }
 
 .cc-search-form {
@@ -534,7 +535,6 @@ header .cc-header-search {
     transition: 0.5s ease-in-out;
     font-size: 1.5em;
     cursor: pointer;
-    position: absolute;
 }
 
 .cc-search-btn.active {
@@ -606,13 +606,14 @@ header .cc-header-search {
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
     transition: 0.5s;
+    right: 70px;
 }
 
 .cc-mobile-menu-close {
     position: absolute !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
-    right: 65px;
+    right: 70px;
     transition: 0.5s;
 }
 
@@ -1265,7 +1266,7 @@ header .cc-header-search {
       cursor: pointer !important;
       z-index: 10 !important;
       transition: 0.5s;
-      right: 0;
+      right: 70px;
   }
 
   .cc-mobile-menu-close {
@@ -1275,7 +1276,7 @@ header .cc-header-search {
       cursor: pointer !important;
       z-index: 10 !important;
       transition: 0.5s;
-      right: 5;
+      right: 70px;
   }
 
   .hide {
