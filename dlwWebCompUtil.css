@@ -441,7 +441,7 @@ footer {
 }
 
 .cc-header-group {
-    display: flex;
+    display: grid;
     align-items: center;
 }
 
