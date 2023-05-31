@@ -592,6 +592,8 @@ header .cc-header-search {
     transition: 0.5s;
     font-size: 1.5em;
     scale: 1;
+    display: block;
+    right: -20px;
 }
 
 .cc-mobile-menu-toggle {
