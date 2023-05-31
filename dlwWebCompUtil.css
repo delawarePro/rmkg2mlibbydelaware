@@ -484,14 +484,17 @@ header ul li a:hover::before {
 }
 
 header .cc-header-search {
-    position: relative !important;
-    display: flex !important;
-    justify-content: flex-end;
-    align-items: stretch;
-    font-size: 1.5em;
-    z-index: 10;
-    cursor: pointer;
-    top: -10px;
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: stretch;
+  font-size: 1.5em;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.cc-header-search.active {
+  top: -10px;
 }
 
 .cc-search-box {
