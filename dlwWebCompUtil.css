@@ -1814,6 +1814,9 @@ header .cc-header-search {
 /**/
 
 @media (min-width: 280px) {
+  .cc-header-search.active {
+    top: -5px;
+  }
   .cc-hero-home-content-box-title-wrap {
     position: unset;
     text-align: left;
@@ -1922,6 +1925,10 @@ header .cc-header-search {
 }
 
 @media (min-width: 768px) {
+  .cc-header-search.active {
+    top: -15px;
+  }
+
   .cc-hero-home-image-box {
     height: auto;
     width: calc((100vw - 744px)/2 + 290px);
