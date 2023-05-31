@@ -547,7 +547,7 @@ header .cc-header-search {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  right: -5px;
+  right: 0;
   color:rgba(var(--clr-color-1), 1);
 }
 
