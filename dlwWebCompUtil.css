@@ -991,7 +991,7 @@ header .cc-header-search {
   @media (min-width: 45em) {
     .cc-accordion {
       flex-direction: row;
-      height: 30rem;
+      height: 40rem;
     }
   }
   
