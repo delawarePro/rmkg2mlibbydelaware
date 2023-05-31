@@ -1,11 +1,11 @@
 /* web component for header */
 let ccSearchNavigation = [
-    {icon: '<ion-icon name="search-outline" class="cc-search-btn"></ion-icon>'},
-    {icon: '<ion-icon name="close-outline" class="cc-close-btn hide"></ion-icon>'},
     {icon: '<ion-icon name="menu-outline" class="cc-mobile-menu-toggle"></ion-icon>'},
     {icon: '<ion-icon name="close-outline" class="cc-mobile-menu-close hide"></ion-icon>'},
     {icon: '<a href="#" onclick="submitSearch()"><ion-icon name="search-outline" class="cc-submit-job-search-btn hide"></ion-icon>'},
-]
+    {icon: '<ion-icon name="close-outline" class="cc-close-btn hide"></ion-icon>'},
+    {icon: '<ion-icon name="search-outline" class="cc-search-btn"></ion-icon>'}
+];
 
 let navList = ccPrimaryNavDutch;
 let navLocale = "locale=nl_NL";
