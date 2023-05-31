@@ -869,6 +869,10 @@ class CardImage extends HTMLElement {
             elementCardImageLink.classList.add('cc-card-image-link');
             let elementCardImageLinkText = document.createTextNode(this.cardLinkTitle);
             elementCardImageLink.appendChild(elementCardImageLinkText);
+            let elementCardImageLinkIcon = document.createElement('ion-icon');
+            elementCardImageLinkIcon.classList.add('cc-card-image-link-icon');
+            elementCardImageLinkIcon.setAttribute('name','arrow-forward-circle-outline');
+            elementCardImageLink.appendChild(elementCardImageLinkIcon);
             elementCardImageLink.href = this.cardLink;
             elementCardImageLink.title = this.cardLinkTitle;
             elementCardImageLink.target = this.cardLinkTarget;
