@@ -7,6 +7,7 @@ let headerNavigation = document.querySelector(".cc-header-navigation");
 let mobileMenuToggle = document.querySelector(".cc-mobile-menu-toggle");
 let mobileMenuClose = document.querySelector(".cc-mobile-menu-close");
 let header = document.querySelector(".cc-header");
+let headerSearch = document.querySelector(".cc-header-search");
 let profileBtn = document.querySelector(".cc-profile-btn");
 
 searchBtn.onclick = function() {
@@ -20,6 +21,7 @@ searchBtn.onclick = function() {
     mobileMenuToggle.classList.add("hide");
     mobileMenuClose.classList.add("hide");
     header.classList.remove("open");
+    headerSearch.classList.add("active");
 }
 
 closeBtn.onclick = function() {
@@ -32,6 +34,7 @@ closeBtn.onclick = function() {
     profileBtn.classList.remove("hide");
     mobileMenuToggle.classList.remove("hide");
     searchBoxInput.value = "";
+    headerSearch.classList.remove("active");
 }
 
 mobileMenuToggle.onclick = function() {
