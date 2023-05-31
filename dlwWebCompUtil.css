@@ -432,7 +432,7 @@ footer {
     font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
-    width: 50%;
+    width: 49%;
 }
 
 .cc-logo-img {
@@ -494,7 +494,7 @@ header .cc-header-search {
 }
 
 .cc-header-search.active {
-  top: -10px;
+  top: 0;
 }
 
 .cc-search-box {
