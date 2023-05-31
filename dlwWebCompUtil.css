@@ -541,15 +541,28 @@ header .cc-header-search {
     display: none !important;
 }
 
+.cc-profile-btn {
+  position: absolute !important;
+  font-size: 1.5em !important;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cc-profile-btn.hide {
+  display: none !important;
+}
+
 .cc-icon {
   display: block;
 }
 
 .cc-close-btn {
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s;
-    scale: 0;
+  position: absolute !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  scale: 0;
 }
 
 .cc-close-btn.active {
@@ -561,12 +574,13 @@ header .cc-header-search {
 }
 
 .cc-submit-job-search-btn {
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s;
-    scale: 0;
-    color: rgba(var(--clr-color-1),1);
-    z-index: 10;
+  position: absolute !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  scale: 0;
+  color: rgba(var(--clr-color-1),1);
+  z-index: 10;
 }
 
 .cc-submit-job-search-btn.active {
@@ -578,17 +592,17 @@ header .cc-header-search {
 }
 
 .cc-mobile-menu-toggle {
-    position: relative !important;
+    position: absolute !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
     transition: 0.5s;
 }
 
 .cc-mobile-menu-close {
-    position: relative !important;
+    position: absolute !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
-    left: 5px;
+    right: 65px;
     transition: 0.5s;
 }
 
@@ -1232,13 +1246,6 @@ header .cc-header-search {
   .cc-search-btn {
     left: 0 !important;
     top: 22px;
-  }
-
-  .cc-profile-btn {
-    font-size: 1.5em !important;
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
   }
 
   .cc-mobile-menu-toggle {
