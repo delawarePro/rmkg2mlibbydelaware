@@ -1234,6 +1234,13 @@ header .cc-header-search {
     top: 22px;
   }
 
+  .cc-profile-btn {
+    font-size: 1.5em !important;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
   .cc-mobile-menu-toggle {
       position: relative !important;
       display: inline-block !important;
