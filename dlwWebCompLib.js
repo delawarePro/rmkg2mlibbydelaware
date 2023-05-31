@@ -1,11 +1,13 @@
 /* web component for header */
 let navList = ccPrimaryNavDutch;
 let navLocale = "locale=nl_NL";
+let navProfileLocale = "nl-NL";
 
 switch (languageToken) {
   case "fr":
     navList = ccPrimaryNavFrench;
     navLocale = "locale=fr_FR";
+    navProfileLocale = "fr-FR"
     break;
 }
 
@@ -14,7 +16,7 @@ let ccSearchNavigation = [
     {icon: '<ion-icon name="close-outline" class="cc-mobile-menu-close hide"></ion-icon>'},
     {icon: '<a href="#" onclick="submitSearch()"><ion-icon name="search-outline" class="cc-submit-job-search-btn hide"></ion-icon>'},
     {icon: '<ion-icon name="close-outline" class="cc-close-btn hide"></ion-icon>'},
-    {icon: '<a href="#" onclick="j2w.TC.handleViewProfileAction(event)"><ion-icon name="person-circle-outline"></ion-icon></a>'},
+    {icon: '<a href="#" onclick="j2w.TC.handleViewProfileAction(event)" lang="'+navProfileLocale+'" xml:lang="'+navProfileLocale+'"><ion-icon name="person-circle-outline"></ion-icon></a>'},
     {icon: '<ion-icon name="search-outline" class="cc-search-btn"></ion-icon>'}
 ];
 
