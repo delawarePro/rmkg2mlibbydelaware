@@ -547,6 +547,8 @@ header .cc-header-search {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
+  right: -5px;
+  color:rgba(var(--clr-color-1), 1);
 }
 
 .cc-profile-btn.hide {
