@@ -1580,7 +1580,7 @@ header .cc-header-search {
 
 .auto-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: var(--gap, 1em);
 }
 
@@ -1624,7 +1624,7 @@ header .cc-header-search {
 }
 
 .flex > * {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
 }
 
 /*hero-banner home-page*/
