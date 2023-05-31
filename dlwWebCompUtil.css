@@ -588,7 +588,7 @@ header .cc-header-search {
     position: relative !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
-    left: -13px;
+    left: 5px;
     transition: 0.5s;
 }
 
@@ -1241,6 +1241,7 @@ header .cc-header-search {
       cursor: pointer !important;
       z-index: 10 !important;
       transition: 0.5s;
+      right: 5px;
   }
 
   .cc-mobile-menu-close {
