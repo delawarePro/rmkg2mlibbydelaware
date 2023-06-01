@@ -930,11 +930,11 @@ header .cc-header-search {
   }
 
   .cc-card.cc-card-large {
-    min-height: 490px;
+    min-height: 585px;
   }
 
   .cc-card.cc-card-x-large {
-    min-height: 585px;
+    min-height: 650px;
   }
 
   .cc-card p {
