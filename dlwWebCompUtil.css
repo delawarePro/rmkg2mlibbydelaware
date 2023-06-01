@@ -929,6 +929,14 @@ header .cc-header-search {
     overflow: hidden;
   }
 
+  .cc-card.cc-card-large {
+    min-height: 490px;
+  }
+
+  .cc-card.cc-card-x-large {
+    min-height: 585px;
+  }
+
   .cc-card p {
     font-size: 1em;
   }
