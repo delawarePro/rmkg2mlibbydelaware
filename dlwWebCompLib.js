@@ -636,6 +636,9 @@ class Card extends HTMLElement {
 
         let setCardSize = '';
         switch (this.cardSize) {
+            case "medium":
+                setCardSize = 'cc-card-medium'
+                break;
             case "large":
                 setCardSize = 'cc-card-large'
                 break;
@@ -1138,7 +1141,7 @@ templateContentBanner.innerHTML = `
 
 class ContentBanner extends HTMLElement {
     static get observedAttributes() {
-        return['banner-url','banner-appear','banner-appear-delay'];
+        return['banner-url','banner-appear','banner-appear-delay','banner-is-svg'];
     }
 
     get bannerUrl() {
@@ -1150,6 +1153,10 @@ class ContentBanner extends HTMLElement {
 
     get bannerAppearDelay() {
         return this.getAttribute("banner-appear-delay");
+    }
+
+    get bannerIsSvg() {
+        return this.getAttribute("banner-is-svg");
     }
 
     constructor() {
@@ -1211,6 +1218,7 @@ class ContentBanner extends HTMLElement {
         
         let elBannerContainerImage = document.createElement('div');
         elBannerContainerImage.classList.add('cc-content-page-banner-image');
+        if (this.bannerIsSvg == 'true') elBannerContainerImage.classList.add('cc-content-page-banner-image-svg');
         if (bannerAppearMode != '') elBannerContainerImage.classList.add(bannerAppearMode);        
         if (bannerAppearDelayTime != '') elBannerContainerImage.classList.add(bannerAppearDelayTime);
         elBannerContainerImage.style.setProperty("--content-banner",'url("'+this.bannerUrl+'")');
