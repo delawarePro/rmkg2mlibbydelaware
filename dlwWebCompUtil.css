@@ -2139,6 +2139,10 @@ header .cc-header-search {
     margin-top: 40% !important;
     height: 55%;
   }
+
+  .cc-content-page-banner-image {
+    max-width: 100%;
+  }
 }
 
 
