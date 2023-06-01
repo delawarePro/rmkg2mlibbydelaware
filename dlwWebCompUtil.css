@@ -552,7 +552,7 @@ header .cc-header-search {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  right: 0;
+  transform: translate(-30px, 0px);
   color:rgba(var(--clr-color-1), 1);
 }
 
@@ -606,14 +606,14 @@ header .cc-header-search {
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
     transition: 0.5s;
-    right: 70px;
+    transform: translate(-30px, 0px);
 }
 
 .cc-mobile-menu-close {
     position: absolute !important;
     display: none !important;
     color: rgba(var(--clr-color-1),1) !important;
-    right: 70px;
+    transform: translate(-45px, 0px);
     transition: 0.5s;
 }
 
@@ -1274,7 +1274,6 @@ header .cc-header-search {
       cursor: pointer !important;
       z-index: 10 !important;
       transition: 0.5s;
-      right: 70px;
   }
 
   .cc-mobile-menu-close {
@@ -1284,7 +1283,6 @@ header .cc-header-search {
       cursor: pointer !important;
       z-index: 10 !important;
       transition: 0.5s;
-      right: 70px;
   }
 
   .hide {
