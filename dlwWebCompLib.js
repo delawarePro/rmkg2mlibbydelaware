@@ -536,28 +536,55 @@ class Card extends HTMLElement {
         let cardIconName = "heart-circle-outline";
         switch (this.cardIcon) {
             case "paperplane":
-                cardIconName = "paper-plane-outline";
+                cardIconName = '<ion-icon name="paper-plane-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
             case "rocket":
-                cardIconName = "rocket-outline";
+                cardIconName = '<ion-icon name="rocket-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
             case "leaf":
-                cardIconName = "leaf-outline";
+                cardIconName = '<ion-icon name="leaf-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
             case "planet":
-                cardIconName = "planet-outline";
+                cardIconName = '<ion-icon name="planet-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
             case "earth":
-                cardIconName = "earth-outline";
+                cardIconName = '<ion-icon name="earth-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
             case "heartbeat":
-                cardIconName = "fitness-outline";
+                cardIconName = '<ion-icon name="fitness-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
+                break;
+            case "whichjobs":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/588287b6-f205-4349-ba65-f.svg" class="cc-card-icon-svg-blue"></span>';
+                break;
+            case "whywork":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/b53c67e9-fa12-439c-9371-e.svg" class="cc-card-icon-svg-blue"></span>';
+                break;
+            case "whois":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/03f25668-fe80-4089-99f3-c.svg" class="cc-card-icon-svg-blue"></span>';
+                break;
+            case "future":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/d6358431-65ea-4005-8cbc-0.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "unique":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/03585d6f-897c-42fb-9222-4.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "difference":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/f3f571b6-7058-4a10-b775-5.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "workexperience":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/ae5c9ea5-2426-486b-84dc-f.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "mobility":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/f0fb2fa6-67c7-4d61-9df0-1.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "instore":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/345b7036-5fc8-4e9c-8a24-8.svg" class="cc-card-icon-svg-red"></span>';
                 break;
             default:
-                cardIconName = "heart-circle-outline";
+                cardIconName = '<ion-icon name="heart-circle-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
         }
-        let cardIconElement = '<div class="cc-card-icon-corner"><ion-icon name="'+cardIconName+'" aria-hidden="true" class="cc-card-icon"></ion-icon></div>';
+        let cardIconElement = '<div class="cc-card-icon-corner">'+cardIconName+'</div>';
 
         let cardAppear = '';
         switch (this.cardAppearOnScroll) {
@@ -637,6 +664,14 @@ class Card extends HTMLElement {
             case "white":
                 elementCard.classList.add('cc-card-clr-white');
                 elementCardCorner.classList.add('cc-card-corner-clr-white');
+                break;
+            case "passion-white-corner":
+                elementCard.classList.add('cc-card-clr-passion');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "white-white-corner":
+                elementCard.classList.add('cc-card-clr-white');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
                 break;
             default:
                 elementCard.classList.add('cc-card-clr-passion');
