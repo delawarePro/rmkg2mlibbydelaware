@@ -964,8 +964,8 @@ header .cc-header-search {
     z-index: -1;
     top: -16px;
     right: -16px;
-    height: 32px;
-    width: 32px;
+    height: 50px;
+    width: 50px;
     border-radius: 32px;
     transform: scale(1);
     transform-origin: 50% 50%;
