@@ -498,7 +498,7 @@ templateCard.innerHTML = `
 
 class Card extends HTMLElement {
     static get observedAttributes() {
-        return['card-title','card-content','card-color','card-icon', 'card-appear', 'card-appear-delay'];
+        return['card-title','card-content','card-color','card-icon', 'card-appear', 'card-appear-delay','card-size'];
     }
 
     get cardTitle() {
@@ -523,6 +523,10 @@ class Card extends HTMLElement {
 
     get cardAppearOnScrollDelay() {
         return this.getAttribute("card-appear-delay");
+    }
+
+    get cardSize() {
+        return this.getAttribute("card-size");
     }
 
     constructor() {
@@ -629,11 +633,25 @@ class Card extends HTMLElement {
                 cardAppearDelay = '';
                 break;
         }
+
+        let setCardSize = '';
+        switch (this.cardSize) {
+            case "large":
+                setCardSize = 'cc-card-large'
+                break;
+            case "x-large":
+                setCardSize = 'cc-card-x-large'
+                break;
+            default:
+                setCardSize = '';
+                break; 
+        }
         
         let elementCardWrapper = document.createElement('div');
 
         let elementCard = document.createElement('div');
         elementCard.classList.add('cc-card');
+        if (setCardSize != '') elementCard.classList.add(setCardSize);
         
         if (cardAppear != '') elementCard.classList.add(cardAppear);
         if (cardAppearDelay != '') elementCard.classList.add(cardAppearDelay);
