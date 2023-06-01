@@ -498,7 +498,7 @@ templateCard.innerHTML = `
 
 class Card extends HTMLElement {
     static get observedAttributes() {
-        return['card-title','card-content','card-color','card-icon'];
+        return['card-title','card-content','card-color','card-icon', 'card-appear', 'card-appear-delay'];
     }
 
     get cardTitle() {
@@ -515,6 +515,14 @@ class Card extends HTMLElement {
 
     get cardIcon() {
         return this.getAttribute("card-icon");
+    }
+
+    get cardAppearOnScroll() {
+        return this.getAttribute("card-appear");
+    }
+
+    get cardAppearOnScrollDelay() {
+        return this.getAttribute("card-appear-delay");
     }
 
     constructor() {
@@ -551,11 +559,58 @@ class Card extends HTMLElement {
         }
         let cardIconElement = '<div class="cc-card-icon-corner"><ion-icon name="'+cardIconName+'" aria-hidden="true" class="cc-card-icon"></ion-icon></div>';
 
+        let cardAppear = '';
+        switch (this.cardAppearOnScroll) {
+            case "default":
+                cardAppear = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                cardAppear = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                cardAppear = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                cardAppear = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                cardAppear = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                cardAppear = '';
+                break;
+        }
+        
+        let cardAppearDelay = '';
+        switch (this.cardAppearOnScrollDelay) {
+            case "200ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-200ms';
+                break;
+            case "400ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-400ms';
+                break;
+            case "600ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-600ms';
+                break;
+            case "800ms":
+                cardAppearDelay = 'cc-show-on-scroll-delay-800ms';
+                break;
+            case "1s":
+                cardAppearDelay = 'cc-show-on-scroll-delay-1s';
+                break;
+            default:
+                cardAppearDelay = '';
+                break;
+        }
+        
         let elementCardWrapper = document.createElement('div');
 
         let elementCard = document.createElement('div');
         elementCard.classList.add('cc-card');
         
+        if (cardAppear != '') elementCard.classList.add(cardAppear);
+        if (cardAppearDelay != '') elementCard.classList.add(cardAppearDelay);
+
         let elementCardTitle = document.createElement('h3');
         elementCardTitle.innerHTML = this.cardTitle;
         elementCard.appendChild(elementCardTitle);
