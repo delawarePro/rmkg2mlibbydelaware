@@ -549,7 +549,7 @@ class Card extends HTMLElement {
                 cardIconName = "heart-circle-outline";
                 break;
         }
-        let cardIconElement = '<div class="cc-card-icon-corner"><ion-icon name="'+cardIconName+'" aria-hidden="true"></ion-icon></div>';
+        let cardIconElement = '<div class="cc-card-icon-corner"><ion-icon name="'+cardIconName+'" aria-hidden="true" class="cc-card-icon"></ion-icon></div>';
 
         let elementCardWrapper = document.createElement('div');
 
