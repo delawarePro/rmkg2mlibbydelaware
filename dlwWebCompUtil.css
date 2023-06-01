@@ -929,6 +929,10 @@ header .cc-header-search {
     overflow: hidden;
   }
 
+  .cc-card.cc-card-medium {
+    min-height: 365px;
+  }
+
   .cc-card.cc-card-large {
     min-height: 585px;
   }
@@ -1841,6 +1845,11 @@ header .cc-header-search {
   height: 410px;
   max-height: 410px;
   max-width: 1440px;
+}
+
+.cc-content-page-banner-image-svg {
+  background-size: auto;
+  max-width: 100%;
 }
 
 /**/
