@@ -885,6 +885,10 @@ header .cc-header-search {
     background-color: rgba(var(--clr-color-1),1);
   }
 
+  .cc-card-corner-clr-white-2 {
+    background-color: rgba(var(--clr-color-white),1);
+  }
+
   .cc-card-corner-clr-nightsky,
   .cc-card-corner-clr-dark {
     background-color: rgba(var(--clr-color-2),1);
@@ -897,6 +901,18 @@ header .cc-header-search {
 
   .cc-card-icon {
     font-size: 4em;
+  }
+
+  .cc-card-icon-svg-red {
+    height: 75px;
+    width: 75px;
+    transform: translate(-5px, -5px);
+  }
+
+  .cc-card-icon-svg-blue {
+    height: 85px;
+    width: 85px;
+    transform: translate(0px, 0px);
   }
   
   .cc-card {
