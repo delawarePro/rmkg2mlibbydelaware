@@ -2063,6 +2063,11 @@ header .cc-header-search {
     height: 410px;
   }
 
+  .cc-content-page-banner-image-svg {
+    height: 310px;
+    max-height: 310px;
+  }
+
   .cc-search-form-page {
     flex-direction: row;
     align-items: center;
