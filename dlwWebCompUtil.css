@@ -930,15 +930,15 @@ header .cc-header-search {
   }
 
   .cc-card.cc-card-medium {
-    min-height: 365px;
+    min-height: 325px;
   }
 
   .cc-card.cc-card-large {
-    min-height: 585px;
+    min-height: 530px;
   }
 
   .cc-card.cc-card-x-large {
-    min-height: 650px;
+    min-height: 605px;
   }
 
   .cc-card p {
