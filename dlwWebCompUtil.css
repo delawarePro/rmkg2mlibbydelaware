@@ -918,7 +918,7 @@ header .cc-header-search {
   .cc-card {
     display: block;
     position: relative;
-    max-width: 300px;
+    max-width: 350px;
     min-height: 325px;
     border-radius: 4px;
     padding: 32px 24px;
