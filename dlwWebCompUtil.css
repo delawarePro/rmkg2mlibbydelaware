@@ -802,70 +802,7 @@ header .cc-header-search {
       transform: scale(1);
     }
   }
-  
-  
-  .cc-heartbeat {
-    color: rgba(var(--clr-color-1),1);
-    font-size: 2em;
-  }
-  
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  .animate__fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-    -webkit-animation-delay: 1.3s;
-    animation-delay: 1.3s;
-  }
-  
-  @-webkit-keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  .animate__fadeInLeft {
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-  }
-
-
+    
   /*card layout*/
  .cc-card-corner {
     display: flex;
