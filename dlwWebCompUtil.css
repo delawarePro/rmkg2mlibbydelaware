@@ -872,8 +872,8 @@ header .cc-header-search {
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     overflow: hidden;
     top: 0;
     right: 0;
@@ -1987,7 +1987,7 @@ header .cc-header-search {
   }  
 
   .cc-card-icon {
-    font-size: 6em;
+    font-size: 3em;
   }
 
   footer {
