@@ -904,9 +904,9 @@ header .cc-header-search {
   }
 
   .cc-card-icon-svg-red {
-    height: 75px;
-    width: 75px;
-    transform: translate(-5px, -5px);
+    height: 60px;
+    width: 60px;
+    transform: translate(-2px, 0px);
   }
 
   .cc-card-icon-svg-blue {
