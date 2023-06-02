@@ -1472,7 +1472,7 @@ header .cc-header-search {
 .cc-background-curved-video-right {
   position: absolute;
   margin: 20px 0 0 5% !important;
-  height: 300px;
+  height: 275px;
   width: 90%;
   border-radius: 0 140px 0;
   background: rgba(var(--clr-color-1), 0.1);
@@ -2081,7 +2081,7 @@ header .cc-header-search {
 
   .cc-background-curved-video-left {
     margin: 20px 0 0 5% !important;
-    height: 25%;
+    height: 275px;
     width: 75%;
   }
 
