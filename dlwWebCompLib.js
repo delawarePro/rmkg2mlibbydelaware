@@ -557,6 +557,15 @@ class Card extends HTMLElement {
             case "heartbeat":
                 cardIconName = '<ion-icon name="fitness-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
+            case "flash":
+                cardIconName = '<ion-icon name="flash-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
+                break;
+            case "ribbon":
+                cardIconName = '<ion-icon name="ribbon-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
+                break;
+            case "diamond":
+                cardIconName = '<ion-icon name="diamond-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
+                break;
             case "whichjobs":
                 cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/588287b6-f205-4349-ba65-f.svg" class="cc-card-icon-svg-blue"></span>';
                 break;
