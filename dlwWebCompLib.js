@@ -175,7 +175,7 @@ templateHeroBannerHome.innerHTML = `
 
 class HeroBannerHome extends HTMLElement {
     static get observedAttributes() {
-        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target','hero-image-appear','hero-content-appear'];
+        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target','hero-image-appear','hero-content-appear','hero-content-title'];
     }
 
     get heroImageDesktop() {
@@ -188,6 +188,10 @@ class HeroBannerHome extends HTMLElement {
 
     get heroContentBg() {
         return this.getAttribute("hero-content-bg");
+    }
+
+    get heroContentTitle() {
+        return this.getAttribute("hero-content-title");
     }
 
     get heroContentBigTitle() {
@@ -274,11 +278,7 @@ class HeroBannerHome extends HTMLElement {
         
         let elementHeroHomeContentBox = document.createElement('div');
         elementHeroHomeContentBox.classList.add('cc-hero-home-content-box');
-        if (this.heroContentBg == 'true') {
-            let elementBackground = document.createElement('div');
-            elementBackground.classList.add('cc-background-curved-2');
-            elementHeroHomeContentBox.appendChild(elementBackground);
-        }
+        
         let elementHeroHomeTitleWrapper = document.createElement('div');
         elementHeroHomeTitleWrapper.classList.add('cc-hero-home-content-box-title-wrap');
         let contentAppear = '';
@@ -306,14 +306,11 @@ class HeroBannerHome extends HTMLElement {
             elementHeroHomeTitleWrapper.classList.add(contentAppear);
             elementHeroHomeTitleWrapper.classList.add('cc-show-on-scroll-delay-400ms');
         }
-        let elementHeroHomeBigTitle = document.createElement('span');
-        elementHeroHomeBigTitle.classList.add('cc-hero-home-content-big-title');
-        elementHeroHomeBigTitle.innerHTML = this.heroContentBigTitle;
-        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeBigTitle);
-        let elementHeroHomeSubTitle = document.createElement('span');
-        elementHeroHomeSubTitle.classList.add('cc-hero-home-content-sub-title');
-        elementHeroHomeSubTitle.innerHTML = '<div>' + this.heroContentSubTitle + '</div>';
-        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeSubTitle);
+        let elementHeroHomeTitle = document.createElement('span');
+        elementHeroHomeTitle.classList.add('cc-hero-home-content-title');
+        elementHeroHomeTitle.innerHTML = this.heroContentTitle;
+        elementHeroHomeTitleWrapper.appendChild(elementHeroHomeTitle);
+        
         let elementHeroHomeText = document.createElement('p');
         elementHeroHomeText.classList.add('cc-hero-home-content-text');
         elementHeroHomeText.innerHTML = this.heroContentText;
@@ -1055,12 +1052,6 @@ class VideoText extends HTMLElement {
 
         let elVideoText = document.createElement('div');
         elVideoText.classList.add('cc-video-wrapper');
-
-        if (this.videoAddBackground == 'true') {
-            let elVideoBackground = document.createElement('div');
-            elVideoBackground.classList.add('cc-background-curved-video-left');
-            elVideoText.appendChild(elVideoBackground);
-        }
 
         let videoAppearMode = '';
         switch (this.videoAppear) {
