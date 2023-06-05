@@ -1809,6 +1809,10 @@ header .cc-header-search {
   text-indent: 0;
 }
 
+.quickApply .outershell {
+  transform: translate(20%, 100px);
+}
+
 .rcmFormSectionContent .addAttachments {
   margin: 7px 0 0 65px !important;
 }
