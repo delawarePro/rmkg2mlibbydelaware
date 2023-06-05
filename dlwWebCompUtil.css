@@ -1761,6 +1761,7 @@ header .cc-header-search {
   margin-bottom: 2px !important;
   margin-left: 4px !important;
   transition: all .60s ease;
+  cursor: pointer;
 }
 
 .cc-cta-button-search:hover,
