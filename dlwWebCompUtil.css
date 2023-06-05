@@ -1813,6 +1813,11 @@ header .cc-header-search {
   padding-top: 100px;
 }
 
+.quickApply .innershell {
+  max-width: 1200px !important;
+  transform: translateX(50%);
+}
+
 .rcmFormSectionContent .addAttachments {
   margin: 7px 0 0 65px !important;
 }
