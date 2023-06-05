@@ -1275,6 +1275,10 @@ header .cc-header-search {
   padding: 100px 20% 0 20%;
 }
 
+.back-to-search-wrapper {
+  padding-top: 100px;
+}
+
 .job-page #innershell {
   padding-top: 100px;
 }
