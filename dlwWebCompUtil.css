@@ -1271,9 +1271,20 @@ header .cc-header-search {
 }
 
 /*search result & job detail page*/
-.search-page .inner,
+.search-page .inner{
+  padding: 100px 20% 0 20%;
+}
+
+.job-page #innershell {
+  padding-top: 100px;
+}
+
 .job-page .inner {
-  padding: 10vh 20% 0 20%;
+  padding: 0 10% 0 10%;
+}
+
+.job-page #back-to-search {
+  padding-left: 11%
 }
 
 .search-page #noresults {
