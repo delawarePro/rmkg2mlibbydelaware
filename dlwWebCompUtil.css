@@ -1800,7 +1800,21 @@ header .cc-header-search {
   max-height: 310px;
 }
 
-/**/
+/*apply page*/
+#rcmQuickApplyMenu {
+  display: none;
+}
+
+.quickApply ul {
+  text-indent: 0;
+}
+
+.rcmFormSectionContent .addAttachments {
+  margin: 7px 0 0 65px !important;
+}
+
+
+/*media queries*/
 
 @media (min-width: 280px) {
   .cc-hero-home-content-box-title-wrap {
