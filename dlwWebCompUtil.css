@@ -1815,7 +1815,6 @@ header .cc-header-search {
 
 .quickApply .innershell {
   max-width: 1200px !important;
-  transform: translateX(50%);
 }
 
 .rcmFormSectionContent .addAttachments {
