@@ -1809,8 +1809,8 @@ header .cc-header-search {
   text-indent: 0;
 }
 
-.quickApply .innershell {
-  max-width: 1200px;
+.quickApply .outershell {
+  padding-top: 100px;
 }
 
 .rcmFormSectionContent .addAttachments {
