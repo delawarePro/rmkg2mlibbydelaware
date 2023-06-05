@@ -1652,10 +1652,20 @@ header .cc-header-search {
 .cc-hero-home-content-box-title-wrap {
   position: absolute;
   top: 25%;
-  left: -10%;
   margin: 0;
   display: inline-block;
   text-align: right;
+}
+
+.cc-hero-home-content-title {
+  font-size: 2.5em;
+  line-height: 1.05;
+  font-weight: var(--fw-700);
+  color:rgba(var(--clr-color-1), 1);
+}
+
+.cc-text-larger {
+  font-size: 2em;
 }
 
 .cc-hero-home-content-big-title {
@@ -1888,6 +1898,7 @@ header .cc-header-search {
     position: absolute;
     text-align: right;
     padding: 0;
+    right: 10%;
   }
 
   .cc-background-curved-2 {
@@ -1979,10 +1990,6 @@ header .cc-header-search {
     height: 410px;
   }
 
-  .cc-hero-home-content-box-title-wrap {
-    left: -20%;
-  }
-
   .cc-hero-home-content-big-title {
     font-size: 7.5em;
   }
@@ -2041,10 +2048,6 @@ header .cc-header-search {
     width: calc((100vw - 1176px)/2 + 543px) !important;
   }
 
-  .cc-hero-home-content-box-title-wrap {
-    left: -15%;
-  }
-
   .cc-hero-home-content-big-title {
     font-size: 9em;
   }
@@ -2067,7 +2070,6 @@ header .cc-header-search {
 
   .cc-hero-home-content-box-title-wrap {
     top: 30%;
-    left: -10%;
   }
 
   .cc-hero-home-content-big-title {
