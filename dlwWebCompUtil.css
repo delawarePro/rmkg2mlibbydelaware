@@ -15,6 +15,7 @@
   --clr-color-8: 242,125,169; /*tender*/
   --clr-color-9: 255,194,14; /*sunlight*/
   --clr-color-10: 235,95,14; /*sundown*/
+  --clr-color-11: 0,168,215; /*commitment*/
   --clr-color-dark: 23,64,92; /*nightsky*/
   --clr-color-white: 255,255,255; /*white*/
   --clr-color-accent: 245,245,245; /*lightgray*/
@@ -922,6 +923,10 @@ header .cc-header-search {
     background-color: rgba(var(--clr-color-10),0.1);
   }
 
+  .cc-card-clr-commitment {
+    background-color: rgba(var(--clr-color-11),0.1);
+  }
+
   .cc-card-clr-white,
   .cc-card-clr-dark {
     background-color: rgba(var(--clr-color-white),1);
@@ -991,6 +996,10 @@ header .cc-header-search {
 
   .cc-card-clr-sundown:before {
     background-color: rgba(var(--clr-color-10),1);
+  }
+
+  .cc-card-clr-commitment:before {
+    background-color: rgba(var(--clr-color-11),1);
   }
 
   .cc-card:hover:before {
