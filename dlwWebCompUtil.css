@@ -436,7 +436,7 @@ footer {
 }
 
 .cc-logo-img {
-    width: 80%;
+    width: 70%;
     display: inline-block;
 }
 
@@ -1178,11 +1178,6 @@ header .cc-header-search {
   header, 
   .cc-header {
       padding: 20px 5%;
-  }
-
-  .cc-logo-img {
-      width: 100%;
-      display: inline-block;
   }
 
   .cc-section {
