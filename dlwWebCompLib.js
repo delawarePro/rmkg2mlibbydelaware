@@ -747,6 +747,10 @@ class Card extends HTMLElement {
                 elementCard.classList.add('cc-card-clr-sunlight');
                 elementCardCorner.classList.add('cc-card-corner-clr-white-2');
                 break;
+            case "commitment":
+                elementCard.classList.add('cc-card-clr-commitment');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
             default:
                 elementCard.classList.add('cc-card-clr-passion');
                 elementCardCorner.classList.add('cc-card-corner-clr-passion');
