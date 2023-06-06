@@ -715,6 +715,38 @@ class Card extends HTMLElement {
                 elementCard.classList.add('cc-card-clr-white');
                 elementCardCorner.classList.add('cc-card-corner-clr-white-2');
                 break;
+            case "sundown":
+                elementCard.classList.add('cc-card-clr-sundown');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "basic":
+                elementCard.classList.add('cc-card-clr-basic');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "daylight":
+                elementCard.classList.add('cc-card-clr-daylight');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "future":
+                elementCard.classList.add('cc-card-clr-future');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "ocean":
+                elementCard.classList.add('cc-card-clr-ocean');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "aubergine":
+                elementCard.classList.add('cc-card-clr-aubergine');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "tender":
+                elementCard.classList.add('cc-card-clr-tender');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
+            case "sunlight":
+                elementCard.classList.add('cc-card-clr-sunlight');
+                elementCardCorner.classList.add('cc-card-corner-clr-white-2');
+                break;
             default:
                 elementCard.classList.add('cc-card-clr-passion');
                 elementCardCorner.classList.add('cc-card-corner-clr-passion');
