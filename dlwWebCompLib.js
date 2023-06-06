@@ -590,6 +590,21 @@ class Card extends HTMLElement {
             case "instore":
                 cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/345b7036-5fc8-4e9c-8a24-8.svg" class="cc-card-icon-svg-red"></span>';
                 break;
+            case "courage":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/27cb2828-c5b1-41f0-8e59-4.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "commitment":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/3e78f3db-dec9-4d52-ae11-5.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "customer":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/44c8d6dc-7032-433b-9987-7.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "care":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/fc4fc0c3-134b-469b-899c-5.svg" class="cc-card-icon-svg-red"></span>';
+                break;
+            case "collaboration":
+                cardIconName = '<span class="cc-card-icon-svg"><img src="https://rmkcdn.successfactors.com/67fb2e9b/32160017-72d5-4c6f-a626-b.svg" class="cc-card-icon-svg-red"></span>';
+                break;
             default:
                 cardIconName = '<ion-icon name="heart-circle-outline" aria-hidden="true" class="cc-card-icon"></ion-icon>';
                 break;
