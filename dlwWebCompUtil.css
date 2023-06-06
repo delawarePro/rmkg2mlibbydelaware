@@ -1746,14 +1746,14 @@ header .cc-header-search {
 }
 
 .cc-hero-home-content-title {
-  font-size: 3.5em;
+  font-size: 2.5em;
   line-height: 1.05;
   font-weight: var(--fw-700);
   color:rgba(var(--clr-color-1), 1);
 }
 
 .cc-text-larger {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .cc-hero-home-content-big-title {
@@ -2009,6 +2009,14 @@ header .cc-header-search {
   .cc-hero-home-image-mobile,
   .cc-content-page-banner-image {
     height: 284px;
+  }
+
+  .cc-hero-home-content-title {
+    font-size: 3.5em;
+  }
+  
+  .cc-text-larger {
+    font-size: 2em;
   }
 
   .cc-hero-home-content-big-title {
