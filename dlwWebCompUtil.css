@@ -1291,24 +1291,6 @@ header .cc-header-search {
     top: 22px;
   }
 
-  .cc-mobile-menu-toggle {
-      position: absolute !important;
-      display: block !important;
-      font-size: 1.5em !important;
-      cursor: pointer !important;
-      z-index: 10 !important;
-      transition: 0.5s;
-  }
-
-  .cc-mobile-menu-close {
-      position: absolute !important;
-      display: block !important;
-      font-size: 1.5em !important;
-      cursor: pointer !important;
-      z-index: 10 !important;
-      transition: 0.5s;
-  }
-
   .hide {
       display: none !important;
   }  
@@ -1322,6 +1304,27 @@ header .cc-header-search {
   .cc-card {
     max-width: 100%;
   }
+}
+
+@media (max-width: 1221px) {
+  .cc-mobile-menu-toggle {
+    position: absolute !important;
+    display: block !important;
+    font-size: 1.5em !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: 0.5s;
+}
+
+.cc-mobile-menu-close {
+    position: absolute !important;
+    display: block !important;
+    font-size: 1.5em !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: 0.5s;
+}
+
 }
 
 /*cookie modal*/
@@ -1878,28 +1881,6 @@ header .cc-header-search {
   max-width: 100%;
   max-height: 310px;
 }
-
-/*apply page*/
-#rcmQuickApplyMenu {
-  display: none;
-}
-
-.quickApply ul {
-  text-indent: 0;
-}
-
-.quickApply .outershell {
-  padding-top: 100px;
-}
-
-.quickApply .innershell {
-  max-width: 1200px !important;
-}
-
-.rcmFormSectionContent .addAttachments {
-  margin: 7px 0 0 65px !important;
-}
-
 
 /*media queries*/
 
