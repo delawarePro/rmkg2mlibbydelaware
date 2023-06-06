@@ -1295,6 +1295,24 @@ header .cc-header-search {
       font-size: 1.25rem !important;
   }
 
+  .cc-mobile-menu-toggle {
+    position: absolute !important;
+    display: block !important;
+    font-size: 1.5em !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: 0.5s;
+  }
+
+  .cc-mobile-menu-close {
+      position: absolute !important;
+      display: block !important;
+      font-size: 1.5em !important;
+      cursor: pointer !important;
+      z-index: 10 !important;
+      transition: 0.5s;
+  }
+
   .cc-search-btn {
     left: 0 !important;
     top: 22px;
@@ -1315,26 +1333,6 @@ header .cc-header-search {
   }
 }
 
-@media (max-width: 1221px) {
-  .cc-mobile-menu-toggle {
-    position: absolute !important;
-    display: block !important;
-    font-size: 1.5em !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    transition: 0.5s;
-}
-
-.cc-mobile-menu-close {
-    position: absolute !important;
-    display: block !important;
-    font-size: 1.5em !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    transition: 0.5s;
-}
-
-}
 
 /*cookie modal*/
 .modal.in .modal-dialog {
