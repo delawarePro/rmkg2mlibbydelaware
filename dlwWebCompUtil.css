@@ -2187,6 +2187,42 @@ header .cc-header-search {
   }
 }
 
+/*search tags*/
+.cc-tag-link a {
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+.cc-tag {
+  display: inline-block;
+  border-radius: 3px;
+  padding: .2em .5em .3em;
+  border-radius: 2px;
+  background: rgba(var(--clr-color-1),1);
+  color: rgba(var(--clr-color-white),1);
+  font-weight: 600;
+  margin: .1em .1em !important;
+  transition: 0.5s ease-in-out;
+}
+
+.cc-tag-link a:hover,
+.cc-tag:hover {
+  background: rgba(var(--clr-color-3),1);
+}
+
+.cc-tag-sm {
+  font-size: .7em;
+  display: inline-block;
+  letter-spacing: .15ch;
+  font-weight: 400
+}
+
+.cc-tag-lg {
+  font-size: 1.2em;
+  border-radius: 4px
+}
+
 /*footer fa icons*/
 .social-icon .fa {
   height: 24px;
