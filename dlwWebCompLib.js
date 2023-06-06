@@ -456,7 +456,7 @@ customElements.define('cc-search', SearchForm);
 
 
 /* web component for Hero Banner Image */
-const heroElement = document.querySelector("hero-banner");
+let heroElement = document.querySelector("hero-banner");
 if (heroElement) {
   const hbHeight = heroElement.dataset.imgHeight;
   const hbUrl = heroElement.dataset.imgUrl;
@@ -466,7 +466,7 @@ if (heroElement) {
   heroElement.style.setProperty("--bg-hero-banner-image-position", hbPosition);
 }
 
-const templateHeroBanner = document.createElement('template');
+let templateHeroBanner = document.createElement('template');
 templateHeroBanner.innerHTML = `
 <style>
     .hero-banner-image {
@@ -1281,6 +1281,46 @@ class ContentBanner extends HTMLElement {
 }
 
 customElements.define('cc-contentbanner', ContentBanner);
+
+
+/* search tag component */
+let templateSearchTags = document.createElement('template');
+templateSearchTags.setAttribute('id','cc-search-tags');
+templateSearchTags.innerHTML = `
+<slot></slot>
+`;
+
+class SearchTags extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderSearchTags();
+        shadow.append(templateSearchTags.content.cloneNode(true))
+    }
+
+    renderSearchTags() {
+        let elSearchTagsWrapper = document.createElement('div');
+        arrFunctionCat.forEach((searchTag) => {
+            let elementSearchTagLink = document.createElement('a');
+            elementSearchTagLink.classList.add('cc-tag-link');
+            let elementSearchTagSpan = document.createElement('span');
+            elementSearchTagSpan.classList.add('cc-tag');
+            elementSearchTagSpan.classList.add('cc-tag-lg');
+            elementSearchTagSpan.innerText = '#' + searchTag;
+            elementSearchTagLink.appendChild(elementSearchTagSpan);
+
+            elementSearchTagLink.href = 'search/?optionsFacetsDD_department='+ encodeURI(searchTag);
+            elementSearchTagLink.title = searchTag;
+            elementSearchTagLink.target = '_self';
+
+            elSearchTagsWrapper.appendChild(elementSearchTagLink);
+        });
+
+        this.innerHTML = elSearchTagsWrapper.innerHTML;
+    }
+}
+customElements.define('cc-searchtags', SearchTags);
+
 
 /*show on scroll*/
 const observer = new IntersectionObserver((entries) => {
