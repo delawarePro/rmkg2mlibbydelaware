@@ -2132,6 +2132,8 @@ header .cc-header-search {
   }
 }
 
-
-
-/*hero-banner content page*/
+/*footer fa icons*/
+.social-icon .fa {
+  height: 24px;
+  font-size: 24px;
+}
