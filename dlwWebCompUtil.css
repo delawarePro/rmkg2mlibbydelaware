@@ -1773,7 +1773,7 @@ header .cc-header-search {
   color: rgba(var(--clr-color-2), 1);
   font-weight: var(--fw-700);
   padding-top: 10px;
-  font-size: 1.2em;
+  font-size: 2em;
 }
 
 .cc-hero-home-content-link {
@@ -1993,7 +1993,7 @@ header .cc-header-search {
     position: absolute;
     text-align: right;
     padding: 0;
-    right: 10%;
+    right: 15%;
   }
 
   .cc-background-curved-2 {
