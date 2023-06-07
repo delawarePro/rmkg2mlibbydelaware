@@ -520,11 +520,10 @@ header .cc-header-search {
     padding-inline: 2.5%; 
     border: none;
     outline: none;
-    height: 100px;
+    height: 99px;
     color: rgba(var(--clr-color-black),0.7);
     font-size: 1.25rem;
     background: rgba(var(--clr-color-white),1);
-    border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
     padding-top: 15px;
 }
 
