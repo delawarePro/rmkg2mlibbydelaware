@@ -1290,6 +1290,13 @@ templateSearchTags.innerHTML = `
 <slot></slot>
 `;
 
+let searchTagsTitle = ccSearchTagsTitleDutch;
+switch (languageToken) {
+  case "fr":
+    searchTagsTitle = ccSearchTagsTitleFrench;
+    break;
+}
+
 class SearchTags extends HTMLElement {
     constructor() {
         super();
@@ -1300,6 +1307,11 @@ class SearchTags extends HTMLElement {
 
     renderSearchTags() {
         let elSearchTagsWrapper = document.createElement('div');
+        let elSearchTagsTitle = document.createElement('h2');
+        elSearchTagsTitle.classList.add('cc-search-tags-title');
+        elSearchTagsTitle.innerText = searchTagsTitle;
+        elSearchTagsWrapper.appendChild(elSearchTagsTitle);
+
         arrFunctionCat.forEach((searchTag) => {
             let elementSearchTagLink = document.createElement('a');
             elementSearchTagLink.classList.add('cc-tag-link');
