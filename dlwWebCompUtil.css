@@ -1266,8 +1266,25 @@ header .cc-header-search {
       padding-top: 100px !important;
   }
 
+  .cc-search-btn {
+    left: 0 !important;
+    top: 22px;
+  }
+
+  .cc-img-wrap:before {
+      content: ' ';
+      background-image: none;
+  }
+
+  /* card */
+  .cc-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1180px) {
   .cc-search-box {
-      padding: 0 5%;
+    padding: 0 5%;
   }
 
   .cc-header .cc-header-navigation {
@@ -1313,23 +1330,8 @@ header .cc-header-search {
       transition: 0.5s;
   }
 
-  .cc-search-btn {
-    left: 0 !important;
-    top: 22px;
-  }
-
   .hide {
-      display: none !important;
-  }  
-  
-  .cc-img-wrap:before {
-      content: ' ';
-      background-image: none;
-  }
-
-  /* card */
-  .cc-card {
-    max-width: 100%;
+    display: none !important;
   }
 }
 
