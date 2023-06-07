@@ -1888,6 +1888,14 @@ header .cc-header-search {
 /*media queries*/
 
 @media (min-width: 280px) {
+  .cc-logo {
+    width: 40%;
+  }
+
+  .cc-logo-img {
+    width: 100%;
+  }
+
   .cc-hero-home-content-box-title-wrap {
     position: unset;
     text-align: left;
@@ -1997,6 +2005,14 @@ header .cc-header-search {
 }
 
 @media (min-width: 768px) {
+  .cc-logo {
+    width: 25%;
+  }
+
+  .cc-logo-img {
+    width: 70%;
+  }
+
   .cc-hero-home-image-box {
     height: auto;
     width: calc((100vw - 744px)/2 + 290px);
