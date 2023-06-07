@@ -1676,6 +1676,10 @@ header .cc-header-search {
   padding-bottom: 1em;
 }
 
+.cc-place-items-center {
+  place-items: center;
+}
+
 @media (min-width: 280px) {
   .grid {
     --column-count: 1;
