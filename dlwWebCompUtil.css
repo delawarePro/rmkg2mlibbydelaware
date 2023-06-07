@@ -2222,6 +2222,7 @@ header .cc-header-search {
 .cc-search-tags-title {
   border-top: 1px solid rgba(var(--clr-color-2), 0.2);
   padding-top: 10px;
+  margin-top: 75px !important;
 }
 
 /*footer fa icons*/
