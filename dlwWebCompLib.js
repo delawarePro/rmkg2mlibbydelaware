@@ -175,7 +175,7 @@ templateHeroBannerHome.innerHTML = `
 
 class HeroBannerHome extends HTMLElement {
     static get observedAttributes() {
-        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target','hero-image-appear','hero-content-appear','hero-content-title'];
+        return['hero-img-desktop','hero-img-mobile','hero-content-bg','hero-content-big-title', 'hero-content-sub-title', 'hero-content-text','hero-content-link','hero-content-link-title','hero-content-link-target','hero-image-appear','hero-content-appear','hero-content-title','beating-heart'];
     }
 
     get heroImageDesktop() {
@@ -224,6 +224,10 @@ class HeroBannerHome extends HTMLElement {
 
     get heroContentAppearOnScroll() {
         return this.getAttribute("hero-content-appear");
+    }
+
+    get heroBeatingHeart() {
+        return this.getAttribute("beating-heart");
     }
 
     constructor() {
@@ -309,6 +313,7 @@ class HeroBannerHome extends HTMLElement {
         let elementHeroHomeTitle = document.createElement('span');
         elementHeroHomeTitle.classList.add('cc-hero-home-content-title');
         elementHeroHomeTitle.innerHTML = this.heroContentTitle;
+        if (this.heroBeatingHeart) elementHeroHomeTitle.innerHTML += ' <ion-icon name="heart" class="cc-text-color-passion animate__animated animate__infinite animate__heartBeat"></ion-icon>';
         elementHeroHomeTitleWrapper.appendChild(elementHeroHomeTitle);
         
         let elementHeroHomeText = document.createElement('p');
