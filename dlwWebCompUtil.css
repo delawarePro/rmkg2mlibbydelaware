@@ -1360,6 +1360,7 @@ header .cc-header-search {
 
 .job-page #content .back-to-search-wrapper {
   padding-top: 120px;
+  padding-bottom: 20px;
 }
 
 .search-page #noresults {
