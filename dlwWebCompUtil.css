@@ -1362,7 +1362,7 @@ header .cc-header-search {
   padding-left: 6%
 }
 
-.job-page #content .inner {
+.job-page #content .inner:first-child {
   padding-top: 120px;
 }
 
