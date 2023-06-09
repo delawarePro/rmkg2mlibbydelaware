@@ -1363,7 +1363,7 @@ header .cc-header-search {
 }
 
 .job-page #content .content:first-child {
-  padding-top: 120px;
+  padding-top: 120px !important;
 }
 
 .job-page #content .back-to-search-wrapper {
