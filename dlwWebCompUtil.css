@@ -1362,8 +1362,11 @@ header .cc-header-search {
   padding-left: 6%
 }
 
-.job-page #content .back-to-search-wrapper {
+.job-page #content .inner {
   padding-top: 120px;
+}
+
+.job-page #content .back-to-search-wrapper {
   padding-bottom: 20px;
 }
 
