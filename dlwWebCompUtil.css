@@ -872,11 +872,11 @@ header .cc-header-search {
   }
 
   .cc-card.cc-card-large {
-    min-height: 530px;
+    min-height: 550px;
   }
 
   .cc-card.cc-card-x-large {
-    min-height: 630px;
+    min-height: 650px;
   }
 
   .cc-card p {
