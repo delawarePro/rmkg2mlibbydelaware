@@ -1017,7 +1017,11 @@ header .cc-header-search {
   }
 
   .cc-card-clr-white:hover p,
-  .cc-card-clr-dark:hover p {
+  .cc-card-clr-dark:hover p,
+  .cc-card-clr-white:hover ul,
+  .cc-card-clr-dark:hover ul,
+  .cc-card-clr-white:hover li,
+  .cc-card-clr-dark:hover li {
     transition: var(--card-transition);
     color: rgba(var(--clr-color-white),1);
   }
