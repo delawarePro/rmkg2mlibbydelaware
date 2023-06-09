@@ -1362,13 +1362,13 @@ header .cc-header-search {
   padding-left: 6%
 }
 
-.job-page #content .content:first-child:not(#content > div > div.back-to-search-wrapper.row-float) {
+#content > div > div.jobDisplayShell > div > div.content {
   padding-top: 120px;
 }
 
 #content > div > div.back-to-search-wrapper.row-float {
   padding-top: 120px;
-  padding-bottom: 20px;
+  margin-bottom: -100px !important;
 }
 
 .search-page #noresults {
