@@ -1338,6 +1338,54 @@ class SearchTags extends HTMLElement {
 }
 customElements.define('cc-searchtags', SearchTags);
 
+/*back link component*/
+let templateBackLink = document.createElement('template');
+templateBackLink.setAttribute('id','cc-back-link');
+templateBackLink.innerHTML = `
+<slot></slot>
+`;
+
+class BackLink extends HTMLElement {
+    static get observedAttributes() {
+        return['back-title'];
+    }
+
+    get backTitle() {
+        return this.getAttribute("back-title");
+    }
+    
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderBackLink();
+        shadow.append(templateBackLink.content.cloneNode(true))
+    }
+
+    renderBackLink() {
+        let elBackLinkWrapper = document.createElement('div');
+        elBackLinkWrapper.setAttribute('id','cc-back-link-wrapper');
+        let elBackLink = document.createElement('a');
+        
+        elBackLink.classList.add('cc-back-link');
+        let elBackLinkIcon = document.createElement('ion-icon');
+        elBackLinkIcon.classList.add('cc-back-link-icon');
+        elBackLinkIcon.setAttribute('name','arrow-back-circle-outline');
+        elBackLink.appendChild(elBackLinkIcon);
+
+        let elBackLinkText = document.createTextNode(this.backTitle);
+        elBackLink.appendChild(elBackLinkText);
+        
+        elBackLink.setAttribute('onclick','history.back();');
+        elBackLink.href = '#';
+        elBackLink.title = this.backTitle;
+        elBackLink.target = "_self";
+        
+        elBackLinkWrapper.appendChild(elBackLink);
+        this.innerHTML = elBackLinkWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-backlink', BackLink);
 
 /*show on scroll*/
 const observer = new IntersectionObserver((entries) => {
