@@ -1013,7 +1013,7 @@ header .cc-header-search {
 
   .cc-card-clr-white p,
   .cc-card-clr-dark p {
-    color: rgba(var(--clr-color-dark),1);
+    color: rgba(var(--clr-color-black),1);
   }
 
   .cc-card-clr-white:hover p,
