@@ -1316,7 +1316,8 @@ class SearchTags extends HTMLElement {
         elSearchTagsTitle.classList.add('cc-search-tags-title');
         elSearchTagsTitle.innerText = searchTagsTitle;
         elSearchTagsWrapper.appendChild(elSearchTagsTitle);
-
+        
+        arrFunctionCat.sort();
         arrFunctionCat.forEach((searchTag) => {
             let elementSearchTagLink = document.createElement('a');
             elementSearchTagLink.classList.add('cc-tag-link');
