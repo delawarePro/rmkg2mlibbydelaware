@@ -2261,18 +2261,18 @@ header .cc-header-search {
 }
 
 /*back link*/
-.cc-back-link {
+.outershell .cc-back-link {
   text-decoration: none;
   font-weight: var(--fw-700);
   color: rgba(var(--clr-color-2), 1) !important;
   transition: 0.5s ease-in-out !important;
 }
 
-.cc-back-link:hover {
+.outershell .cc-back-link:hover {
   color: rgba(var(--clr-color-1), 1) !important;
 }
 
-.cc-back-link-icon {
+.outershell .cc-back-link-icon {
   vertical-align: middle !important;
   font-size: 2em;
 }
