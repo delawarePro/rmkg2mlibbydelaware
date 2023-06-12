@@ -2275,6 +2275,7 @@ header .cc-header-search {
 .outershell .cc-back-link-icon {
   vertical-align: middle !important;
   font-size: 2em;
+  padding-right: 2px;
 }
 
 /*footer fa icons*/
