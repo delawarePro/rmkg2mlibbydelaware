@@ -2260,6 +2260,23 @@ header .cc-header-search {
   margin-top: 75px !important;
 }
 
+/*back link*/
+.cc-back-link {
+  text-decoration: none;
+  font-weight: var(--fw-700);
+  color: rgba(var(--clr-color-2), 1) !important;
+  transition: 0.5s ease-in-out !important;
+}
+
+.cc-back-link:hover {
+  color: rgba(var(--clr-color-1), 1) !important;
+}
+
+.cc-back-link-icon {
+  vertical-align: middle !important;
+  font-size: 2em;
+}
+
 /*footer fa icons*/
 .social-icon .fa {
   height: 24px;
