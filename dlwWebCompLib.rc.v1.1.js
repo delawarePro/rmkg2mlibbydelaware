@@ -1445,6 +1445,161 @@ const observerBottom = new IntersectionObserver((entries) => {
 let hiddenElementsBottom = document.querySelectorAll('.cc-hidden-on-scroll-bottom');
 hiddenElementsBottom.forEach((el) => observerBottom.observe(el));
 
+/* web component for Hero Banner with background video */
+let bannerXmlLang = "nl-NL";
+let bannerSearchLabel = ccSearchLabelDutch;
+let bannerSearchLabelBtn = ccSearchLabelBtnDutch;
+switch (languageToken) {
+    case "fr":
+        xmlLang = "fr-FR";
+        bannerSearchLabel = ccSearchLabelFrench;
+        bannerSearchLabelBtn = ccSearchLabelBtnFrench;
+        break;
+}
+
+
+let templateHeroBannerBg = document.createElement('template');
+templateHeroBannerBg.setAttribute('id','hero-banner-bg');
+templateHeroBannerBg.innerHTML = `
+<slot></slot>
+`;
+
+class HeroBannerBg extends HTMLElement {
+    static get observedAttributes() {
+        return['data-banner-title','data-banner-text','data-banner-search','data-banner-text-align', 'data-banner-video-url', 'data-banner-video-title', 'data-banner-video-id','data-banner-image-url','data-banner-image-title','data-banner-text-appear'];
+    }
+
+    get bannerTitle() {
+        return this.getAttribute("data-banner-title");
+    }
+
+    get bannerText() {
+        return this.getAttribute("data-banner-text");
+    }
+
+    get bannerSearch() {
+        return this.getAttribute("data-banner-search");
+    }
+
+    get bannerTextAlign() {
+        return this.getAttribute("data-banner-text-align");
+    }
+
+    get bannerVideoUrl() {
+        return this.getAttribute("data-banner-video-url");
+    }
+
+    get bannerVideoTitle() {
+        return this.getAttribute("data-banner-video-title");
+    }
+
+    get bannerVideoId() {
+        return this.getAttribute("data-banner-video-id");
+    }
+
+    get bannerImageUrl() {
+        return this.getAttribute("data-banner-image-url");
+    }
+
+    get bannerImageTitle() {
+        return this.getAttribute("data-banner-image-title");
+    }
+
+    get bannerTextAppear() {
+        return this.getAttribute("data-banner-text-appear");
+    }
+
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        this.renderHeroBannerBg();
+        shadow.append(templateHeroBannerHome.content.cloneNode(true))
+    }
+    
+    renderHeroBannerBg() {
+        let elementHeroBgWrapper = document.createElement('div');
+
+        let elementHeroBg = document.createElement('div');
+        elementHeroBg.classList.add('cc-hero-banner-bg');    
+
+        let elementHeroHBgTextBlock = document.createElement('div');
+        elementHeroHBgTextBlock.classList.add('cc-hero-banner-bg-text-block');
+        let textAppear = '';
+        switch (this.bannerTextAppear) {
+            case "default":
+                textAppear = 'cc-hidden-on-scroll';
+                break;
+            case "left":
+                textAppear = 'cc-hidden-on-scroll-left';
+                break;
+            case "right":
+                textAppear = 'cc-hidden-on-scroll-right';
+                break;
+            case "top":
+                textAppear = 'cc-hidden-on-scroll-top';
+                break;
+            case "bottom":
+                textAppear = 'cc-hidden-on-scroll-bottom';
+                break;
+            default:
+                textAppear = '';
+                break;
+        }
+        if (textAppear != '') elementHeroHBgTextBlock.classList.add(textAppear); 
+        
+        let elementHeroHBgTextBlockTitle = document.createElement('h1');
+        elementHeroHBgTextBlockTitle.innerHTML = this.bannerTitle;
+        elementHeroBg.appendChild(elementHeroHBgTextBlockTitle);
+
+        let elementHeroHBgTextBlockSearch = document.createElement('form');
+        elementHeroHBgTextBlockSearch.classList.add('cc-hero-banner-bg-form');
+        elementHeroHBgTextBlockSearch.setAttribute('name', 'keywordsearch');
+        elementHeroHBgTextBlockSearch.setAttribute('method', 'get');
+        elementHeroHBgTextBlockSearch.setAttribute('action', '/search/');
+        elementHeroHBgTextBlockSearch.setAttribute('xml:lang', bannerXmlLang);
+        elementHeroHBgTextBlockSearch.setAttribute('lang', bannerXmlLang);
+        elementHeroHBgTextBlockSearch.setAttribute('role', 'search');
+        
+        let elementHeroHBgTextBlockInput = document.createElement('input');
+        elementHeroHBgTextBlockInput.classList.add('cc-search-box-page-input');
+        elementHeroHBgTextBlockInput.setAttribute('type', 'text');
+        elementHeroHBgTextBlockInput.setAttribute('name', 'q');
+        elementHeroHBgTextBlockInput.setAttribute('maxlength', 50);
+        elementHeroHBgTextBlockInput.setAttribute('aria-label', bannerSearchLabel);
+        elementHeroHBgTextBlockInput.setAttribute('placeholder', bannerSearchLabel);
+        elementHeroHBgTextBlockSearch.appendChild(elementHeroHBgTextBlockInput);
+        
+        let elementHeroHBgTextBlockSubmit = document.createElement('a');
+        elementHeroHBgTextBlockSubmit.classList.add('cc-hero-banner-bg-btn');
+        let elementHeroHBgTextBlockSubmitText = document.createTextNode(bannerSearchLabelBtn);
+        elementHeroHBgTextBlockSubmit.appendChild(elementHeroHBgTextBlockSubmitText);
+        elementHeroHBgTextBlockSubmit.title = bannerSearchLabelBtn;
+        elementHeroHBgTextBlockSubmit.target = '_self';
+        elementHeroHBgTextBlockSubmit.setAttribute('onclick','submitCcSearch();');
+        elementHeroHBgTextBlockSearch.appendChild(elementHeroHBgTextBlockSubmit);
+
+        let elementHeroHBgVideo = document.createElement('div');
+        elementHeroHBgVideo.classList.add('cc-video-bg');
+        let elementHeroHBgVideoIframe = document.createElement('iframe');
+        elementHeroHBgVideoIframe.setAttribute('src', this.bannerVideoUrl+'?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0&playlist='+this.bannerVideoId);
+        elementHeroHBgVideoIframe.setAttribute('title',this.bannerVideoTitle);
+        elementHeroHBgVideoIframe.setAttribute('frameborder','0');
+        elementHeroHBgVideoIframe.setAttribute('allow','autoplay; encrypted-media;');
+        elementHeroHBgVideoIframe.setAttribute('width','100%');
+        elementHeroHBgVideoIframe.setAttribute('height','100%');
+        elementHeroHBgVideo.appendChild(elementHeroHBgVideoIframe);
+        
+        elementHeroBg.appendChild(elementHeroHBgTextBlockSearch);
+        elementHeroBg.appendChild(elementHeroHBgVideo);
+
+        elementHeroBgWrapper.appendChild(elementHeroBg);
+        this.innerHTML = elementHeroBgWrapper.innerHTML;
+    }
+}
+
+customElements.define('cc-herobannerbg', HeroBannerBg);
+
+/* Search */
 let searchBtn = document.querySelector(".cc-search-btn");
 let closeBtn = document.querySelector(".cc-close-btn");
 let searchBox = document.querySelector(".cc-search-box");
