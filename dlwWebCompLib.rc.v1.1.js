@@ -1737,72 +1737,74 @@ customElements.define('cc-carousel', Carousel);
 
 /* Carousel actions*/
 let wrapper = document.querySelector(".cc-carousel-wrapper");
-let carousel = document.querySelector(".cc-carousel");
-let firstCardWidth = carousel.querySelector(".cc-carousel-card").offsetWidth;
-let arrowBtns = document.querySelectorAll(".cc-carousel-nav");
-let carouselChildren = [...carousel.children];
+if (wrapper) {
+    let carousel = document.querySelector(".cc-carousel");
+    let firstCardWidth = carousel.querySelector(".cc-carousel-card").offsetWidth;
+    let arrowBtns = document.querySelectorAll(".cc-carousel-nav");
+    let carouselChildren = [...carousel.children];
 
-let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+    let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
-carouselChildren.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterBegin", card.outerHTML);
-});
-
-carouselChildren.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeEnd", card.outerHTML);
-});
-
-carousel.classList.add("cc-no-transition");
-carousel.scrollLeft = carousel.offsetWidth;
-carousel.classList.remove("cc-no-transition");
-
-arrowBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    carouselChildren.slice(-cardPerView).reverse().forEach(card => {
+        carousel.insertAdjacentHTML("afterBegin", card.outerHTML);
     });
-});
+
+    carouselChildren.slice(0, cardPerView).forEach(card => {
+        carousel.insertAdjacentHTML("beforeEnd", card.outerHTML);
+    });
+
+    carousel.classList.add("cc-no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("cc-no-transition");
+
+    arrowBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+        });
+    });
 
 
-let dragStart = (e) => {
-    isDragging = true;
-    carousel.classList.add("cc-carousel-dragging");
-    startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
-}
-let dragging = (e) => {
-    if(!isDragging) return;
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-}
-let dragStop = (e) => {
-    isDragging = false;
-    carousel.classList.remove("cc-carousel-dragging");
-}
-let infiniteScroll = (e) => {
-    if (carousel.scrollLeft === 0) {
-        carousel.classList.add("cc-no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("cc-no-transition");
+    let dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("cc-carousel-dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
     }
-    else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
-        carousel.classList.add("cc-no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("cc-no-transition");
+    let dragging = (e) => {
+        if(!isDragging) return;
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    }
+    let dragStop = (e) => {
+        isDragging = false;
+        carousel.classList.remove("cc-carousel-dragging");
+    }
+    let infiniteScroll = (e) => {
+        if (carousel.scrollLeft === 0) {
+            carousel.classList.add("cc-no-transition");
+            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+            carousel.classList.remove("cc-no-transition");
+        }
+        else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+            carousel.classList.add("cc-no-transition");
+            carousel.scrollLeft = carousel.offsetWidth;
+            carousel.classList.remove("cc-no-transition");
+        }
+
+        clearTimeout(timeoutId);
+        if(!wrapper.matches(":hover")) autoPlay();
     }
 
-    clearTimeout(timeoutId);
-    if(!wrapper.matches(":hover")) autoPlay();
+    let autoPlay = (e) => {
+        if(window.innerWidth < 800 || !isAutoPlay) return;
+        timeoutId = setTimeout((e) => carousel.scrollLeft += firstCardWidth, 3500);
+    };
+    autoPlay();
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("scroll", infiniteScroll);
+    wrapper.addEventListener("mouseenter", (e) => clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);
 }
-
-let autoPlay = (e) => {
-    if(window.innerWidth < 800 || !isAutoPlay) return;
-    timeoutId = setTimeout((e) => carousel.scrollLeft += firstCardWidth, 3500);
-};
-autoPlay();
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-wrapper.addEventListener("mouseenter", (e) => clearTimeout(timeoutId));
-wrapper.addEventListener("mouseleave", autoPlay);
