@@ -1848,11 +1848,13 @@ header .cc-header-search {
   max-width: 800px;
   text-wrap: balance;
   position: absolute;
+  z-index: 1;
 }
 
 .cc-hero-banner-bg form {
   position: absolute;
   padding-top: 250px;
+  z-index: 1;
 }
 
 .cc-hero-banner-bg-form {
@@ -1902,7 +1904,7 @@ header .cc-header-search {
   transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.5;
 }
 
