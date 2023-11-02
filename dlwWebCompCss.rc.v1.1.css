@@ -1865,7 +1865,7 @@ header .cc-header-search {
   border: none;
   outline: none;
   height: 36px;
-  color: rgba(var(--clr-color-black),0.7);
+  color: rgba(var(--clr-color-black),0.7) !important;
   background: rgba(var(--clr-color-white),1);
   border-bottom: 1px solid rgba(var(--clr-color-3),0.05);
   border-radius: 5px;
@@ -2213,6 +2213,10 @@ header .cc-header-search {
     height: 100dvh;
     width: auto;
   }
+
+  .cc-hero-banner-bg input {
+    width: 30ch;
+  }
 }
 
 @media (min-width: 400px) {
@@ -2312,6 +2316,10 @@ header .cc-header-search {
   .cc-footer-address {
     font-size: 0.875em;
     text-align: left;
+  }
+
+  .cc-hero-banner-bg input {
+    width: 50ch;
   }
 }
 
