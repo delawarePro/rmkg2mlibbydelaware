@@ -1581,7 +1581,7 @@ class HeroBannerBg extends HTMLElement {
         let elementHeroHBgVideo = document.createElement('div');
         elementHeroHBgVideo.classList.add('cc-video-bg');
         let elementHeroHBgVideoIframe = document.createElement('iframe');
-        elementHeroHBgVideoIframe.setAttribute('src', this.bannerVideoUrl+'?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0&playlist='+this.bannerVideoId);
+        elementHeroHBgVideoIframe.setAttribute('src', this.bannerVideoUrl+'?autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0&disablekb=1&playlist='+this.bannerVideoId);
         elementHeroHBgVideoIframe.setAttribute('title',this.bannerVideoTitle);
         elementHeroHBgVideoIframe.setAttribute('frameborder','0');
         elementHeroHBgVideoIframe.setAttribute('allow','autoplay; encrypted-media;');
