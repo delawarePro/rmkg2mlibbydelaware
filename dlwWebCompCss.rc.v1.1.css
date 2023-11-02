@@ -2052,7 +2052,7 @@ header .cc-header-search {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: 0;
-  padding-inline-start: 0px;
+  padding-inline-start: 0px !important;
 }
 
 .cc-carousel::-webkit-scrollbar {
