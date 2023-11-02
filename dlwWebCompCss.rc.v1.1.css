@@ -1842,6 +1842,7 @@ header .cc-header-search {
   overflow: hidden;
   min-height: 100vh;
   min-height: 100dvh;
+  margin-top: -100px !important;
 }
 
 .cc-hero-banner-bg h1 {
