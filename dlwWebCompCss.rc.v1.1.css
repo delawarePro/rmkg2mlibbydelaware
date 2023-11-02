@@ -1909,6 +1909,10 @@ header .cc-header-search {
   opacity: 0.5;
 }
 
+.cc-video-bg iframe {
+  pointer-events: none;
+}
+
 /*search component*/
 .cc-search-form-page {
   display: flex;
