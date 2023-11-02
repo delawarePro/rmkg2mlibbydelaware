@@ -872,6 +872,11 @@ header .cc-header-search {
     overflow: hidden;
   }
 
+  .cc-card h3 {
+    background: rgba(var(--clr-color-white),0.75);
+    padding: 5px;
+  }
+
   .cc-card.cc-card-clr-switch {
     max-width: 450px;
   }
@@ -1056,6 +1061,8 @@ header .cc-header-search {
   .cc-card:hover h3 {
     transition: var(--card-transition);
     color: rgba(var(--clr-color-white),1) !important;
+    padding: 0;
+    background: rgba(var(--clr-color-white),0);
   }
 
   .cc-card-clr-dark:hover h3 {
