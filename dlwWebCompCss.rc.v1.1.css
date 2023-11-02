@@ -2004,6 +2004,116 @@ header .cc-header-search {
   max-height: 310px;
 }
 
+
+/*carousel*/
+.cc-carousel-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  padding-inline-start: 20px;
+}
+
+.cc-carousel-nav {
+  height: 50px;
+  color: rgba(var(--clr-color-1), 1);
+  line-height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 3.25rem;
+  box-shadow: 0 3px 6px rgba(var(--clr-color-black),0.25);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.cc-carousel-nav:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.cc-carousel-nav:first-child {
+  left: -5px;
+}  
+
+.cc-carousel-nav:last-child {
+  right: -20px;
+}
+
+.cc-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3 - 12px));
+  gap: 16px;
+  text-indent: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+  padding-inline-start: 0px;
+}
+
+.cc-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.cc-no-transition {
+  scroll-behavior: auto;
+}
+
+.cc-carousel-dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.cc-carousel-dragging .cc-carousel-card {
+  cursor: grab;
+  user-select: none;
+}
+
+.cc-carousel-card {
+  scroll-snap-align: start;
+  height: 100%;
+  max-width: 330px;
+  list-style: none;
+  cursor: pointer;
+  background: rgba(var(--clr-color-1),0.1);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.cc-carousel-card span{
+  padding-top: 10px;
+}
+
+.cc-carousel-card-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .cc-carousel {
+    grid-auto-columns: calc((100% / 2 - 9px));
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  .cc-carousel {
+    grid-auto-columns: 100%;
+  }
+
+  .cc-carousel-card {
+    padding-inline-start: 10px;
+  }
+}
+
 /*media queries*/
 
 @media (min-width: 280px) {
