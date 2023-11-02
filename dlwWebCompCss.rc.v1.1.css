@@ -1871,6 +1871,7 @@ header .cc-header-search {
   border-radius: 5px;
 }
 
+.outershell a:not(.jobCardTitle):not(.unify-apply-now),
 .cc-hero-banner-bg-btn {
   text-decoration: none;
   display: inline-block;
@@ -1887,10 +1888,11 @@ header .cc-header-search {
   cursor: pointer;
 }
 
+.outershell a:not(.jobCardTitle):not(.unify-apply-now):hover,
 .cc-hero-banner-bg-btn:hover {
   color: rgba(var(--clr-color-1),1) !important;
   background: rgba(var(--clr-color-white),1) !important;
-  border: 1px solid rgba(var(--clr-color-white),1) !important;
+  border: 1px solid rgba(var(--clr-color-1),1) !important;
 }
 
 .cc-video-bg {
