@@ -1776,6 +1776,7 @@ customElements.define('cc-carousel', Carousel);
 var wrapper = document.querySelector(".cc-carousel-wrapper");
 if (wrapper) {
     var carousel = document.querySelector(".cc-carousel");
+    console.log("carousel object: " + carousel);
     var firstCardWidth = carousel.querySelector(".cc-carousel-card").offsetWidth;
     var arrowBtns = document.querySelectorAll(".cc-carousel-nav");
     var carouselChildren = [...carousel.children];
