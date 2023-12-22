@@ -1795,7 +1795,8 @@ if (wrapper) {
     carousel.scrollLeft = carousel.offsetWidth;
     carousel.classList.remove("cc-no-transition");
     console.log("carousel.scrollWidth: " + carousel.scrollWidth);
-
+    if (window.innerWidth > 800 && carousel.scrollWidth < 3709) carousel.scrollWidth = 3709;
+    
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
             carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
