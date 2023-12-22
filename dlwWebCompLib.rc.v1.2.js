@@ -1784,11 +1784,11 @@ if (wrapper) {
     var cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
     carouselChildren.slice(-cardPerView).reverse().forEach(card => {
-        carousel.insertAdjacentHTML("afterBegin", card.outerHTML);
+        // carousel.insertAdjacentHTML("afterBegin", card.outerHTML);
     });
 
     carouselChildren.slice(0, cardPerView).forEach(card => {
-        carousel.insertAdjacentHTML("beforeEnd", card.outerHTML);
+        // carousel.insertAdjacentHTML("beforeEnd", card.outerHTML);
     });
 
     carousel.classList.add("cc-no-transition");
@@ -1835,12 +1835,12 @@ if (wrapper) {
         if(window.innerWidth < 800 || !isAutoPlay) return;
         timeoutId = setTimeout((e) => carousel.scrollLeft += firstCardWidth, 3500);
     };
-    autoPlay();
+    //autoPlay();
 
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", dragStop);
+    //carousel.addEventListener("mousedown", dragStart);
+    //carousel.addEventListener("mousemove", dragging);
+    //document.addEventListener("mouseup", dragStop);
     //carousel.addEventListener("scroll", infiniteScroll);
-    wrapper.addEventListener("mouseenter", (eME) => clearTimeout(timeoutId));
-    wrapper.addEventListener("mouseleave", autoPlay);
+    //wrapper.addEventListener("mouseenter", (eME) => clearTimeout(timeoutId));
+    //wrapper.addEventListener("mouseleave", autoPlay);
 }
