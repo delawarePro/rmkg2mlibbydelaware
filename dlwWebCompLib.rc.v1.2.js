@@ -1823,12 +1823,7 @@ if (wrapper) {
         }
         else if (Math.ceil(carousel.scrollLeft) >= (carousel.scrollWidth - carousel.offsetWidth)){
             carousel.classList.add("cc-no-transition");
-            if (carousel.offsetWidth < 3709) {
-                carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
-            }
-            else {
-                carousel.scrollLeft = carousel.offsetWidth;
-            }
+            carousel.scrollLeft = carousel.offsetWidth;
             carousel.classList.remove("cc-no-transition");
         }
       
