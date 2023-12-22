@@ -1794,7 +1794,7 @@ if (wrapper) {
     carousel.classList.add("cc-no-transition");
     carousel.scrollLeft = carousel.offsetWidth;
     carousel.classList.remove("cc-no-transition");
-
+  console.log("x");
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
             carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
