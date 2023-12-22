@@ -1776,7 +1776,6 @@ customElements.define('cc-carousel', Carousel);
 var wrapper = document.querySelector(".cc-carousel-wrapper");
 if (wrapper) {
     var carousel = document.querySelector(".cc-carousel");
-    console.log("carousel object: " + carousel);
     var firstCardWidth = carousel.querySelector(".cc-carousel-card").offsetWidth;
     var arrowBtns = document.querySelectorAll(".cc-carousel-nav");
     var carouselChildren = [...carousel.children];
@@ -1795,8 +1794,6 @@ if (wrapper) {
     carousel.classList.add("cc-no-transition");
     carousel.scrollLeft = carousel.offsetWidth;
     carousel.classList.remove("cc-no-transition");
-    console.log("wrapper.scrollWidth: " + wrapper.scrollWidth);
-    console.log("carousel.scrollWidth: " + carousel.scrollWidth);
     
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -1831,7 +1828,12 @@ if (wrapper) {
           console.log("carousel.scrollWidth: " + carousel.scrollWidth);
           console.log("carousel.offsetWidth: " + carousel.offsetWidth);
             carousel.classList.add("cc-no-transition");
-            carousel.scrollLeft = carousel.offsetWidth;
+            if (carousel.offsetWidth < 3709) {
+                carousel.scrollLeft = carousel.offsetWidth * 2;
+            }
+            else {
+                carousel.scrollLeft = carousel.offsetWidth;
+            }
             carousel.classList.remove("cc-no-transition");
         }
         else {
