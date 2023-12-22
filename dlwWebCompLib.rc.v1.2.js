@@ -1840,7 +1840,7 @@ if (wrapper) {
     carousel.addEventListener("mousedown", dragStart);
     carousel.addEventListener("mousemove", dragging);
     document.addEventListener("mouseup", dragStop);
-    carousel.addEventListener("scroll", infiniteScroll);
+    //carousel.addEventListener("scroll", infiniteScroll);
     wrapper.addEventListener("mouseenter", (eME) => clearTimeout(timeoutId));
     wrapper.addEventListener("mouseleave", autoPlay);
 }
