@@ -1792,7 +1792,7 @@ if (wrapper) {
     });
 
     //carousel.classList.add("cc-no-transition");
-    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.scrollLeft = 0;
     //carousel.classList.remove("cc-no-transition");
     
     arrowBtns.forEach(btn => {
