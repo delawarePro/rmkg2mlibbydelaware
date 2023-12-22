@@ -1816,30 +1816,20 @@ if (wrapper) {
         carousel.classList.remove("cc-carousel-dragging");
     }
     var infiniteScroll = (eIS) => {
-      console.log("infiniteScroll");
         if (carousel.scrollLeft === 0) {
-          console.log("scrollLeft == 0");
             carousel.classList.add("cc-no-transition");
             carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
             carousel.classList.remove("cc-no-transition");
         }
         else if (Math.ceil(carousel.scrollLeft) >= (carousel.scrollWidth - carousel.offsetWidth)){
-          console.log("math.ceil");
-          console.log("carousel.scrollWidth: " + carousel.scrollWidth);
-          console.log("carousel.offsetWidth: " + carousel.offsetWidth);
             carousel.classList.add("cc-no-transition");
             if (carousel.offsetWidth < 3709) {
-                carousel.scrollLeft = carousel.offsetWidth * 2;
+                carousel.scrollLeft = carousel.scrollWidth - carousel.offsetWidth;
             }
             else {
                 carousel.scrollLeft = carousel.offsetWidth;
             }
             carousel.classList.remove("cc-no-transition");
-        }
-        else {
-          console.log("else");
-          console.log("(carousel.scrollWidth - carousel.offsetWidth)" + (carousel.scrollWidth - carousel.offsetWidth));
-          console.log("Math.ceil(carousel.scrollLeft)" + Math.ceil(carousel.scrollLeft));
         }
       
         clearTimeout(timeoutId);
