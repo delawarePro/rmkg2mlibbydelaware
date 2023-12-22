@@ -1825,6 +1825,8 @@ if (wrapper) {
         }
         else if (Math.ceil(carousel.scrollLeft) >= (carousel.scrollWidth - carousel.offsetWidth)){
           console.log("math.ceil");
+          console.log("carousel.scrollWidth: " + carousel.scrollWidth);
+          console.log("carousel.offsetWidth: " + carousel.offsetWidth);
             carousel.classList.add("cc-no-transition");
             carousel.scrollLeft = carousel.offsetWidth;
             carousel.classList.remove("cc-no-transition");
