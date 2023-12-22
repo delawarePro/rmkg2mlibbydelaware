@@ -1794,12 +1794,8 @@ if (wrapper) {
     carousel.classList.add("cc-no-transition");
     carousel.scrollLeft = carousel.offsetWidth;
     carousel.classList.remove("cc-no-transition");
+    console.log("wrapper.scrollWidth: " + wrapper.scrollWidth);
     console.log("carousel.scrollWidth: " + carousel.scrollWidth);
-    if (window.innerWidth > 800 && carousel.scrollWidth < 3709) {
-        carousel.scrollWidth = 3709;
-        console.log("new width: " + carousel.scrollWidth);
-    }
-    
     
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
