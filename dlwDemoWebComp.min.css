@@ -143,18 +143,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: var(--fs-900) !important;
-  color: var(--clr-primary) !important;
+  font-size: var(--fs-700) !important;
+  color: var(--clr-primary);
 }
 
 h2 {
-  font-size: var(--fs-800) !important;
-  color: var(--clr-primary) !important;
+  font-size: var(--fs-600) !important;
+  color: var(--clr-primary);
 }
 
 h3 {
-  font-size: var(--fs-700) !important;
-  color: var(--clr-text) !important;
+  font-size: var(--fs-500) !important;
+  color: var(--clr-text);
 }
 
 a {
@@ -190,7 +190,7 @@ a:focus {
 }
 
 ::marker {
-  color: var(--clr-primary);
+  color: var(--clr-primary) !important;
 }
 
 h1 {
@@ -483,12 +483,12 @@ transition-delay: 1s;
 .content-grid {
   --padding-inline: 1rem;
   --padding-block: 0.5rem;
-  --content-max-width: 75ch; /*50*/
-  --popout-max-width: 80ch; /*55*/
+  --content-max-width: 60ch; /*50*/
+  --popout-max-width: 65ch; /*55*/
   --popout-size: calc(
       (var(--popout-max-width) - var(--content-max-width)) / 2
     );
-  --feature-max-width: 85ch; /*67*/
+  --feature-max-width: 70ch; /*67*/
   --feature-size: calc(
     (var(--feature-max-width) - var(--content-max-width)) / 2
   );
@@ -643,18 +643,23 @@ img.full-width {
 .cc-icon {
   font-size: var(--fs-600);
   color: var(--clr-primary);
+  border-radius: 50%;
+  border: 0px solid var(--clr-primary);
+  padding: 10px;
 }
 
 a .cc-icon:hover,
 a .cc-icon:focus {
   color: var(--clr-accent-500);
   text-decoration: underline;
-  transition: all var(--transition-time-slow) ease; 
+  transition: all var(--transition-time-normal) ease; 
 } 
 
 a .cc-icon:hover,
 .outershell a.cc-icon:hover {
-    transform: translateY(-5px);
+    /*transform: translateY(-5px);*/
+    /*color: var(--clr-white);*/
+    background: var(--clr-accent-200);
 }
 
 a .cc-icon-home:hover, 
