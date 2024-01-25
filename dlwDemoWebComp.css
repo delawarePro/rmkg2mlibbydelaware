@@ -123,7 +123,7 @@ body {
 .outershellDemoDLW3 a,
 .outershellDemoDLW3b a,
 .outershellDemoDLW3c a {
-  color: var(--clr-body) !important;
+  color: var(--clr-white) !important;
   text-decoration: none !important;
 }
 
@@ -133,7 +133,7 @@ body {
 .outershellDemoDLW3 a:focus,
 .outershellDemoDLW3b a:focus,
 .outershellDemoDLW3c a:focus {
-  color: var(--clr-white) !important;
+  color: var(--clr-body) !important;
   transition: all var(--transition-time-normal) ease;
 }
 /*EXTRA OVERRIDES END*/
