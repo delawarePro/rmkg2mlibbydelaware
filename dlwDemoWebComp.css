@@ -154,13 +154,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--fs-900) !important;
-  color: var(--clr-primary);
+  color: var(--clr-primary) !important;
   --flow-space: 2em;
 }
 
 h2 {
   font-size: var(--fs-800) !important;
-  color: var(--clr-primary);
+  color: var(--clr-primary) !important;
   --flow-space: 1.5em;
 }
 
@@ -171,17 +171,17 @@ h3 {
 
 h4 {
   font-size: var(--fs-600) !important;
-  color: var(--clr-text);
+  color: var(--clr-text) !important;
 }
 
 h5 {
   font-size: var(--fs-500) !important;
-  color: var(--clr-text);
+  color: var(--clr-text) !important;
 }
 
 h6 {
   font-size: var(--fs-400) !important;
-  color: var(--clr-text);
+  color: var(--clr-text) !important;
 }
 
 /*need to add the outershell for the different brands in RMK*/
