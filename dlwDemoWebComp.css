@@ -197,6 +197,7 @@ a:focus {
 
 .btn a,
 .btn {
+  font-size: var(--fs-500);
   background-color: var(--clr-primary) !important;
   color: var(--clr-text) !important;
   padding: 14px 25px;
