@@ -196,7 +196,9 @@ a:focus {
 }
 
 .btn a,
-.btn {
+.btn,
+.cc-btn a,
+.cc-btn {
   font-size: var(--fs-500);
   background-color: var(--clr-primary) !important;
   color: var(--clr-text) !important;
@@ -211,9 +213,13 @@ a:focus {
 .btn a:hover,
 .btn:hover,
 .btn a:focus
-.btn:focus {
+.btn:focus
+.cc-btn a:hover,
+.cc-btn:hover,
+.cc-btn a:focus
+.cc-btn:focus {
   background-color: var(--clr-accent) !important;
-  color: var(--clr-text) !important; 
+  color: var(--clr-white) !important; 
   transition: all var(--transition-time-normal) ease; 
 }
 
