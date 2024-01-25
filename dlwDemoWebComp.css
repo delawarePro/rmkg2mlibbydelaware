@@ -118,6 +118,24 @@ body {
 #content > .inner > div, #content > #category-header > .inner > div, .jobDisplay > .content > div, .jobDisplay > .content > .jobColumnOne > div, .jobDisplay > .content > .jobColumnTwo > div, .landingPageDisplay > .content > .landingPage > .landingPageColumnOne > div, .landingPageDisplay > .content > .landingPage > .landingPageColumnTwo > div, .landingPageDisplay > .content > .landingPage > .landingPageSingleColumn > div {
   margin-bottom: 0px !important;
 }
+
+/*need to add the outershell for the different brands in RMK*/
+.outershellDemoDLW3 a,
+.outershellDemoDLW3b a,
+.outershellDemoDLW3c a {
+  color: var(--clr-body) !important;
+  text-decoration: none !important;
+}
+
+.outershellDemoDLW3 a:hover,
+.outershellDemoDLW3b a:hover,
+.outershellDemoDLW3c a:hover,
+.outershellDemoDLW3 a:focus,
+.outershellDemoDLW3b a:focus,
+.outershellDemoDLW3c a:focus {
+  color: var(--clr-white) !important;
+  transition: all var(--transition-time-normal) ease;
+}
 /*EXTRA OVERRIDES END*/
 
 html {
@@ -185,22 +203,13 @@ h6 {
 }
 
 /*need to add the outershell for the different brands in RMK*/
-a,
-.outershellDemoDLW3 a,
-.outershellDemoDLW3b a,
-.outershellDemoDLW3c a {
+a {
   color: var(--clr-primary) !important;
   text-decoration: none !important;
 }
 
 a:hover,
-a:focus,
-.outershellDemoDLW3 a:hover,
-.outershellDemoDLW3b a:hover,
-.outershellDemoDLW3c a:hover,
-.outershellDemoDLW3 a:focus,
-.outershellDemoDLW3b a:focus,
-.outershellDemoDLW3c a:focus {
+a:focus {
   color: var(--clr-accent) !important;
   transition: all var(--transition-time-normal) ease;
 }
