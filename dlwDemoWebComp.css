@@ -166,7 +166,7 @@ h2 {
 
 h3 {
   font-size: var(--fs-700) !important;
-  color: var(--clr-text);
+  color: var(--clr-text) !important;
 }
 
 h4 {
