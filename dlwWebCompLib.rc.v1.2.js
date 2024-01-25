@@ -1347,7 +1347,7 @@ class SearchTags extends HTMLElement {
             elementSearchTagSpan.innerText = '#' + searchTag;
             elementSearchTagLink.appendChild(elementSearchTagSpan);
 
-            elementSearchTagLink.href = '/search/?optionsFacetsDD_department='+ encodeURI(searchTag);
+            elementSearchTagLink.href = '/search/?optionsFacetsDD_department='+ encodeURIComponent(searchTag);
             elementSearchTagLink.title = searchTag;
             elementSearchTagLink.target = '_self';
 
