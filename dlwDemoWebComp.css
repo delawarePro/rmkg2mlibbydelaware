@@ -210,7 +210,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--clr-accent) !important;
+  color: var(--clr-secondary) !important;
   transition: all var(--transition-time-normal) ease;
 }
 
