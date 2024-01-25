@@ -184,13 +184,23 @@ h6 {
   color: var(--clr-text);
 }
 
-a {
+/*need to add the outershell for the different brands in RMK*/
+a,
+.outershellDemoDLW3 a,
+.outershellDemoDLW3b a,
+.outershellDemoDLW3c a {
   color: var(--clr-primary) !important;
   text-decoration: none !important;
 }
 
 a:hover,
-a:focus {
+a:focus,
+.outershellDemoDLW3 a:hover,
+.outershellDemoDLW3b a:hover,
+.outershellDemoDLW3c a:hover,
+.outershellDemoDLW3 a:focus,
+.outershellDemoDLW3b a:focus,
+.outershellDemoDLW3c a:focus {
   color: var(--clr-accent) !important;
   transition: all var(--transition-time-normal) ease;
 }
